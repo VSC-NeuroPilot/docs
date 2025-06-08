@@ -42,7 +42,7 @@ export default defineConfig({
                             }
                         },
                         { label: 'Commands', slug: 'reference/commands' },
-                        { label: 'Context', slug: 'reference/context' },
+                        { label: 'Context', slug: 'reference/auto-context' },
                         { label: 'Cookies', slug: 'reference/cookies' },
                         { label: 'Permissions', slug: 'reference/permissions' },
                         { label: 'RCE', slug: 'reference/rce' },
