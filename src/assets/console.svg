@@ -7,6 +7,7 @@
    viewBox="0 0 45.214626 39.892044"
    version="1.1"
    id="svg5"
+   stroke="currentColor"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    sodipodi:docname="console.svg"
    inkscape:export-filename="console.png"
@@ -59,7 +60,6 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-	 stroke="currentColor"
      transform="translate(-82.392685,-129.97473)">
     <rect
        style="fill:none;fill-opacity:1;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none"

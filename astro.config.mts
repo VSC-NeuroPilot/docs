@@ -19,10 +19,26 @@ export default defineConfig({
                         rel: 'icon',
                         href: '/neuropilot/neuropilot.svg'
                     }
+                },
+                {
+                    tag: 'script',
+                    attrs: {
+                        src: '/neuropilot/favicon-switch.js',
+                        defer: true
+                    }
                 }
             ],
             title: 'NeuroPilot Docs',
+            logo: {
+                dark: './public/evilpilot.svg',
+                light: './public/neuropilot.svg'
+            },
             social: [
+                {
+                    icon: 'vscode',
+                    label: 'NeuroPilot listing on Visual Studio Marketplace',
+                    href: 'https://marketplace.visualstudio.com/items?itemName=Pasu4.neuropilot',
+                },
                 {
                     icon: 'github',
                     label: 'NeuroPilot GitHub',
