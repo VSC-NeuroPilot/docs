@@ -8,7 +8,7 @@ export default defineConfig({
     base: '/neuropilot',
     integrations: [
         starlight({
-            favicon: '/neuropilot.svg',
+            favicon: '/twinpilot.svg',
             customCss: [
                 './src/styles/icons.css'
             ],
@@ -17,21 +17,14 @@ export default defineConfig({
                     tag: 'link',
                     attrs: {
                         rel: 'icon',
-                        href: '/neuropilot/neuropilot.svg'
-                    }
-                },
-                {
-                    tag: 'script',
-                    attrs: {
-                        src: '/neuropilot/favicon-switch.js',
-                        defer: true
+                        href: '/neuropilot/twinpilot.svg'
                     }
                 }
             ],
             title: 'NeuroPilot Docs',
             logo: {
-                dark: './public/evilpilot.svg',
-                light: './public/neuropilot.svg'
+                dark: './src/assets/evilpilot.svg',
+                light: './src/assets/neuropilot.svg'
             },
             social: [
                 {

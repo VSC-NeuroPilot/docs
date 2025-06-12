@@ -3,11 +3,13 @@ title: Copilot-like features
 description: Features which use the chat panel and replicates GitHub Copilot's behaviour.
 ---
 
+import { Aside } from '@astrojs/starlight/components'
+
 ## Copilot Chat
 
 The following features send a chat message to Neuro:
 
-- [Ask Neuro to fix/explain](/neuropilot/references/commands#ask-neuro-to-fixexplain)
+- [Ask Neuro to fix/explain](/neuropilot/reference/commands#ask-neuro-to-fixexplain) (using the `/fix` and `/explain` commands respectively)
 
 The user can also send a message to Neuro directly using either `@neuro`, `@evil`, or `@neuroapi` (as appropriate).
 Doing so will reroute the prompt to Neuro and will await for her response.
@@ -15,6 +17,12 @@ Doing so will reroute the prompt to Neuro and will await for her response.
 Chat features will register a disposable `chat` action and force an action from Neuro with only the `chat` action.
 The `state` will be the relevant code (even if it is in a Neuro-unsafe path), and the `query` will be dependent on what subcommand and prompt was chosen/typed (if any).
 The action force's state will always be not ephermeral.
+
+<Aside>
+
+If you type the wrong name's @, the prompt will be sent to GitHub Copilot, even if the @ is still highlighted in the chatbox (which can happen if you don't clear the chatbox before changing the active name).
+
+</Aside>
 
 ## Inline Completions
 
