@@ -57,11 +57,11 @@ The impact of enabling this setting vastly depends on the tasks defined in there
 
 ## Explicit shell definition
 
-More info: [Features/Shells - Terminals](/neuropilot/reference/features/shells#terminals)
+More info: [Settings/Terminals](/neuropilot/reference/settings#terminals)
 
 In order to run shells, they must be explicitly defined in `.vscode/settings.json` with their name, path and args to be passed in (if any).
 
-You can learn more by reading the link above. You cannot disable this safety feature.
+You can find out how to define them by reading the link above. You cannot disable this safety feature.
 
 ## Permissions
 
@@ -74,3 +74,5 @@ This system is tightly integrated into NeuroPilot, and disabling it can mean two
 You can learn about the way NeuroPilot handles action permissions on the [RCE page](/neuropilot/reference/rce).
 
 You cannot disable the RCE framework itself as that would effectively mean every Autopilot-able permission will no longer function.
+However, what can be construed as effectively disabling it is setting every permission to Autopilot mode.
+This will allow Neuro to do any and all actions whenever she wants without pre-execution human oversight.
