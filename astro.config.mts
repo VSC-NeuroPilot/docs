@@ -9,6 +9,18 @@ export default defineConfig({
     integrations: [
         starlight({
             favicon: '/neuropilot.svg',
+            customCss: [
+                './src/styles/icons.css'
+            ],
+            head: [
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'icon',
+                        href: '/neuropilot/neuropilot.svg'
+                    }
+                }
+            ],
             title: 'NeuroPilot Docs',
             social: [
                 {

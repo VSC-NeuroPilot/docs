@@ -1,0 +1,9 @@
+.neuropilot-icon {
+  fill: black; /* Light mode: icons are black */
+}
+
+@media (prefers-color-scheme: dark) {
+  .neuropilot-icon {
+    fill: white; /* Dark mode: icons are white */
+  }
+}
