@@ -38,6 +38,7 @@ html[data-theme="light"] .twinpilot #twinpilot-heartbreak {
 }
 
 html[data-theme="dark"] .twinpilot #twinpilot-heartbreak {
+  stroke-dasharray: 1000 1000;
   stroke-dashoffset: 993;
   transition: 0.5s;
 }
