@@ -10,7 +10,8 @@ export default defineConfig({
         starlight({
             favicon: '/twinpilot.svg',
             customCss: [
-                './src/styles/icons.css'
+                './src/styles/icons.css',
+                './src/styles/inline.css'
             ],
             head: [
                 {
