@@ -62,6 +62,7 @@ export default defineConfig({
                                 collapsed: true
                             }
                         },
+                        { label: 'Safety', slug: 'reference/safety' },
                         { label: 'Commands', slug: 'reference/commands' },
                         { label: 'Context', slug: 'reference/auto-context' },
                         { label: 'Cookies', slug: 'reference/cookies' },
