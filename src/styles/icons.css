@@ -11,33 +11,33 @@ html[data-theme="dark"] .neuropilot-icon {
 }
 
 html[data-theme="light"] .twinpilot #twinpilot-ahoge {
-    /* animation: test 1s infinite alternate; */
-    scale: -1 1;
-    transition: 0.5s;
+  /* animation: test 1s infinite alternate; */
+  scale: -1 1;
+  transition: 0.5s;
 }
 
 html[data-theme="dark"] .twinpilot #twinpilot-ahoge {
-    scale: 1 1;
-    transition: 0.5s;
+  scale: 1 1;
+  transition: 0.5s;
 }
 
 html[data-theme="light"] .twinpilot #twinpilot-angry {
-    transform: translate(0, -2px);
-    transition: 0.5s;
+  transform: translate(0, -2px);
+  transition: 0.5s;
 }
 
 html[data-theme="dark"] .twinpilot #twinpilot-angry {
-    transform: translate(0, 0);
-    transition: 0.5s;
+  transform: translate(0, 0);
+  transition: 0.5s;
 }
 
 html[data-theme="light"] .twinpilot #twinpilot-heartbreak {
-    stroke-dasharray: 1000 1000;
-    stroke-dashoffset: 1000;
-    transition: 0.5s;
+  stroke-dasharray: 1000 1000;
+  stroke-dashoffset: 1000;
+  transition: 0.5s;
 }
 
 html[data-theme="dark"] .twinpilot #twinpilot-heartbreak {
-    stroke-dashoffset: 993;
-    transition: 0.5s;
+  stroke-dashoffset: 993;
+  transition: 0.5s;
 }
