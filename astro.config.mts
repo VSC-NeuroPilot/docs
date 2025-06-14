@@ -8,7 +8,7 @@ export default defineConfig({
     base: '/neuropilot',
     integrations: [
         starlight({
-            favicon: '/twinpilot.svg',
+            favicon: '/heart-pink.svg',
             customCss: [
                 './src/styles/icons.css',
                 './src/styles/inline.css'
@@ -18,7 +18,7 @@ export default defineConfig({
                     tag: 'link',
                     attrs: {
                         rel: 'icon',
-                        href: '/neuropilot/twinpilot.svg'
+                        href: '/neuropilot/heart-pink.svg'
                     }
                 }
             ],

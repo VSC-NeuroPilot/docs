@@ -21,4 +21,39 @@ hero:
       variant: minimal
 ---
 
+import { Aside, Card, CardGrid } from '@astrojs/starlight/components'
+
+**For simplicity, all mentions of Neuro in these docs also apply to Evil unless otherwise stated.**
+
+<Aside type="danger">
+
+Depending on the permissions you activate and which of the aforementioned testing tools / AIs you use, this extension can be quite destructive to your system.
+No contributors or collaborators on this project take responsibility for any harm done to your system as a result of this extension.
+Use Copilot mode for dangerous permissions or use the extension on a virtual machine.
+
+</Aside>
+
+## Terminology
+
+<CardGrid>
+	<Card title="Neuro-safe/Neuro-unsafe">
+		A set of directories Neuro is/isn't allowed to access.
+
+    To find out about what directories are included, see [the File access restrictions section on the safety page](/neuropilot/reference/safety#file-access-restrictions).
+	</Card>
+	<Card title="Autopilot/Copilot">
+		Two modes you can set permissions to, allowing more controlled behaviour from the extension.
+
+    For more info, see [the guides page on selecting a -pilot mode for a setting](/neuropilot/guides/pilot).
+	</Card>
+	<Card title="Passive/Background/Auto context">
+		Context that is sent to Neuro passively. This is done with a small amount of features.
+
+    You can learn more and find the list [here](/neuropilot/reference/auto-context).
+	</Card>
+	<Card title="What should go here?" icon="open-book">
+		uh
+	</Card>
+</CardGrid>
+
 {/* I have an idea for quick links but this will be blank for now */}
