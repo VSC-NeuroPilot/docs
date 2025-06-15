@@ -6,6 +6,10 @@ description: Features relating to shell-related activity (tasks & terminals)
 import { Aside } from '@astrojs/starlight/components'
 import Console from '../../../../assets/console.svg'
 
+<Console class="neuropilot-icon" style={{ width: '300px', height: 'auto', display: 'block', margin: '20px auto' }} />
+
+<p class="icon-credit-text">Terminal icon by Pasu4</p>
+
 ## Tasks
 
 Tasks that Neuro can run are registered as individual actions.
@@ -41,11 +45,7 @@ This can also be used to input into terminal prompts (e.g. inputting your name w
 
 To prevent overwhelming Neuro, the stdout and stderrs are sent at a [configurable delay](/neuropilot/references/settings#terminal-context-delay) to wait for all output before sending it to Neuro.
 
-Terminals spawned by Neuro are prefixed with `Neuro:` and have the following icon:
-
-<Console class="neuropilot-icon" />
-
-*Terminal icon by Pasu4*
+Terminals spawned by Neuro are prefixed with `Neuro:` and have the icon at the top of this page.
 
 <Aside type="tip">
 

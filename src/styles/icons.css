@@ -1,3 +1,10 @@
+.center-icon {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 20 auto;
+}
+
 html[data-theme="light"] .neuropilot-icon {
   stroke: black; /* Light mode: icons are black */
 }
@@ -41,4 +48,9 @@ html[data-theme="dark"] .twinpilot #twinpilot-heartbreak {
   stroke-dasharray: 1000 1000;
   stroke-dashoffset: 993;
   transition: 0.5s;
+}
+
+.icon-credit-text {
+    font-style: italic;
+    text-align: center;
 }

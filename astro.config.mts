@@ -10,8 +10,7 @@ export default defineConfig({
         starlight({
             favicon: '/heart-pink.svg',
             customCss: [
-                './src/styles/icons.css',
-                './src/styles/inline.css'
+                './src/styles/icons.css'
             ],
             head: [
                 {
