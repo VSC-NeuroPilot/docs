@@ -5,12 +5,33 @@ description: Info about how NeuroPilot handles execution of actions.
 
 import { Aside } from '@astrojs/starlight/components'
 
-When handling actions from Neuro, the action is first passed through a "central" handler function. This forms the basis of the Requested Command Execution system.
+When handling actions from Neuro, the action is first passed through a "central" handler function. This forms the basis of the Requested Command Execution (RCE) system.
 
-<Aside>
+<Aside type="tip">
 
 Even though this page is supposed to be about the RCE framework, since most actions are handled through it anyways, this will serve as an overview as to how NeuroPilot handles actions overall.
 Some actions do not route through RCE.
+
+</Aside>
+
+<Aside type="caution">
+
+If you're thinking any of these questions:
+
+- "Why is there a file named `rce.ts` in it???"
+- "Is there an intentional RCE vulnerability inside this extension???"
+- "What's with that `rce.ts` file that you're trying to hide?"
+- or something similar...
+
+Short answer: you're wrong.
+
+Long answer:
+
+Copilot mode is developed for making Neuro request to do actions instead of directly allowing her to do that action.
+This was called the **R**equested **C**ommand **E**xecution (or Request for Command Execution) framework when it was first conceived.
+
+So no, there isn't an intentional Remote Code Execution vulnerability in this extension. 
+But by enabling Neuro's access to Pseudoterminals, one could say she already has access to a very powerful RCE, so be careful with that one.
 
 </Aside>
 
@@ -44,10 +65,10 @@ In a perfect world, Neuro won't have access to the actions that she doesn't have
 ### Schema validation
 
 As Neuro can send JSON not conforming to schema, it is required to check the JSON to ensure the schema has been followed before continuing on (to prevent errors from undefined fields). The `jsonschema` library is used here due to the ability to just send in a schema file and Neuro's packet, and get back a result.
-This result is then used to check whether or not to stop processing and tell Neuro she doesn't have permissions
+This result is then used to check whether or not to stop processing and tell Neuro she typed something wrong.
 
 This is an improvement over other ways of doing it, which is normally using the same function set copy-pasted all over.
-That may be preferred if actions are used on a smaller scale, but with so many actions used and so many arguments needed, this becomes infeasible for NeuroPilot, so having this way to validate Neuro's packets is much easier while being functionally the same.
+That may be preferred if actions are used on a smaller scale since it requires less external packages, therefore reducing the external attack vectors (among other benefits), but with so many actions used and so many arguments needed, this becomes infeasible for NeuroPilot, so having this to validate Neuro's packets is much easier while being functionally the same and features become easy to implement.
 
 ### Custom validation
 
@@ -63,6 +84,9 @@ Here, the framework will decide whether or not it will synchronously return resu
 
 <Aside>
 
-Certain action results will still be returned asynchronously, regardless of Autopilot or Copilot. This is due to the required APIs returning `Promise`s and async `Thenable`s.
+Certain action results will still be returned asynchronously, regardless of Autopilot or Copilot. This is due to the required APIs returning `Promise`s and non-sync `Thenable`s.
+
+If you don't know what those are, just think of them as the data that gets returned when running your language-of-choice's asynchronous functions.
+They essentially tell your variable/function "hey, we're gonna go do some stuff in a separate thread, we promise we'll give you some data back after we're done!", which gives you the option to either continue on the main thread, or await them (in an async function).
 
 </Aside>

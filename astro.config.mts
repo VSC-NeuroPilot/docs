@@ -69,6 +69,7 @@ export default defineConfig({
                         { label: 'Permissions', slug: 'reference/permissions' },
                         { label: 'RCE', slug: 'reference/rce' },
                         { label: 'Settings', slug: 'reference/settings' },
+                        { label: 'Dependencies', slug: 'reference/dependencies' },
                     ],
                 },
             ],
