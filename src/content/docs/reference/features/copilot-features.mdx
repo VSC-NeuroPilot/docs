@@ -32,3 +32,20 @@ Similar to the chat features, the `state` will be the nearby code, and the conte
 The query (and the action description) will prompt Neuro to suggest only code, never worded responses.
 
 You can adjust how many lines are sent to Neuro using the [Before/After Context setting](/neuropilot/reference/settings#beforeafter-context).
+
+You can also adjust when inline completions are triggered with the [Completion Trigger setting](/neuropilot/reference/settings#completion-trigger).
+
+<Aside type="tip">
+
+Unfortunately, requesting inline completions will trigger all completion providers (including Copilot), and since Copilot is required for the Copilot Chat window, you cannot simply disable it. {/* unnecessary circular dependency? */}
+You can, however, work around this by modifying User/Workspace Settings to make Copilot unable to talk to the API.
+
+Simply paste this into your `settings.json` file:
+
+```json
+"github.copilot.advanced": {
+    "debug.overrideEngine": "someRandomString"
+}
+```
+
+</Aside>
