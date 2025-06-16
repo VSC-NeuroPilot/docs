@@ -77,6 +77,7 @@ export default defineConfig({
                         { label: 'Dependencies', slug: 'reference/dependencies' },
                     ],
                 },
+                "assets",
             ],
         }),
     ],
