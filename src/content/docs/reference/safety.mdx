@@ -76,3 +76,9 @@ You can learn about the way NeuroPilot handles action permissions on the [RCE pa
 You cannot disable the RCE framework itself as that would effectively mean every Autopilot-able permission will no longer function.
 However, what can be construed as effectively disabling it is setting every permission to Autopilot mode.
 This will allow Neuro to do any and all actions whenever she wants without pre-execution human oversight.
+
+## Disable All Permissions command
+
+As a panic button, you can activate the [Disable All Permissions command](/neuropilot/reference/commands#disable-all-permissions). This will immediately shut off access to all permissions, even requesting cookies, and will also forcibly change certain non-action-permission settings.
+
+You cannot fully disable this command. However, you can choose not to bind it to a keyboard shotcut. This will mean that you cannot instantly disable permissions for Neuro if she is misbehaving.
