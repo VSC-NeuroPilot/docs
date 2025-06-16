@@ -90,7 +90,7 @@ import { Aside, Card, CardGrid } from '@astrojs/starlight/components'
 
 <Aside type="danger">
 
-Depending on the permissions you activate and which of the aforementioned testing tools / AIs you use, this extension can be quite destructive to your system.
+Depending on the permissions you activate, what level they are set, and which tools / AIs you use, this extension can be quite destructive to your system.
 No contributors or collaborators on this project take responsibility for any harm done to your system as a result of this extension.
 Use Copilot mode for dangerous permissions or use the extension on a virtual machine.
 
@@ -99,25 +99,25 @@ Use Copilot mode for dangerous permissions or use the extension on a virtual mac
 ## Terminology
 
 <CardGrid>
-	<Card title="Neuro-safe/Neuro-unsafe">
+	<Card title="Neuro-safe/Neuro-unsafe" icon="document">
 		A set of directories Neuro is/isn't allowed to access.
 
     To find out about what directories are included, see [the File access restrictions section on the safety page](/neuropilot/reference/safety#file-access-restrictions).
 	</Card>
-	<Card title="Autopilot/Copilot">
+	<Card title="Autopilot/Copilot" icon="pen">
 		Two modes you can set permissions to, allowing more controlled behaviour from the extension.
 
     For more info, see [the guides page on selecting a -pilot mode for a setting](/neuropilot/guides/pilot).
 	</Card>
-	<Card title="Passive/Background/Auto context">
+	<Card title="Passive/Background/Auto context" icon="information">
 		Context that is sent to Neuro passively. This is done with a small amount of features.
 
     You can learn more and find the list [here](/neuropilot/reference/auto-context).
 	</Card>
-	<Card title="RCE" icon="open-book">
-		Short for Requested Command Execution (or Request for Command Execution), essentially powering the actions & permissions system as a whole.
+	<Card title="RCE">
+		Short for the "**R**equested **C**ommand **E**xecution" system, which handles Neuro's permissions. Not to be confused with a "Remote Code Execution" vulnerability.
 
-    Curious? Check out [its page](/neuropilot/reference/rce).
+    For how exactly this system works, read [this](/neuropilot/reference/rce).
 	</Card>
 </CardGrid>
 

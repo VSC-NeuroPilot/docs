@@ -24,7 +24,8 @@ export default defineConfig({
             title: 'NeuroPilot Docs',
             logo: {
                 dark: './src/assets/evilpilot.svg',
-                light: './src/assets/neuropilot.svg'
+                light: './src/assets/neuropilot.svg',
+                alt: 'NeuroPilot and EvilPilot icons'
             },
             social: [
                 {
