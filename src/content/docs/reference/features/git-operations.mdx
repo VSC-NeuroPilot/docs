@@ -7,6 +7,14 @@ import { Aside } from '@astrojs/starlight/components'
 import NeuroGit from '../../../../assets/neuro-git.svg'
 import CenterIcon from '../../../../components/CenterIcon.astro'
 
+export const attribs = {
+    text: "Based on the Git logo by Jason Long",
+    license: {
+        name: "Creative Commons Attribution 3.0 Unported License",
+        link: "https://creativecommons.org/licenses/by/3.0/"
+    }
+}
+
 Git operations has the most amount of actions, so in this page they will be (sort of) sectioned according to their permission.
 
 Each permission here also requires the Git Operations permission to be enabled no matter what.
@@ -14,7 +22,7 @@ Each permission here also requires the Git Operations permission to be enabled n
 As this relies on the built-in git extension (and for most, an initialized repo), NeuroPilot will first check if the Git extension is loaded, before registering git actions.
 Then, NeuroPilot will check if there already is an initialized repo in the workspace.
 
-<CenterIcon Icon={NeuroGit} credits="NeuroGit icon by KTrain5369, based on the Git logo" />
+<CenterIcon Icon={NeuroGit} credits="NeuroGit icon by KTrain5369" attribs={attribs} />
 
 ## Vanilla (no additional permissions)
 

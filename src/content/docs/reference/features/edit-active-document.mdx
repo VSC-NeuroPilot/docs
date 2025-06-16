@@ -4,6 +4,17 @@ description: Features relating to editing.
 ---
 
 import { Aside } from '@astrojs/starlight/components'
+import NeuroPilotEdit from '../../../../assets/neuropilot-edit.svg'
+import CenterIcon from '../../../../components/CenterIcon.astro'
+
+export const attribs = {
+    text: "Modified from the text cursor icon by scarlab",
+    license: {
+        name: "MIT"
+    }
+}
+
+<CenterIcon Icon={NeuroPilotEdit} credits="Edit active document logo by KTrain5369" attribs={attribs} />
 
 ## Cursor
 

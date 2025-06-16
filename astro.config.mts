@@ -51,6 +51,10 @@ export default defineConfig({
                             label: 'Pilot modes',
                             slug: 'guides/pilot',
                         },
+                        {
+                            label: 'Sandboxing',
+                            slug: 'guides/sandboxing'
+                        }
                     ],
                 },
                 {
