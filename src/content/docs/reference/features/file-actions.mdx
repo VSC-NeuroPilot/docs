@@ -6,7 +6,15 @@ description: Features relating to file properties.
 import NeuroFiles from '../../../../assets/neuro-files.svg'
 import CenterIcon from '../../../../components/CenterIcon.astro'
 
-<CenterIcon Icon={NeuroFiles} credits="File actions icon by KTrain5369" />
+export const attribs = {
+    text: "Modified from original design by Dazzle UI",
+    license: {
+        name: "CC Attribution",
+        link: "https://creativecommons.org/licenses/by/3.0/"
+    }
+}
+
+<CenterIcon Icon={NeuroFiles} credits="File actions icon by KTrain5369" attribs={attribs} />
 
 ## Get/open workspace files
 
