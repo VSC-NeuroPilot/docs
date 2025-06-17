@@ -17,6 +17,8 @@ import Console from '../../assets/console.svg'
 import NeuroGit from '../../assets/neuro-git.svg'
 import NeuroPilotLint from '../../assets/neuropilot-lint.svg'
 
+export const CenterIconStyles = { width: '300px', height: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0px auto' }
+
 export const iconList = [
     [
         {
@@ -28,6 +30,8 @@ export const iconList = [
             Icon: HeartPink,
             credits: "Pink version by KTrain5369"
         },
+    ],
+    [
         {
             Icon: NeuroPilot,
             credits: "NeuroPilot logo by Pasu4"
@@ -90,7 +94,15 @@ Exhaustive list of assets used for NeuroPilot.
     <CenterIcon {...icon} />
 ))}
 
-<div style={{ width: '300px', height: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0px auto' }}>
+<img src="/neuropilot/heart-xaendril.png" style={{ 'padding-top': '20px', 'padding-bottom': '10px', ...CenterIconStyles}} />
+
+<p class="icon-credit-text" style={{ paddingBottom: '20px'}}>NeuroPilot v2 logo by Xaendril</p>
+
+{iconList[1].map(icon => (
+    <CenterIcon {...icon} />
+))}
+
+<div style={CenterIconStyles}>
     <Fragment set:html={TwinPilot} />
 </div>
 
@@ -98,6 +110,6 @@ Exhaustive list of assets used for NeuroPilot.
 
 ## Feature icons
 
-{iconList[1].map(icon => (
+{iconList[2].map(icon => (
     <CenterIcon {...icon} />
 ))}
