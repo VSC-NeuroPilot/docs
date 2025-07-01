@@ -4,8 +4,8 @@
   "private": true,
   "version": "ext-v2.0.2",
   "readme": "README.md",
-  "repository": "https://github.com/Pasu4/neuropilot/tree/master/docs",
-  "homepage": "https://pasu4.github.io/neuropilot",
+  "repository": "https://github.com/VSC-NeuroPilot/neuropilot/tree/master/docs",
+  "homepage": "https://vsc-neuropilot.github.io/neuropilot",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
