@@ -4,8 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://vsc-neuropilot.github.io/neuropilot',
-    base: '/neuropilot',
+    site: 'https://vsc-neuropilot.github.io/',
+    base: '/docs',
     integrations: [
         starlight({
             favicon: '/heart-pink.svg',
