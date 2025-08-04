@@ -1,0 +1,48 @@
+name: Bump docs version
+
+permissions:
+    contents: write
+
+on:
+    workflow_dispatch:
+        inputs:
+            version:
+                type: choice
+                description: 'Bump docs version by how much?'
+                required: true
+                default: 'none'
+                options:
+                    - 'major'
+                    - 'minor'
+                    - 'patch'
+                    - 'none'
+
+jobs:
+    bump:
+        name: Bump docs version
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 'latest'
+                cache: 'npm'
+                cache-dependency-path: './package-lock.json'
+
+            - name: Install deps
+              run: npm install
+
+            - name: Configure git
+              run: |
+                git config --global user.name "GitHub Actions"
+                git config --global user.email "actions@github.com"
+
+            - name: Bump version
+              run: |
+                npm version ${{ inputs.version }}
+                git push --follow-tags
+            
+            - name: Call workflow
+              run: gh workflow run build.yml

@@ -3,16 +3,19 @@ title: Passive context
 description: Feature list that sends Neuro context messages autonomously
 ---
 
-![Example of auto-context with linting and saving](/neuropilot/tony-lint.png)
+import { Image } from 'astro:assets'
+import TonyLint from '../../../assets/guides/tony-lint.png'
+
+<Image src={TonyLint} alt="Example of auto-context with linting and saving" />
 
 *Auto-context examples by KTrain5369*
 
 Certain features allow Neuro to be notified of updates within the workspace, without requiring input from Neuro.
 The list of passive context features include:
 
-- Saving notifications (configurable via [this setting](/neuropilot/reference/settings#send-save-notifications)).
+- Saving notifications (configurable via [this setting](/docs/reference/settings#send-save-notifications)).
 - Auto-Save setting modification.
-- Linting problems that appear automatically (configurable via [this setting](/neuropilot/reference/settings#send-new-linting-problems-on)).
+- Linting problems that appear automatically (configurable via [this setting](/docs/reference/settings#send-new-linting-problems-on)).
 - Timed out Copilot requests.
 - Sending output from terminals to Neuro if they produce more output.
 - Finished/exited tasks/terminals.

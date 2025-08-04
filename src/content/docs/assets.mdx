@@ -4,10 +4,12 @@ description: Official asset list for NeuroPilot icons.
 ---
 
 import CenterIcon from '../../components/CenterIcon.astro'
+import { Image } from 'astro:assets'
 
 import HeartPink from '../../../public/heart-pink.svg'
 import HeartBNW from '../../assets/heart-bnw.svg'
 import NeuroPilot from '../../assets/neuropilot.svg'
+import NeuroPilotV2 from '../../assets/heart-xaendril.png'
 import EvilPilot from '../../assets/evilpilot.svg'
 import TwinPilot from '../../assets/twinpilot.svg?raw'
 
@@ -94,7 +96,7 @@ Exhaustive list of assets used for NeuroPilot.
     <CenterIcon {...icon} />
 ))}
 
-<img src="/neuropilot/heart-xaendril.png" style={{ 'padding-top': '20px', 'padding-bottom': '10px', ...CenterIconStyles}} />
+<Image src={NeuroPilotV2} style={{ 'padding-top': '20px', 'padding-bottom': '10px', ...CenterIconStyles }} alt="NeuroPilot v2 logo" />
 
 <p class="icon-credit-text" style={{ paddingBottom: '20px'}}>NeuroPilot v2 logo by Xaendril</p>
 
@@ -102,13 +104,15 @@ Exhaustive list of assets used for NeuroPilot.
     <CenterIcon {...icon} />
 ))}
 
+<br />
+
 <div style={CenterIconStyles}>
     <Fragment set:html={TwinPilot} />
 </div>
 
 <p class="icon-credit-text">NeuroPilot/EvilPilot icon + light/dark mode change animation by Pasu4</p>
 
-## Feature icons
+## Feature icons :badge[Docs-exclusive]
 
 {iconList[2].map(icon => (
     <CenterIcon {...icon} />

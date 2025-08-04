@@ -1,6 +1,9 @@
 ---
 title: Linting analysis
 description: Features relating to linting diagnostics from language server extensions.
+banner:
+    content: |
+        Some features listed here requires the <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat">GitHub Copilot Chat</a> extension to be installed.
 ---
 
 import { Aside } from '@astrojs/starlight/components'
@@ -11,7 +14,7 @@ import CenterIcon from '../../../../components/CenterIcon.astro'
 
 ## Passive linting contexts
 
-If the [Send New Linting Problems On](/neuropilot/reference/settings#send-new-linting-problems-on) setting is set to a value other than 'Off', Neuro will be informed if a file has gotten new linting problems accordingly.
+If the [Send New Linting Problems On](/docs/reference/settings#send-new-linting-problems-on) setting is set to a value other than 'Off', Neuro will be informed if a file has gotten new linting problems accordingly.
 
 This setting respects the Neuro-safe path checks.
 
@@ -29,6 +32,6 @@ This will send the surrounding context of the relevant file, alongside the lint 
 Due to the normal inline chat feature being contributed by the Copilot extension and being hardcoded to use `@workspace`, NeuroPilot works around this by sending the prompt in chat.
 
 This therefore means that it will rely on the chat system with action forces and the like.
-Find out more at [Features/Copilot features - Copilot Chat](/neuropilot/reference/features/copilot-features#copilot-chat).
+Find out more at [Features/Copilot features - Copilot Chat](/docs/reference/features/copilot-features#copilot-chat).
 
 </Aside>

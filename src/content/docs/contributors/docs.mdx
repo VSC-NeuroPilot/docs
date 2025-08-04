@@ -1,0 +1,39 @@
+---
+title: NeuroPilot docs
+description: Resources for contributing to NeuroPilot docs.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+## General
+
+- All changes must pass the `@astrojs/check` check.
+- Styling must actually function before it is merged.
+
+## Content updates
+
+<Aside type="tip">
+
+You don't necessarily need a code editor for content changes, though it's recommended to have one anyways as it will make it much easier.
+
+</Aside>
+
+- Always make new files as `.mdx`, as this allows importing of components if necessary. There's no downside to it either.
+- Ensure wording is clear and understandable.
+- Don't go off for too long per section in reference pages.
+
+## Component/utility updates
+
+<Aside>
+
+Component updates also apply to SVG assets in src/assets unless otherwise indicated.
+
+</Aside>
+
+- All utility updates must work without any server interaction (beyond the page load interaction)
+- All components must be a .astro component (for now)
+
+## Configuration updates
+
+- `content.config.ts` should not be updated (mostly).
+- `astro.config.mts` updates should be cross-checked with [Starlight docs](https://starlight.astro.build/) + any plugin docs if necessary.

@@ -9,17 +9,17 @@ NeuroPilot's main safety feature is the permissions system. This allows almost f
 
 NeuroPilot actually has 2 main types of permissions: action permissions and non-action permissions.
 
-## Action permissions
+## Action permissions :badge[RCE]{variant=tip}
 
 A constant with action permissions is that they usually have 3 options for their permissions: **Off**, **Copilot**, and **Autopilot**.  
-If you can't decide which one to choose, [visit this page](/neuropilot/guides/pilot).
+If you can't decide which one to choose, [visit this page](/docs/guides/pilot).
 
 All permissions are set to 'Off' by default, except one.
 
 ### File interactions
 
 This category of permissions covers actions related to files themselves.  
-To see the features covered by these permissions, go to [this page](/neuropilot/reference/features/file-actions).
+To see the features covered by these permissions, go to [this page](/docs/reference/features/file-actions).
 
 <Aside>
 
@@ -37,7 +37,7 @@ The following permissions belong in this category:
 ### Edit active document
 
 This permission covers actions relating to editing the currently open document.  
-To see features covered by this permission, go to [this page](/neuropilot/reference/features/edit-active-document).
+To see features covered by this permission, go to [this page](/docs/reference/features/edit-active-document).
 
 The associated permission is found [here](vscode://settings/neuropilot.permission.editActiveDocument).
 
@@ -50,7 +50,7 @@ When enabled, Neuro gains her own virtual cursor to act completely independently
 ### Git operations
 
 This category covers actions that interact with the local Git repository.  
-To see features covered by these permissions, visit [this page](/neuropilot/reference/features/git-operations).
+To see features covered by these permissions, visit [this page](/docs/reference/features/git-operations).
 
 The following permissions belong here:
 
@@ -63,7 +63,7 @@ The following permissions belong here:
 
 ### Terminals and tasks
 
-This category covers actions that can execute commands in a shell. These requires some pre-defining, which you can learn more about [here](/neuropilot/reference/features/shells).
+This category covers actions that can execute commands in a shell. These requires some pre-defining, which you can learn more about [here](/docs/reference/features/shells).
 
 <Aside type="caution">
 
@@ -80,7 +80,7 @@ The following permissions belong here:
 ### Linting analysis
 
 This permission covers actions about getting linting problems from language servers. This can get any linting diagnostic from any extension contributing them.
-To see features covered by this permission, visit [this page](/neuropilot/reference/features/linting-analysis).
+To see features covered by this permission, visit [this page](/docs/reference/features/linting-analysis).
 
 The associated permission is found [here](vscode://settings/neuropilot.permission.accessLintingAnalysis).
 

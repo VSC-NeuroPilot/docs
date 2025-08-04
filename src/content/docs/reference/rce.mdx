@@ -87,6 +87,6 @@ Here, the framework will decide whether or not it will synchronously return resu
 Certain action results will still be returned asynchronously, regardless of Autopilot or Copilot. This is due to the required APIs returning `Promise`s and non-sync `Thenable`s.
 
 If you don't know what those are, just think of them as the data that gets returned when running your language-of-choice's asynchronous functions.
-They essentially tell your variable/function "hey, we're gonna go do some stuff in a separate thread, we promise we'll give you some data back after we're done!", which gives you the option to either continue on the main thread, or await them (in an async function).
+They essentially tell your variable/function "hey, we're gonna go do some stuff in a separate thread, we promise we'll give you some data back after we're done!", which gives you the option to either continue on the main thread, or await them (in an async function or top-level call).
 
 </Aside>

@@ -1,0 +1,29 @@
+---
+// We reuse Astro's Footer component here
+import Default from '@astrojs/starlight/components/Footer.astro';
+import { Icon } from '@astrojs/starlight/components';
+// Import version info
+import { docsVersion, docsNext } from '../utils/version';
+---
+<footer>
+    <hr class="border" />
+    {docsNext ? <p class="center">A commit has been pushed since the last confirmed update. Some info may be outdated.</p> : ""}
+    <p class="center">{docsVersion ? `NeuroPilot docs are up-to-date for extension version ${docsVersion}` : "No docs version was defined. Likely because this is a dev environment?"}</p>
+    {docsVersion ? <p class="center"><a href={`https://github.com/VSC-NeuroPilot/neuropilot/tree/${docsVersion}`}>The tag's commit can be found here.</a> <Icon name="github" class="inline-icon" /></p> : ""}
+    <Default>
+        <slot />
+    </Default>
+</footer>
+
+<style>
+    .center {
+        text-align: center;
+    }
+    .border {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        margin-bottom: 1.25rem;
+        width: 100%;
+    }
+</style>

@@ -9,7 +9,7 @@ Multiple features require another extension to work, so this page lists them so 
 
 <Aside type="tip">
 
-You probably will most likely only needing to be looking for extension dependencies, as the dependencies from `npm` that we use should already be bundled in the extension pack.
+You will most likely only need to look for extension dependencies, as the dependencies from `npm` that we use should already be bundled in the extension build.
 
 </Aside>
 
@@ -25,15 +25,14 @@ Use one of the tools listed on the official Neuro Game API repository's README (
 
 ## Direct dependencies
 
-### Visual Studio Code
+### Visual Studio Code :badge[Required (obviously)]{variant=danger}
 
 Don't think this one needs to be explained, but there is one thing: While no guarantees it will work 100% as intended, you can try using a VS Code fork if you want (such as Cursor or VSCodium).
+We will try to support VS Code forks, however we will ultimately maintain compatibility with VS Code itself even if it means breaking compatibility with forks.
 
-### Copilot Chat
+### Copilot Chat :badge[Optional]{variant=success}
 
 ID: `github.copilot-chat`
-
-*Required: false*
 
 Copilot Chat allows the user to chat with Neuro on the sidebar panel.
 It also powers inline completions, allowing Neuro to "complete the code".
@@ -44,11 +43,11 @@ You do not require a GitHub Copilot subscription to use the chat panel with Neur
 
 </Aside>
 
-### Git
+### Git :badge[Required]{variant=danger} :badge[Built-in]
 
 ID: `vscode.git`
 
-*Required: true*
+*Required: false*
 
 *Built-in extension*
 
@@ -56,8 +55,8 @@ The built-in Git extension powers Neuro's ability to interact with the git repos
 
 <Aside type="tip">
 
-Despite also having Git in its name, the built-in Git Base extension is not needed to run NeuroPilot.
-You may disable that extension if you wish.
+Despite also having Git in its name, the built-in Git Base extension is not used by NeuroPilot.
+You may disable that extension if you wish, without losing access to any features.
 
 </Aside>
 
@@ -69,7 +68,7 @@ You may disable that extension if you wish.
 
 Language server extensions contribute to the Linting Analysis portion indirectly by contributing to VSCode's linting diagnostics feature, which gets listened to and pulled by the extension.
 
-### Shells
+### Shells :badge[External program]
 
 *Powers: Terminal*
 

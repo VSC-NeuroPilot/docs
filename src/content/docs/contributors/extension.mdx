@@ -1,0 +1,33 @@
+---
+title: NeuroPilot extension
+description: Resources on contributing to the extension.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+This page covers contributing to the NeuroPilot extension.
+
+## Features
+
+- Discuss why the feature would be helpful (this applies to both user-end and developer-end features).
+- Test your code using Tony at least. Testing with Jippity is really only necessary if testing with AI behaviours & understanding is needed.
+- If the feature requires access to new dependencies (vscode or npm), note that in your feature request.
+{/* - If the feature cannot work on the web build or requires adaptation to work in web, note that in your feature request. */}
+
+<Aside>
+
+Characteristics that could make a feature unavailable in web includes:
+- Features which rely on a Node API (though certain modules may be polyfillable just fine)
+- Features which rely on a desktop-only extension.
+- Features that work differently due to the different environment.
+
+There may be more not listed here but that should get you started.
+
+</Aside>
+
+- For upcoming major features (e.g. NeuroPilot API), discuss this on the Discord thread and wait for, at least, `@Pasu4`'s input.
+
+## Bug fixes, patches, changes
+
+- For minor patches (such as fixing small unintended behaviour), it is generally OK to send a pull request immediately. Otherwise, you should open an issue. If in doubt, just open an issue.
+- Ensure fixes don't cause breaking changes whenever possible. Otherwise, note the breaking change.

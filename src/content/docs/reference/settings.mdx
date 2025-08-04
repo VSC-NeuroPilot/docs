@@ -7,21 +7,21 @@ import { Aside } from '@astrojs/starlight/components'
 
 The following are **non-permission-related** settings in NeuroPilot.
 
-To find the list of permission-related settings, visit [this page](/neuropilot/reference/permissions).
+To find the list of permission-related settings, visit [this section on Reference/Permissions](/docs/reference/permissions#non-action-permissions).
 
-## WebSocket URL
+## WebSocket URL :badge[Reconnect]{variant=tip}
 
 **Default: `ws://localhost:8000`**
 
 The address NeuroPilot will try to connect to for the Neuro Game API.
-You'll need to try to [reconnect](/neuropilot/reference/commands) after changing this.
+You'll need to try to [reconnect](/docs/reference/commands) after changing this.
 
-## Game Name
+## Game Name :badge[Reconnect]{variant=tip}
 
 **Default: `Visual Studio Code`**
 
 The game name that will be sent to Neuro in every packet (in the `game` parameter).
-You'll need to try to [reconnect](/neuropilot/reference/commands) after changing this.
+You'll need to try to [reconnect](/docs/reference/commands) after changing this.
 
 <Aside>
 
@@ -30,12 +30,12 @@ Since NeuroPilot extends VS Code, the display name of the "game" is "Visual Stud
 
 </Aside>
 
-## Initial Context
+## Initial Context :badge[Reconnect]{variant=tip}
 
 **Default: `You are currently using an extension that allows you to code together with Vedal.`**
 
 Sets the context that is sent to Neuro upon connection.
-You'll need to try to [reconnect](/neuropilot/reference/commands) after changing this.
+You'll need to try to [reconnect](/docs/reference/commands) after changing this.
 
 ## Currently As Neuro API
 
@@ -54,7 +54,7 @@ If you type the wrong name's @, the prompt will be sent to GitHub Copilot, even 
 
 </Aside>
 
-## Docs URL
+## Docs URL :badge[Contributor]{variant=caution}
 
 **Default: `https://vsc-neuropilot.github.io/neuropilot` (this site)**
 
@@ -67,7 +67,7 @@ Changing this setting to an untrusted website could potentially be dangerous.
 
 </Aside>
 
-## Before/After Context
+## Before/After Context :badge[Multiple settings]{variant=success}
 
 **Default: `10`/`10`**
 
@@ -102,7 +102,7 @@ This is due to NeuroPilot performing many action registers, action forces, actio
 
 The time (in milliseconds) to wait for chats and completions, before considering them cancelled.
 
-## Include/Exclude Patterns
+## Include/Exclude Patterns :badge[Multiple settings]{variant=success}
 
 **Default: `**/*`/`**/node_modules/**\n**/venv/**`**
 
@@ -115,7 +115,7 @@ Files and folders starting with a dot will still be ignored regardless of Includ
 
 </Aside>
 
-## Terminals
+## Terminals :badge[JSON-only] :badge[Permission-dependent]{variant=danger}
 
 **Default: See object array below.**
 
@@ -143,11 +143,11 @@ Files and folders starting with a dot will still be ignored regardless of Includ
 ]
 ```
 
-*See also: [Features/Shells - Terminals](/neuropilot/reference/features/shells#terminals)*
+*See also: [Features/Shells - Terminals](/docs/reference/features/shells#terminals)*
 
 An array of objects that specify the shell's name, path to the shell, and args (if any) to pass in when starting them up.
 
-## Show Time On Terminal Start
+## Show Time On Terminal Start :badge[Permission-dependent]{variant=danger}
 
 **Default: `false`**
 
@@ -155,7 +155,7 @@ An array of objects that specify the shell's name, path to the shell, and args (
 
 Displays the current time (according to system clock) when starting a new terminal session.
 
-## Terminal Context Delay
+## Terminal Context Delay :badge[Permission-dependent]{variant=danger}
 
 **Default: `400`**
 
@@ -167,9 +167,9 @@ The time to wait (in ms) before sending terminal outputs to Neuro.
 
 **Options: `['off', 'inCurrentFile', 'inWorkspace']`**
 
-*See also: [Features/Linting analysis - Automatic context updates](/neuropilot/reference/features/linting-analysis#automatic-context-updates)
+*See also: [Features/Linting analysis - Automatic context updates](/docs/reference/features/linting-analysis#automatic-context-updates)
 
-Defines when Neuro gets automatic context updates. This will send context independent of the [`Access Linting Analysis`](/neuropilot/reference/permissions#linting-analysis) permission.
+Defines when Neuro gets automatic context updates. This will send context independent of the [`Access Linting Analysis`](/docs/reference/permissions#linting-analysis) permission.
 
 ## Send Save Notifications
 
@@ -207,6 +207,8 @@ This means that you may timeout the notification while it's still sitting in the
 **Default: `false`**
 
 **Options: `true`, `false`**
+
+*See also: [Reference/Cursor](/docs/reference/cursor)*
 
 Whether or not Neuro moving her cursor will move the real cursor at the same time.
 Can be useful for Neuro solo coding.

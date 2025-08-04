@@ -1,0 +1,27 @@
+---
+title: Contributing homepage
+description: Contributing to NeuroPilot? This page will help get you started!
+---
+
+{/* ktrain just wants to write all this so he doesn't forget */}
+
+To begin contributing, you should read up on the specific area you want to contribute to.
+
+## Sections
+
+- [Extension (the `src/` folder in repo)](/docs/contributors/extension)
+- [Docs (the `docs/` folder in repo)](/docs/contributors/docs)
+- [Testing/demonstration (tooling stored in the `tony/` folder in repo)](/docs/contributors/testing)
+- [Assets (the `assets/` folder in both repo root and docs' `src/assets`/`public`)](/docs/contributors/assets)
+- [Meta (linting, CI, build tools, extension info, etc...)](/docs/contributors/meta)
+
+## Shared contributing guidelines :badge[Read this too!]{variant=tip}
+
+- Open an issue on the repository first. This allows it to be assigned to a milestone and labels to be applied to the idea. (Only applicable for non-asset contributions and non-minor changes)
+- Always test your changes. Whether that's debugging the extension with VSCode & a testing tool, or firing up the Astro dev server for docs, always test your changes before merging/requesting a review.
+- Double check your changes after getting out of the zone for a bit. This can help catch mistakes from tunnel vision.
+- If CI fails, check to see why it failed, rather than blindly trying everything you think might fix it.
+- Put everything you're working on inside `project-files/`. This is a folder that is gitignored & vscodeignored by default, allowing you to store work-in-progress files without leaving them untracked.
+- Try to open an issue for feature additions/non-patch changes. This will allow us to track progress via milestone, and also allow discussion while being able to link to other issues/PRs.
+- Discussing on the thread in the Neuro Discord is also okay, it can also be used to post progress updates that don't need to be posted on GitHub (also gives updates to people who are following the thread but not the repo).
+- Anything new, changed or removed should be documented on the docs folder.
