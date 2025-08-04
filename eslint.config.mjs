@@ -1,14 +1,11 @@
 import js from '@eslint/js';
-import { defineConfig, globalIgnores } from 'eslint/config';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import eslintPluginAstro from 'eslint-plugin-astro';
 
 export default defineConfig([
     js.configs.recommended,
     ...eslintPluginAstro.configs.recommended,
-    globalIgnores([
-        '.astro',
-    ]),
     {
         languageOptions: {
             globals: {
