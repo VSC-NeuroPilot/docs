@@ -15,7 +15,8 @@ export default defineConfig({
             plugins: [starlightHeadingBadgesPlugin()],
             favicon: '/heart-pink.svg',
             customCss: [
-                './src/styles/icons.css'
+                './src/styles/icons.css',
+                './src/styles/starlight.css'
             ],
             head: [
                 /*{

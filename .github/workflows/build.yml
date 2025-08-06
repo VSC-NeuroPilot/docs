@@ -9,6 +9,12 @@ on:
         paths:
             - docs/**
     workflow_dispatch:
+        inputs:
+            checked:
+                type: boolean
+                description: 'Docs have been checked.'
+                default: false
+                required: false
 
 permissions:
   contents: read
@@ -85,6 +91,8 @@ jobs:
             - name: Build site
               run: |
                 if [ "${{ github.event_name }}" = "push" ]; then
+                  export PUBLIC_NEXT=true
+                elif [ "${{ inputs.checked }}" = "false" ]; then
                   export PUBLIC_NEXT=true
                 done
                 PUBLIC_VERSION=$(npm show ./ version) npm run build

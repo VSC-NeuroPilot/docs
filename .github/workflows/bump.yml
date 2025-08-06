@@ -16,6 +16,11 @@ on:
                     - 'minor'
                     - 'patch'
                     - 'none'
+            check:
+                type: boolean
+                description: 'Docs have been checked.'
+                required: true
+                default: false
 
 jobs:
     bump:
@@ -45,4 +50,4 @@ jobs:
                 git push --follow-tags
             
             - name: Call workflow
-              run: gh workflow run build.yml
+              run: gh workflow run build.yml -f checked=true
