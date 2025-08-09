@@ -94,7 +94,7 @@ jobs:
                   export PUBLIC_NEXT=true
                 elif [ "${{ inputs.checked }}" = "false" ]; then
                   export PUBLIC_NEXT=true
-                done
+                fi
                 PUBLIC_VERSION=$(npm show ./ version) npm run build
             
             - name: Upload GitHub Pages Artifact
