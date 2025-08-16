@@ -11,7 +11,7 @@ banner:
 ---
 
 import { Aside } from '@astrojs/starlight/components'
-import TwinPilot from '../../../../assets/twinpilot.svg?raw'
+import TwinPilot from '@assets/twinpilot.svg?raw'
 
 <div style={{ width: '300px', height: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0px auto' }}>
     <Fragment set:html={TwinPilot} />
@@ -23,7 +23,7 @@ import TwinPilot from '../../../../assets/twinpilot.svg?raw'
 
 The following features send a chat message to Neuro:
 
-- [Ask Neuro to fix/explain](/docs/reference/commands#ask-neuro-to-fixexplain) (using the `/fix` and `/explain` commands respectively)
+- [Ask Neuro to fix/explain](/docs/client/reference/commands#ask-neuro-to-fixexplain) (using the `/fix` and `/explain` commands respectively)
 
 The user can also send a message to Neuro directly using either `@neuro`, `@evil`, or `@neuroapi` (as appropriate).
 Doing so will reroute the prompt to Neuro and will await for her response.
@@ -45,9 +45,9 @@ Similar to the chat features, the `state` will be the nearby code, and the conte
 
 The query (and the action description) will prompt Neuro to suggest only code, never worded responses.
 
-You can adjust how many lines are sent to Neuro using the [Before/After Context setting](/docs/reference/settings#beforeafter-context).
+You can adjust how many lines are sent to Neuro using the [Before/After Context setting](/docs/client/reference/settings#beforeafter-context).
 
-You can also adjust when inline completions are triggered with the [Completion Trigger setting](/docs/reference/settings#completion-trigger).
+You can also adjust when inline completions are triggered with the [Completion Trigger setting](/docs/client/reference/settings#completion-trigger).
 
 <Aside type="tip">
 

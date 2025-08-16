@@ -5,7 +5,7 @@ description: How to run NeuroPilot in a sandboxed environment.
 
 import { Aside } from '@astrojs/starlight/components'
 import { Image } from 'astro:assets'
-import VBoxHostOnlyAdapter from '../../../assets/guides/VirtualBox-Host-Only-Adapter.png'
+import VBoxHostOnlyAdapter from '@assets/guides/VirtualBox-Host-Only-Adapter.png'
 
 <Aside>
 
@@ -54,11 +54,11 @@ If you're comfortable with not having internet access in the VM, you can stay in
 
 7. Now, connect to your virtual machine and install NeuroPilot.
 
-8. Open your settings, and go down to the [`NeuroPilot > Websocket Url`](/docs/reference/settings#websocket-url).
+8. Open your settings, and go down to the [`NeuroPilot > Websocket Url`](/docs/client/reference/settings#websocket-url).
 
 9. Add the host IP address and port that you spawned your Neuro API server on, in the scheme of `ws://(host):(port)`.
 
-10. Now, [attempt to reconnect](/docs/reference/commands#reconnect). This should now connect to your Neuro API server as expected.
+10. Now, [attempt to reconnect](/docs/client/reference/commands#reconnect). This should now connect to your Neuro API server as expected.
 
 ## Web environment
 

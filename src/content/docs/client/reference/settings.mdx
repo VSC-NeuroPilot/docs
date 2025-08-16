@@ -7,21 +7,21 @@ import { Aside } from '@astrojs/starlight/components'
 
 The following are **non-permission-related** settings in NeuroPilot.
 
-To find the list of permission-related settings, visit [this section on Reference/Permissions](/docs/reference/permissions#non-action-permissions).
+To find the list of permission-related settings, visit [this section on Reference/Permissions](/docs/client/reference/permissions#non-action-permissions).
 
 ## WebSocket URL :badge[Reconnect]{variant=tip}
 
 **Default: `ws://localhost:8000`**
 
 The address NeuroPilot will try to connect to for the Neuro Game API.
-You'll need to try to [reconnect](/docs/reference/commands) after changing this.
+You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
 
 ## Game Name :badge[Reconnect]{variant=tip}
 
 **Default: `Visual Studio Code`**
 
 The game name that will be sent to Neuro in every packet (in the `game` parameter).
-You'll need to try to [reconnect](/docs/reference/commands) after changing this.
+You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
 
 <Aside>
 
@@ -35,7 +35,7 @@ Since NeuroPilot extends VS Code, the display name of the "game" is "Visual Stud
 **Default: `You are currently using an extension that allows you to code together with Vedal.`**
 
 Sets the context that is sent to Neuro upon connection.
-You'll need to try to [reconnect](/docs/reference/commands) after changing this.
+You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
 
 ## Currently As Neuro API
 
@@ -50,7 +50,7 @@ You will need to ignore the lint warn if you do that though.
 <Aside>
 
 This is mostly a cosmetic change, with one exception: To chat to Neuro/Evil/connected Neuro API server, you need to prefix your message with `@neuro`/`@evil`/`@neuroapi` respectively.
-If you type the wrong name's @, the prompt will be sent to GitHub Copilot, even if the @ still highlighted in the chatbox.
+If you type the wrong name's @, the prompt will be sent to GitHub Copilot, even if the @ is still highlighted in the chatbox.
 
 </Aside>
 
@@ -143,7 +143,7 @@ Files and folders starting with a dot will still be ignored regardless of Includ
 ]
 ```
 
-*See also: [Features/Shells - Terminals](/docs/reference/features/shells#terminals)*
+*See also: [Features/Shells - Terminals](/docs/client/reference/features/shells#terminals)*
 
 An array of objects that specify the shell's name, path to the shell, and args (if any) to pass in when starting them up.
 
@@ -167,9 +167,9 @@ The time to wait (in ms) before sending terminal outputs to Neuro.
 
 **Options: `['off', 'inCurrentFile', 'inWorkspace']`**
 
-*See also: [Features/Linting analysis - Automatic context updates](/docs/reference/features/linting-analysis#automatic-context-updates)
+*See also: [Features/Linting analysis - Automatic context updates](/docs/client/reference/features/linting-analysis#automatic-context-updates)
 
-Defines when Neuro gets automatic context updates. This will send context independent of the [`Access Linting Analysis`](/docs/reference/permissions#linting-analysis) permission.
+Defines when Neuro gets automatic context updates. This will send context independent of the [`Access Linting Analysis`](/docs/client/reference/permissions#linting-analysis) permission.
 
 ## Send Save Notifications
 
@@ -208,7 +208,7 @@ This means that you may timeout the notification while it's still sitting in the
 
 **Options: `true`, `false`**
 
-*See also: [Reference/Cursor](/docs/reference/cursor)*
+*See also: [Reference/Cursor](/docs/client/reference/cursor)*
 
 Whether or not Neuro moving her cursor will move the real cursor at the same time.
 Can be useful for Neuro solo coding.

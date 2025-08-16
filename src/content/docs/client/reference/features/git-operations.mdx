@@ -7,12 +7,12 @@ sidebar:
         variant: caution
 banner:
     content: |
-        This feature set requires the <a href="/docs/reference/dependencies#git">Git</a> extension to be activated.
+        This feature set requires the <a href="/docs/client/reference/dependencies#git">Git</a> extension to be activated.
 ---
 
 import { Aside } from '@astrojs/starlight/components'
-import NeuroGit from '../../../../assets/neuro-git.svg'
-import CenterIcon from '../../../../components/CenterIcon.astro'
+import NeuroGit from '@assets/neuro-git.svg'
+import CenterIcon from '~/components/CenterIcon.astro'
 
 export const attribs = {
     text: "Based on the Git logo by Jason Long",
@@ -29,7 +29,7 @@ Each permission here also requires the Git Operations permission to be enabled n
 As this relies on the built-in git extension (and for most, an initialized repo), NeuroPilot will first check if the Git extension is loaded, before registering git actions.
 Then, NeuroPilot will check if there already is an initialized repo in the workspace.
 
-You can reinitiate these checks anytime using the [Get dependency extension states](/docs/commands#get-dependency-extension-states) command.
+You can reinitiate these checks anytime using the [Get dependency extension states](/docs/client/commands#get-dependency-extension-states) command.
 
 <CenterIcon Icon={NeuroGit} credits="NeuroGit icon by KTrain5369" attribs={attribs} />
 
@@ -60,7 +60,7 @@ To differentiate between her commits and human commits, the prefix `Neuro commit
 
 <Aside type="tip">
 
-The prefix changes partially depending on the [Currently As Neuro API setting](/docs/reference/settings#currently-as-neuro-api).
+The prefix changes partially depending on the [Currently As Neuro API setting](/docs/client/reference/settings#currently-as-neuro-api).
 It changes the attribution in the prefix.
 
 Example: The Currently As Neuro API setting is set to Evil.
