@@ -13,7 +13,8 @@
     "compile": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "astro": "astro"
+    "astro": "astro",
+    "postinstall": "astro sync"
   },
   "dependencies": {
     "@astrojs/starlight": "~0.34.5",

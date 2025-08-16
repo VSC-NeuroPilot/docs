@@ -2,6 +2,19 @@
 title: Client landing page
 description: Client landing page
 ---
+import { CardGrid, LinkCard } from '@astrojs/starlight/components'
 import { ContributorList } from 'starlight-contributor-list'
+import { MARKETPLACE_URL, BASE_GITHUB_ORG } from '@consts/links'
 
-<ContributorList githubRepo="VSC-NeuroPilot/neuropilot" ignore={["actions-user"]} />
+This is the UI/client-side extension version of the documentation, which connects directly to the Neuro API and is the "VS Code interface" for Neuro.
+
+## Links
+
+<CardGrid>
+    <LinkCard title="VS Marketplace extension listing" description="NeuroPilot's marketplace listing" href={MARKETPLACE_URL("page")} />
+    <LinkCard title="GitHub repository" description="NeuroPilot's source code" href={BASE_GITHUB_ORG + "/neuropilot"} />
+</CardGrid>
+
+## Project contributors
+
+<ContributorList githubRepo="VSC-NeuroPilot/neuropilot" ignore={["actions-user", "dependabot[bot]", "Copilot"]} />

@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 import starlightHeadingBadgesPlugin from 'starlight-heading-badges';
 import starlightSidebarTopicsPlugin from 'starlight-sidebar-topics';
 
-import { BASE_GITHUB_ORG, MARKETPLACE_URL } from './consts/links';
+import { BASE_GITHUB_ORG, MARKETPLACE_URL } from './consts/links'; // typescript aliasing doesn't work here for some reason (it does in the mdx pages tho)
 
 /** @todo https://starlight.astro.build/resources/plugins/#plugins */
 
@@ -60,6 +60,21 @@ export default defineConfig({
                                 { label: 'Dependencies', slug: 'client/reference/dependencies' },
                             ],
                         },
+                    ]
+                },
+                {
+                    label: 'Workspace',
+                    link:  '/server/',
+                    badge: { text: 'Coming later!', variant: 'danger' },
+                    icon: 'vscode',
+                    items: [
+                        {
+                            label: 'Reference',
+                            autogenerate: {
+                                directory: 'server/reference',
+                                collapsed: true
+                            }
+                        }
                     ]
                 },
                 {
