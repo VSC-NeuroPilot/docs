@@ -120,9 +120,8 @@ export default defineConfig({
             },
             lastUpdated: true,
             logo: {
-                dark: './src/assets/evilpilot.svg',
-                light: './src/assets/neuropilot.svg',
-                alt: 'NeuroPilot and EvilPilot icons'
+                src: './public/heart-xaendril.png',
+                alt: 'v2 NeuroPilot logo'
             },
             social: [
                 {
