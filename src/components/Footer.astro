@@ -3,13 +3,60 @@
 import Default from '@astrojs/starlight/components/Footer.astro';
 import { Icon } from '@astrojs/starlight/components';
 // Import version info
-import { docsVersion, docsNext } from '../utils/version';
+import { clientVersion, docsNext } from '@/utils/version';
+import { BASE_GITHUB_ORG } from '@consts/links';
+
+// Gets the current path
+const currentPath = Astro.url.pathname;
+console.log(currentPath)
+let currentTopic: string | null;
+if (currentPath !== import.meta.env.BASE_URL + "/") {
+    const path = currentPath.substring(5).split("/")[1];
+    console.log(path)
+    switch (path) {
+        case "client":
+            currentTopic = "ui"
+            break;
+        case "meta":
+            currentTopic = "meta"
+            break;
+        case "images":
+            currentTopic = "containers"
+            break;
+        default:
+            currentTopic = null
+            break;
+    }
+} else {
+    currentTopic = null
+}
+
+// Logic needs to be placed here such that we can case switch the path of the request and change the footer's text accordingly
+// Otherwise it would make no sense if, for example, the server version's topic has the footer displaying the client version
+// For now we can get away without it since we really only have the client-side code public, though I would like to test this using the meta topic
 ---
 <footer>
     <hr class="border" />
-    {docsNext ? <p class="center">A commit has been pushed since the last confirmed update. Some info may be outdated.</p> : ""}
-    <p class="center">{docsVersion ? `NeuroPilot docs are up-to-date for extension version ${docsVersion}` : "No docs version was defined. Likely because this is a dev environment?"}</p>
-    {docsVersion ? <p class="center"><a href={`https://github.com/VSC-NeuroPilot/neuropilot/tree/${docsVersion}`}>The tag's commit can be found here.</a> <Icon name="github" class="inline-icon" /></p> : ""}
+    {docsNext === true ? <p class="center">A commit has been pushed since the last confirmed update. Some info may be outdated.</p> : ""}
+    <p class="center">
+    {
+    currentTopic === "misc" 
+        ?
+    ""
+        :
+    currentTopic === "ui"
+        ?
+    clientVersion ? `NeuroPilot docs are up-to-date for extension version ${clientVersion}` : "No client version was defined. Either this is a dev environment or something went wrong during build."
+        :
+    currentTopic === "containers"
+        ?
+    <>Find all official containers on <a href={BASE_GITHUB_ORG}>our GitHub organisation</a>.</>
+        :
+    ""
+    }
+    </p>
+    <></>
+    <!-- {clientVersion ? <p class="center"><a href={`https://github.com/VSC-NeuroPilot/neuropilot/tree/${clientVersion}`}>The tag's commit can be found here.</a> <Icon name="github" class="inline-icon" /></p> : ""} -->
     <Default>
         <slot />
     </Default>

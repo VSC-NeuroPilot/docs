@@ -78,6 +78,28 @@ export default defineConfig({
                     ]
                 },
                 {
+                    label: 'Container presets',
+                    link: '/images/',
+                    badge: { text: 'Coming soon!', variant: 'caution' },
+                    icon: 'cloud-download',
+                    items: [
+                        {
+                            label: 'Python',
+                            autogenerate: {
+                                directory: 'images/python',
+                                collapsed: true
+                            }
+                        },
+                        {
+                            label: 'TypeScript',
+                            autogenerate: {
+                                directory: 'images/typescript',
+                                collapsed: true
+                            }
+                        }
+                    ]
+                },
+                {
                     label: 'Meta',
                     link: '/meta/',
                     icon: 'list-format',
