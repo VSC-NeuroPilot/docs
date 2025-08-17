@@ -17,8 +17,8 @@
     "postinstall": "astro sync"
   },
   "dependencies": {
-    "@astrojs/starlight": "~0.34.5",
-    "astro": "~5.12.9",
+    "@astrojs/starlight": "~0.35.2",
+    "astro": "~5.13.2",
     "sharp": "~0.32.5",
     "starlight-contributor-list": "~0.3.0",
     "starlight-heading-badges": "~0.6.0",
