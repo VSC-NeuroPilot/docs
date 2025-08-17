@@ -91,9 +91,9 @@ export default defineConfig({
                             }
                         },
                         {
-                            label: 'TypeScript',
+                            label: 'JavaScript',
                             autogenerate: {
-                                directory: 'images/typescript',
+                                directory: 'images/javascript',
                                 collapsed: true
                             }
                         }
