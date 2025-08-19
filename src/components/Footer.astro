@@ -8,11 +8,9 @@ import { BASE_GITHUB_ORG } from '@consts/links';
 
 // Gets the current path
 const currentPath = Astro.url.pathname;
-console.log(currentPath)
 let currentTopic: string | null;
 if (currentPath !== import.meta.env.BASE_URL + "/") {
-    const path = currentPath.substring(5).split("/")[1];
-    console.log(path)
+    const path = currentPath.substring(5).split("/")[1]; // for some reason splitting by "/" adds an empty string between each non-empty string item, so we're grabbing the second item, not the first
     switch (path) {
         case "client":
             currentTopic = "ui"
@@ -23,15 +21,18 @@ if (currentPath !== import.meta.env.BASE_URL + "/") {
         case "images":
             currentTopic = "containers"
             break;
+        case "server":
+            currentTopic = "workspace"
+            break;
         default:
             currentTopic = null
             break;
     }
 } else {
-    currentTopic = null
+    currentTopic = ""
 }
 
-// Logic needs to be placed here such that we can case switch the path of the request and change the footer's text accordingly
+// Logic needs to be placed such that we can case switch the path of the request and change the footer's text accordingly
 // Otherwise it would make no sense if, for example, the server version's topic has the footer displaying the client version
 // For now we can get away without it since we really only have the client-side code public, though I would like to test this using the meta topic
 ---
@@ -40,9 +41,9 @@ if (currentPath !== import.meta.env.BASE_URL + "/") {
     {docsNext === true ? <p class="center">A commit has been pushed since the last confirmed update. Some info may be outdated.</p> : ""}
     <p class="center">
     {
-    currentTopic === "misc" 
+    currentTopic === "meta" 
         ?
-    ""
+    <>You can find all our repositories on <a href={BASE_GITHUB_ORG}>our GitHub organization</a>.</>
         :
     currentTopic === "ui"
         ?
@@ -50,13 +51,27 @@ if (currentPath !== import.meta.env.BASE_URL + "/") {
         :
     currentTopic === "containers"
         ?
-    <>Find all official containers on <a href={BASE_GITHUB_ORG}>our GitHub organisation</a>.</>
+    <a href={`https://github.com/orgs/VSC-NeuroPilot/packages`}>View currently published containers here.</a> <Icon name="seti:docker" class="inline-icon" />
         :
     ""
     }
     </p>
-    <></>
-    <!-- {clientVersion ? <p class="center"><a href={`https://github.com/VSC-NeuroPilot/neuropilot/tree/${clientVersion}`}>The tag's commit can be found here.</a> <Icon name="github" class="inline-icon" /></p> : ""} -->
+    <p class="center">
+    {
+    currentTopic === "ui"
+        ?
+    <a href={`https://github.com/VSC-NeuroPilot/neuropilot/tree/${clientVersion}`}>The tag's commit can be found here.</a> <Icon name="github" class="inline-icon" />
+        :
+    currentTopic === "containers"
+        ?
+    <>
+        What's a container? A container is a mini virtual machine that can be spawned easily, and often comes with build instructions.
+        You can read more about it <a href="https://medium.com/@hufaaz-in-the-cloud/what-is-containerization-a-beginners-guide-to-understanding-containerization-b0c6ca1827e3">here</a>.
+    </>
+        :
+    ""
+    }
+    </p>
     <Default>
         <slot />
     </Default>

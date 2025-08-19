@@ -60,6 +60,13 @@ export default defineConfig({
                                 { label: 'Dependencies', slug: 'client/reference/dependencies' },
                             ],
                         },
+                        {
+                            label: "MCP",
+                            autogenerate: {
+                                directory: "client/mcp",
+                                collapsed: true
+                            }
+                        }
                     ]
                 },
                 {
@@ -80,8 +87,7 @@ export default defineConfig({
                 {
                     label: 'Container presets',
                     link: '/images/',
-                    badge: { text: 'Coming soon!', variant: 'caution' },
-                    icon: 'cloud-download',
+                    icon: 'seti:docker',
                     items: [
                         {
                             label: 'Python',

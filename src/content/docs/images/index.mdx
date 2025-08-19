@@ -3,5 +3,34 @@ title: Container images overview
 description: Overview and introduction to containers with NeuroPilot
 ---
 
+import { Aside, Code, Tabs, TabItem } from '@astrojs/starlight/components'
+
 [KTrain5369](https://ktrain5369.dev/) maintains a set of Docker/GitHub Codespaces containers with preset tools and configurations for optimal use with NeuroPilot.
 This allows for quick-starting a project of that language and skip the worry of installing the tools you need, while also allowing for a sandbox environment to ensure that the host machine isn't compromised.
+
+Containers are hosted on `ghcr.io/vsc-neuropilot`. You can access a certain container using the following syntax:
+
+<Tabs>
+    <TabItem label="Latest"><Code code="https://ghcr.io/vsc-neuropilot/{repository}:latest" lang="sh" mark={[":latest"]} />This will pull the latest commit version, not the latest tag.</TabItem>
+    <TabItem label="Tagged version"><Code code="https://ghcr.io/vsc-neuropilot/{repository}:{tag}" lang="sh" mark={[":{tag}"]} />Note that not all NeuroPilot versions will have a container version attached.</TabItem>
+    <TabItem label="Git SHA pin"><Code code="https://ghcr.io/vsc-neuropilot/{repository}:{sha}" lang="sh" mark={[":{sha}"]} />Failed builds will not have an associated SHA URL.</TabItem>
+    <TabItem label="SHA-256 digest"><Code code="https://ghcr.io/vsc-neuropilot/{repository}@sha256:{sha}" lang="sh" mark={["@sha256:{sha}"]} />You can get the SHA-256 digest on the container's GitHub Packages listing.</TabItem>
+</Tabs>
+
+<Aside type="tip" title="Neuro Game API">
+
+All images come with the relevant Neuro Game SDK package specified as a dependency, as well as some starter code.
+
+If you would not like to make SDK integrations, you are free to remove the package and the relevant code.
+
+Credits:
+
+- The JavaScript/TypeScript Neuro Game SDK is maintained by [AriesAlex](https://github.com/AriesAlex) and can be found on [GitHub](https://github.com/AriesAlex/neuro-game-sdk) and [npm](https://npmjs.com/p/typescript-neuro-game-sdk).
+
+  It is licensed under the MIT license (all versions).
+
+- The Python Neuro Game SDK is maintained by [CoolCat467](https://github.com/CoolCat467) and can be found on [GitHub](https://github.com/CoolCat467/Neuro-API) and [PyPI](https://pypi.org/p/neuro-api).
+
+  It is licensed under GPL v3 (prior to v1.1.0) or LPGL v3 (v1.1.0 onwards).
+
+</Aside>
