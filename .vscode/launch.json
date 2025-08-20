@@ -10,6 +10,12 @@
       		"name": "Docs development server (Astro)",
       		"request": "launch",
       		"type": "node-terminal"
-    	}
+    	},
+		{
+			"command": "./node_modules/.bin/astro check --watch",
+			"name": "Watch Astro checks",
+			"request": "launch",
+			"type": "node-terminal"
+		}
 	]
 }

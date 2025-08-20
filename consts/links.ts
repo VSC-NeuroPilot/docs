@@ -1,4 +1,4 @@
-export const BASE_GITHUB_URL: string = "https://github.com/VSC-NeuroPilot/neuropilot"
+export const BASE_GITHUB_ORG: string = "https://github.com/VSC-NeuroPilot"
 type MarketplaceLinks = "page" | "direct"
 export const MARKETPLACE_URL = (type: MarketplaceLinks) => {
     if (type === "page") {
