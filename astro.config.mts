@@ -22,43 +22,17 @@ export default defineConfig({
                     items: [
                         {
                             label: 'Guides',
-                            items: [
-                                {
-                                    label: 'Setup NeuroPilot',
-                                    badge: { text: 'Start here!', variant: 'tip' },
-                                    slug: 'client/guides/setup',
-                                },
-                                {
-                                    label: 'Pilot modes',
-                                    slug: 'client/guides/pilot',
-                                },
-                                {
-                                    label: 'Sandboxing',
-                                    badge: { text: 'WIP', variant: 'caution' },
-                                    slug: 'client/guides/sandboxing'
-                                }
-                            ],
+                            autogenerate: {
+                                directory: 'client/guides',
+                                collapsed: true
+                            }
                         },
                         {
                             label: 'Reference',
-                            items: [
-                                {
-                                    label: 'Features',
-                                    autogenerate: {
-                                        directory: 'client/reference/features',
-                                        collapsed: true
-                                    }
-                                },
-                                { label: 'Safety', slug: 'client/reference/safety', badge: { text: 'Important', variant: 'danger' } },
-                                { label: 'Commands', slug: 'client/reference/commands' },
-                                { label: 'Context', slug: 'client/reference/auto-context', badge: { text: 'Stub', variant: 'caution' } },
-                                { label: 'Cookies', slug: 'client/reference/cookies', badge: { text: 'Stub', variant: 'caution' } },
-                                { label: 'Cursor', slug: 'client/reference/cursor', badge: { text: 'Conditional', variant: 'success' } },
-                                { label: 'Permissions', slug: 'client/reference/permissions', badge: { text: 'Important', variant: 'danger' } },
-                                { label: 'RCE', slug: 'client/reference/rce', badge: { text: 'Core', variant: 'note' } },
-                                { label: 'Settings', slug: 'client/reference/settings' },
-                                { label: 'Dependencies', slug: 'client/reference/dependencies' },
-                            ],
+                            autogenerate: {
+                                directory: 'client/reference',
+                                collapsed: true
+                            }
                         },
                         {
                             label: "MCP",
@@ -75,6 +49,13 @@ export default defineConfig({
                     badge: { text: 'Coming later!', variant: 'danger' },
                     icon: 'vscode',
                     items: [
+                        {
+                            label: 'Guides',
+                            autogenerate: {
+                                directory: 'server/guides',
+                                collapsed: true
+                            }
+                        },
                         {
                             label: 'Reference',
                             autogenerate: {
@@ -108,6 +89,7 @@ export default defineConfig({
                 {
                     label: 'Meta',
                     link: '/meta/',
+                    badge: { text: 'Contributors' },
                     icon: 'list-format',
                     items: [
                         'meta/assets',
