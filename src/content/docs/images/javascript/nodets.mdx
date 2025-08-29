@@ -3,8 +3,9 @@ title: Node.ts container
 description: A Node.ts (Node.js + TypeScript) container with pre-configured settings for NeuroPilot.
 ---
 import { Tabs, TabItem, Code, FileTree, Steps, LinkButton, Aside } from '@astrojs/starlight/components'
-import { BASE_GITHUB_ORG } from '@consts/links'
+import { BASE_GITHUB_ORG, SHOWCASE_IGNORES } from '@consts/links'
 import { ShowcaseProfile } from 'starlight-showcases'
+import { ContributorList } from 'starlight-contributor-list'
 export const DOCKERFILE = `
 FROM ghcr.io/vsc-neuropilot/node.ts-image:latest
 # Or use a specific version
@@ -54,6 +55,10 @@ A pre-configured Node.ts (Node.js + TypeScript) container for use with NeuroPilo
 
 <ShowcaseProfile entries={profiles} />
 
+## Contributors
+
+<ContributorList githubRepo="VSC-NeuroPilot/node.ts-image" ignore={SHOWCASE_IGNORES} />
+
 ## Use the image
 
 <Tabs syncKey="containerImageObtainMethod">
@@ -62,7 +67,10 @@ A pre-configured Node.ts (Node.js + TypeScript) container for use with NeuroPilo
     <TabItem label="Docker pull"><Code name="docker pull" lang="sh" code={DOCKERPULL} /></TabItem>
     <TabItem label="GitHub Codespaces">
         <Steps>
-            1. Make a new repository using the `Use this template` button.
+            1. Make a new repository using the `Use this template` button. Alternatively, use the button below.
+
+                <LinkButton href="https://github.com/new?template_name=node.ts-image&template_owner=VSC-NeuroPilot">Create repo from template</LinkButton>
+
             2. Press `.` to open the GitHub Containers web app.
             3. Start coding! 
         </Steps>

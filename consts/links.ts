@@ -8,3 +8,4 @@ export const MARKETPLACE_URL = (type: MarketplaceLinks) => {
     } else
         return "/"
 }
+export const SHOWCASE_IGNORES: string[] = ["actions-user", "dependabot[bot]", "Copilot"]

@@ -4,7 +4,7 @@ description: Client landing page
 ---
 import { ContributorList } from 'starlight-contributor-list'
 import { ShowcaseProfile } from 'starlight-showcases'
-import { MARKETPLACE_URL, BASE_GITHUB_ORG } from '@consts/links'
+import { MARKETPLACE_URL, BASE_GITHUB_ORG, SHOWCASE_IGNORES } from '@consts/links'
 export const profiles = [
     {
         name: 'VS Marketplace listing',
@@ -28,4 +28,4 @@ This is the UI/client-side extension version of the documentation, which connect
 
 ## Project contributors
 
-<ContributorList githubRepo="VSC-NeuroPilot/neuropilot" ignore={["actions-user", "dependabot[bot]", "Copilot"]} />
+<ContributorList githubRepo="VSC-NeuroPilot/neuropilot" ignore={SHOWCASE_IGNORES} />
