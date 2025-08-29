@@ -3,6 +3,8 @@ title: Contributing homepage
 description: Contributing to NeuroPilot? This page will help get you started!
 ---
 
+import { Aside } from '@astrojs/starlight/components'
+
 {/* ktrain just wants to write all this so he doesn't forget */}
 
 To begin contributing, you should read up on the specific area you want to contribute to.
@@ -24,4 +26,25 @@ To begin contributing, you should read up on the specific area you want to contr
 - Put everything you're working on inside `project-files/`. This is a folder that is gitignored & vscodeignored by default, allowing you to store work-in-progress files without leaving them untracked.
 - Try to open an issue for feature additions/non-patch changes. This will allow us to track progress via milestone, and also allow discussion while being able to link to other issues/PRs.
 - Discussing on the thread in the Neuro Discord is also okay, it can also be used to post progress updates that don't need to be posted on GitHub (also gives updates to people who are following the thread but not the repo).
-- Anything new, changed or removed should be documented on the docs folder.
+- Anything new, changed or removed should be documented on the docs repo.
+
+## Conventions
+
+Across NeuroPilot's code, we try to keep a certain convention to ensure productivity and familiarity.
+Below is a compilation of our conventions that we use in the code.
+
+<Aside>
+
+Some conventions may have been violated in early code, before these conventions were "standardised".
+We're working to refactor these eventually, but going forward everything must follow the conventions below.
+
+</Aside>
+
+### Naming conventions
+
+- Types and type interfaces are capitalised via PascalCase. Functions are capitalised via camelCase. Constants that are initialised at the top of a file are in full caps and with spaces replaced by `_`
+- Handler functions follow the `handle<ActionName>` convention, where `<ActionName>` is the name of the action converted to PascalCase (`handle` already takes the first word, so no camelCase for the `<ActionName>` part).
+- The object with all the action data that governs how actions are sent, handled and validated follow the `<type>Actions` convention, where `<type>` is the name of the action category converted to camelCase.
+- Registration functions that register actions follow the `register<Type>` conventions, where `<Type>` is the name of the action category converted to PascalCase (for the same reasons as handler functions)
+- Validator functions often, but aren't *strictly* required to, follow the `validate<Purpose>` or `<Purpose>Validation` conventions, where `<Purpose>` is what the function is validating.
+- Imports from `@types/vscode` often use the `import * as vscode from 'vscode'` import pattern.
