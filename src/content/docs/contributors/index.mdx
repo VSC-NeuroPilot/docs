@@ -48,3 +48,49 @@ We're working to refactor these eventually, but going forward everything must fo
 - Registration functions that register actions follow the `register<Type>Actions` conventions, where `<Type>` is the name of the action category converted to PascalCase (for the same reasons as handler functions)
 - Validator functions often, but aren't *strictly* required to, follow the `validate<Purpose>` or `<Purpose>Validation` conventions, where `<Purpose>` is what the function is validating, converted to PascalCase/camelCase respectively.
 - Imports from `@types/vscode` often use the `import * as vscode from 'vscode'` import pattern.
+
+### Placement conventions
+
+These placement conventions apply to files which contain actions (such as `file_actions.ts` or `editing.ts`).
+
+```ts
+import * as vscode from 'vscode';
+import { NEURO } from '@/constants';
+import { PERMISSIONS, getPermissionLevel } from '@/config'
+import { RCEAction, stripToActions, ActionData, ActionValidationResult } from '@/neuro_client_helper';
+// other imports
+
+function validatePath(actionData: ActionData): ActionValidationResult {
+    // code goes here
+};
+
+// other functions related to validation go here
+
+export const pathActions = {
+    move_file: {
+        name: 'move_file', // must match exactly the object key
+        description: 'Move a file from one place to another.',
+        schema: {
+            // schema goes here
+        },
+        // other info
+    },
+    // other actions similarly structured here
+} satisfies Record<string, RCEAction>;
+
+export function registerPathActions() { // only one of these per file!
+    if (getPermissionLevel(PERMISSIONS.moveFiles)) {
+        NEURO.client?.registerActions(stripToActions([
+            pathActions.move_file,
+            // other actions
+        ]));
+    },
+};
+
+// All handlers go under here
+
+export function handleMoveFile(actionData: ActionData) {
+    // handling code goes here
+};
+
+```
