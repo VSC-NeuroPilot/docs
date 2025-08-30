@@ -16,6 +16,11 @@ export const attribs = {
 
 <CenterIcon Icon={NeuroPilotEdit} credits="Edit active document logo by KTrain5369" attribs={attribs} />
 
+
+## Limitations
+
+There is a 100,000 character limit for all editing actions.
+
 ## Cursor
 
 *See also: [Reference/Cursor](/docs/reference/cursor)*
@@ -45,6 +50,14 @@ For all other options, Neuro can choose to use either glob patterns or regex to 
 
 A special variant of the Insert Text action that automatically adds below a line rather than at the cursor.
 By default it inserts below the cursor.
+
+## Rewrite Lines
+
+Rewrites the specified line range with the given content. 
+
+## Rewrite All
+
+Completely rewrites the contents of the file and places the cursor at the start of the file.
 
 ## Undo
 
