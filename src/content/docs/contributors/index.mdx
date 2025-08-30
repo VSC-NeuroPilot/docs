@@ -42,9 +42,9 @@ We're working to refactor these eventually, but going forward everything must fo
 
 ### Naming conventions
 
-- Types and type interfaces are capitalised via PascalCase. Functions are capitalised via camelCase. Constants that are initialised at the top of a file are in full caps and with spaces replaced by `_`
+- Types and type interfaces are capitalised via PascalCase. Functions are capitalised via camelCase. Constants that are initialised at the top of a file are in MACRO_CASE.
 - Handler functions follow the `handle<ActionName>` convention, where `<ActionName>` is the name of the action converted to PascalCase (`handle` already takes the first word, so no camelCase for the `<ActionName>` part).
 - The object with all the action data that governs how actions are sent, handled and validated follow the `<type>Actions` convention, where `<type>` is the name of the action category converted to camelCase.
-- Registration functions that register actions follow the `register<Type>` conventions, where `<Type>` is the name of the action category converted to PascalCase (for the same reasons as handler functions)
-- Validator functions often, but aren't *strictly* required to, follow the `validate<Purpose>` or `<Purpose>Validation` conventions, where `<Purpose>` is what the function is validating.
+- Registration functions that register actions follow the `register<Type>Actions` conventions, where `<Type>` is the name of the action category converted to PascalCase (for the same reasons as handler functions)
+- Validator functions often, but aren't *strictly* required to, follow the `validate<Purpose>` or `<Purpose>Validation` conventions, where `<Purpose>` is what the function is validating, converted to PascalCase/camelCase respectively.
 - Imports from `@types/vscode` often use the `import * as vscode from 'vscode'` import pattern.
