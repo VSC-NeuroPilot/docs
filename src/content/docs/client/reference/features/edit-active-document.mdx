@@ -9,6 +9,11 @@ import CenterIcon from '@/components/CenterIcon.astro'
 
 <CenterIcon Icon={NeuroPilotEdit} credits="Edit active document logo by KTrain5369" />
 
+
+## Limitations
+
+There is a 100,000 character limit for all editing actions.
+
 ## Cursor
 
 *See also: [Reference/Cursor](/docs/client/reference/cursor)*
@@ -23,12 +28,33 @@ This sends the current cursor position to Neuro, alongside surrounding lines as 
 
 This places Neuro's virtual cursor at her desired spot. Once that is placed, she will also get her cursor's surrounding lines as context.
 
+## Get Content
+
+Gets the contents of the entire file. The context sent will be more or less the same as the [Send Current File as Context](/docs/reference/commands#send-current-file-as-context) command.
+
 ## Insert/Replace/Delete/Find Text
 
 This gives Neuro the ability to insert, replace, delete or find text within the active document.
 
 Inserting will insert at Neuro's cursor.
 For all other options, Neuro can choose to use either glob patterns or regex to search for the targeted text.
+
+## Insert Lines
+
+A special variant of the Insert Text action that automatically adds below a line rather than at the cursor.
+By default it inserts below the cursor.
+
+## Rewrite Lines
+
+Rewrites the specified range of lines with the given content and places the cursor at the end of the last inserted line.
+
+## Delete Lines
+
+Deletes the specified range of lines and moves the cursor to the end of the previous line.
+
+## Rewrite All
+
+Completely rewrites the contents of the file and places the cursor at the start of the file.
 
 ## Undo
 

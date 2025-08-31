@@ -3,11 +3,17 @@ name: Docs CI
 on:
     push:
         branches: [ master ]
-        paths:
-            - docs/**
+        paths-ignore:
+            - .vscode
+            - .husky
+            - .github
+            - '!.github/workflows/build.yml'
     pull_request:
-        paths:
-            - docs/**
+        paths-ignore:
+            - .vscode
+            - .husky
+            - .github
+            - '!.github/workflows/build.yml'
     workflow_dispatch:
         inputs:
             checked:
