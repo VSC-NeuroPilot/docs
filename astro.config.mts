@@ -131,7 +131,7 @@ export default defineConfig({
             lastUpdated: true,
             pagination: false,
             logo: {
-                src: './public/heart-xaendril.png',
+                src: './src/assets/heart-xaendril.png',
                 alt: 'v2 NeuroPilot logo'
             },
             social: [
@@ -144,7 +144,12 @@ export default defineConfig({
                     icon: 'github',
                     label: 'VSC-NeuroPilot organization',
                     href: BASE_GITHUB_ORG
-                }
+                },
+                {
+                    icon: 'discord',
+                    label: 'Discord discussion thread',
+                    href: 'https://discord.com/channels/574720535888396288/1350968830230396938'
+                },
             ],
             components: {
                 Footer: './src/components/Footer.astro'
