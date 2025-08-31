@@ -129,6 +129,7 @@ export default defineConfig({
                 baseUrl: BASE_GITHUB_ORG + '/docs/edit/master/'
             },
             lastUpdated: true,
+            pagination: false,
             logo: {
                 src: './public/heart-xaendril.png',
                 alt: 'v2 NeuroPilot logo'
