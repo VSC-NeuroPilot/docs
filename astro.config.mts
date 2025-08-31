@@ -16,7 +16,7 @@ export default defineConfig({
         starlight({
             plugins: [starlightHeadingBadgesPlugin(), starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
                 {
-                    label: 'UI',
+                    label: 'Base Extension',
                     link: '/client/',
                     icon: 'laptop',
                     items: [
@@ -44,7 +44,7 @@ export default defineConfig({
                     ]
                 },
                 {
-                    label: 'Workspace',
+                    label: 'Server Extension',
                     link:  '/server/',
                     badge: { text: 'Coming later!', variant: 'danger' },
                     icon: 'vscode',
@@ -66,7 +66,7 @@ export default defineConfig({
                     ]
                 },
                 {
-                    label: 'Container presets',
+                    label: 'Container Presets',
                     link: '/images/',
                     icon: 'seti:docker',
                     items: [
