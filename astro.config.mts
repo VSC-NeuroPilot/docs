@@ -2,7 +2,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightHeadingBadgesPlugin from 'starlight-heading-badges';
-import { BASE_GITHUB_URL, MARKETPLACE_URL } from './consts/links';
+import starlightSidebarTopicsPlugin from 'starlight-sidebar-topics';
+
+import { BASE_GITHUB_ORG, MARKETPLACE_URL } from './consts/links'; // typescript aliasing doesn't work here for some reason (it does in the mdx pages tho)
 
 /** @todo https://starlight.astro.build/resources/plugins/#plugins */
 
@@ -12,30 +14,125 @@ export default defineConfig({
     base: '/docs',
     integrations: [
         starlight({
-            plugins: [starlightHeadingBadgesPlugin()],
+            plugins: [starlightHeadingBadgesPlugin(), starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
+                {
+                    label: 'Base Extension',
+                    link: '/client/',
+                    icon: 'laptop',
+                    items: [
+                        {
+                            label: 'Guides',
+                            autogenerate: {
+                                directory: 'client/guides',
+                                collapsed: true
+                            }
+                        },
+                        {
+                            label: 'Reference',
+                            autogenerate: {
+                                directory: 'client/reference',
+                                collapsed: true
+                            }
+                        },
+                        {
+                            label: "MCP",
+                            autogenerate: {
+                                directory: "client/mcp",
+                                collapsed: true
+                            }
+                        }
+                    ]
+                },
+                {
+                    label: 'Server Extension',
+                    link:  '/server/',
+                    badge: { text: 'Coming later!', variant: 'danger' },
+                    icon: 'vscode',
+                    items: [
+                        {
+                            label: 'Guides',
+                            autogenerate: {
+                                directory: 'server/guides',
+                                collapsed: true
+                            }
+                        },
+                        {
+                            label: 'Reference',
+                            autogenerate: {
+                                directory: 'server/reference',
+                                collapsed: true
+                            }
+                        }
+                    ]
+                },
+                {
+                    label: 'Container Presets',
+                    link: '/images/',
+                    icon: 'seti:docker',
+                    items: [
+                        {
+                            label: 'Python',
+                            autogenerate: {
+                                directory: 'images/python',
+                                collapsed: true
+                            }
+                        },
+                        {
+                            label: 'JavaScript',
+                            autogenerate: {
+                                directory: 'images/javascript',
+                                collapsed: true
+                            }
+                        }
+                    ]
+                },
+                {
+                    label: 'Meta',
+                    link: '/meta/',
+                    badge: { text: 'Contributors' },
+                    icon: 'list-format',
+                    items: [
+                        'meta/assets',
+                        {
+                            label: 'Contributors',
+                            autogenerate: {
+                                directory: 'meta/contributors',
+                                collapsed: true
+                            }
+                        }
+                    ],
+                },
+                {
+                    label: 'Unit tests',
+                    icon: 'approve-check-circle',
+                    badge: { text: 'External', variant: 'note' },
+                    link: 'https://vsc-neuropilot.github.io/unit-tests'
+                }
+            ],
+            )],
             favicon: '/heart-pink.svg',
             customCss: [
                 './src/styles/icons.css',
                 './src/styles/starlight.css'
             ],
             head: [
-                /*{
+                {
                     tag: 'link',
                     attrs: {
                         rel: 'icon',
                         href: '/docs/heart-pink.svg'
                     }
-                }*/
+                }
             ],
             title: 'NeuroPilot Docs',
             editLink: {
-                baseUrl: BASE_GITHUB_URL + '/edit/master/docs'
+                baseUrl: BASE_GITHUB_ORG + '/docs/edit/master/'
             },
             lastUpdated: true,
+            pagination: false,
             logo: {
-                dark: './src/assets/evilpilot.svg',
-                light: './src/assets/neuropilot.svg',
-                alt: 'NeuroPilot and EvilPilot icons'
+                src: './public/heart-xaendril.png',
+                alt: 'v2 NeuroPilot logo'
             },
             social: [
                 {
@@ -45,63 +142,8 @@ export default defineConfig({
                 },
                 {
                     icon: 'github',
-                    label: 'NeuroPilot GitHub',
-                    href: BASE_GITHUB_URL,
-                },
-            ],
-            sidebar: [
-                {
-                    label: 'Guides',
-                    items: [
-                        {
-                            label: 'Setup NeuroPilot',
-                            badge: { text: 'Start here!', variant: 'tip' },
-                            slug: 'guides/setup',
-                        },
-                        {
-                            label: 'Pilot modes',
-                            slug: 'guides/pilot',
-                        },
-                        {
-                            label: 'Sandboxing',
-                            badge: { text: 'WIP', variant: 'caution' },
-                            slug: 'guides/sandboxing'
-                        }
-                    ],
-                },
-                {
-                    label: 'Reference',
-                    items: [
-                        {
-                            label: 'Features',
-                            autogenerate: {
-                                directory: 'reference/features',
-                                collapsed: true
-                            }
-                        },
-                        { label: 'Safety', slug: 'reference/safety', badge: { text: 'Important', variant: 'danger' } },
-                        { label: 'Commands', slug: 'reference/commands' },
-                        { label: 'Context', slug: 'reference/auto-context', badge: { text: 'Stub', variant: 'caution' } },
-                        { label: 'Cookies', slug: 'reference/cookies', badge: { text: 'Stub', variant: 'caution' } },
-                        { label: 'Cursor', slug: 'reference/cursor', badge: { text: 'Conditional', variant: 'success' } },
-                        { label: 'Permissions', slug: 'reference/permissions', badge: { text: 'Important', variant: 'danger' } },
-                        { label: 'RCE', slug: 'reference/rce', badge: { text: 'Core', variant: 'note' } },
-                        { label: 'Settings', slug: 'reference/settings' },
-                        { label: 'Dependencies', slug: 'reference/dependencies' },
-                    ],
-                },
-                {
-                    label: 'NeuroPilot Assets',
-                    badge: { text: 'Meta', variant: 'note' },
-                    slug: 'assets'
-                },
-                {
-                    label: 'Contributors',
-                    badge: { text: 'Meta', variant: 'note' },
-                    autogenerate: {
-                        directory: 'contributors',
-                        collapsed: true
-                    }
+                    label: 'VSC-NeuroPilot organization',
+                    href: BASE_GITHUB_ORG
                 }
             ],
             components: {

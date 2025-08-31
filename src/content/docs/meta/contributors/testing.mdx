@@ -1,0 +1,34 @@
+---
+title: Testing & demonstration
+description: Resources on testing, demonstrating and recording examples.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+## Testing
+
+<Aside>
+
+This section is only for testing with a Neuro API server.
+Testing with integration tests are considered part of [meta](/docs/meta/contributors/meta).
+
+</Aside>
+
+- Try to test using at least one of the non-AI-backed (Randy, Tony) and optionally one of the AI-backed (Jippity, Gary) simulators.
+- In the case of using AI-backed simulators you should also see if they are confused or are avoiding using the tool.
+
+## Demonstration recording
+
+- Use either Tony or Jippity, but it will be more reproducible with Tony, allowing you to easily do multiple tries if you wish.
+- Also be aware that Tony has an API that spawns it headlessly (i.e. no GUI), so it may be better to set up a script for that. Store scripts in the `tony/` folder.
+- Recordings need to be converted into a GIF file, to reduce bundle sizes when packaging.
+
+<Aside type="tip">
+
+If using `ffmpeg`, the following command can be used to convert a video file to GIF:
+
+```bash
+ffmpeg -y -ss <start_time> -t <gif_length> -i "input.mp4" -vf "fps=10,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+```
+
+</Aside>

@@ -1,0 +1,96 @@
+---
+title: Contributing homepage
+description: Contributing to NeuroPilot? This page will help get you started!
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+{/* ktrain just wants to write all this so he doesn't forget */}
+
+To begin contributing, you should read up on the specific area you want to contribute to.
+
+## Sections
+
+- [Extension (the `src/` folder in repo)](/docs/meta/contributors/extension)
+- [Docs (the `docs/` folder in repo)](/docs/meta/contributors/docs)
+- [Testing/demonstration (tooling stored in the `tony/` folder in repo)](/docs/meta/contributors/testing)
+- [Assets (the `assets/` folder in both repo root and docs' `src/assets`/`public`)](/docs/meta/contributors/assets)
+- [Meta (linting, CI, build tools, extension info, etc...)](/docs/meta/contributors/meta)
+
+## Shared contributing guidelines :badge[Read this too!]{variant=tip}
+
+- Open an issue on the repository first. This allows it to be assigned to a milestone and labels to be applied to the idea. (Only applicable for non-asset contributions and non-minor changes)
+- Always test your changes. Whether that's debugging the extension with VSCode & a testing tool, or firing up the Astro dev server for docs, always test your changes before merging/requesting a review.
+- Double check your changes after getting out of the zone for a bit. This can help catch mistakes from tunnel vision.
+- If CI fails, check to see why it failed, rather than blindly trying everything you think might fix it.
+- Put everything you're working on inside `project-files/`. This is a folder that is gitignored & vscodeignored by default, allowing you to store work-in-progress files without leaving them untracked.
+- Try to open an issue for feature additions/non-patch changes. This will allow us to track progress via milestone, and also allow discussion while being able to link to other issues/PRs.
+- Discussing on the thread in the Neuro Discord is also okay, it can also be used to post progress updates that don't need to be posted on GitHub (also gives updates to people who are following the thread but not the repo).
+- Any new, changed or removed feature should be documented on the [docs repo](https://github.com/VSC-NeuroPilot/docs).
+
+## Conventions
+
+Across NeuroPilot's code, we try to keep a certain convention to ensure productivity and familiarity.
+Below is a compilation of our conventions that we use in the code.
+
+<Aside>
+
+Some conventions may have been violated in early code, before these conventions were "standardised".
+We're working to refactor these eventually, but going forward everything must follow the conventions below.
+
+</Aside>
+
+### Naming conventions
+
+- Types and type interfaces are capitalised via PascalCase. Functions are capitalised via camelCase. Constants that are initialised at the top of a file are in MACRO_CASE.
+- Handler functions follow the `handle<ActionName>` convention, where `<ActionName>` is the name of the action converted to PascalCase (`handle` already takes the first word, so no camelCase for the `<ActionName>` part).
+- The object with all the action data that governs how actions are sent, handled and validated follow the `<type>Actions` convention, where `<type>` is the name of the action category converted to camelCase.
+- Registration functions that register actions follow the `register<Type>Actions` conventions, where `<Type>` is the name of the action category converted to PascalCase (for the same reasons as handler functions)
+- Validator functions often, but aren't *strictly* required to, follow the `validate<Purpose>` or `<Purpose>Validation` conventions, where `<Purpose>` is what the function is validating, converted to PascalCase/camelCase respectively.
+- Imports from `@types/vscode` often use the `import * as vscode from 'vscode'` import pattern.
+
+### Placement conventions
+
+These placement conventions apply to files which contain actions (such as `file_actions.ts` or `editing.ts`).
+
+```ts
+import * as vscode from 'vscode';
+import { NEURO } from '@/constants';
+import { PERMISSIONS, getPermissionLevel } from '@/config'
+import { RCEAction, stripToActions, ActionData, ActionValidationResult } from '@/neuro_client_helper';
+// other imports
+
+function validatePath(actionData: ActionData): ActionValidationResult {
+    // code goes here
+};
+
+// other functions related to validation go here
+
+export const pathActions = {
+    move_file: {
+        name: 'move_file', // must match exactly the object key
+        description: 'Move a file from one place to another.',
+        schema: {
+            // schema goes here
+        },
+        // other info
+    },
+    // other actions similarly structured here
+} satisfies Record<string, RCEAction>;
+
+export function registerPathActions() { // only one of these per file!
+    if (getPermissionLevel(PERMISSIONS.moveFiles)) {
+        NEURO.client?.registerActions(stripToActions([
+            pathActions.move_file,
+            // other actions
+        ]));
+    },
+};
+
+// All handlers go under here
+
+export function handleMoveFile(actionData: ActionData) {
+    // handling code goes here
+};
+
+```

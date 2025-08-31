@@ -1,0 +1,31 @@
+---
+title: Client landing page
+description: Client landing page
+---
+import { ContributorList } from 'starlight-contributor-list'
+import { ShowcaseProfile } from 'starlight-showcases'
+import { MARKETPLACE_URL, BASE_GITHUB_ORG, SHOWCASE_IGNORES } from '@consts/links'
+export const profiles = [
+    {
+        name: 'VS Marketplace listing',
+        picture: import('@assets/heart-xaendril.png'),
+        href: MARKETPLACE_URL("page"),
+        description: 'NeuroPilot\'s listing on the VS Marketplace.'
+    },
+    {
+        name: 'Source code repository',
+        picture: import('@static/heart-pink.svg'),
+        href: BASE_GITHUB_ORG + '/neuropilot',
+        description: 'The source code of NeuroPilot, licensed under MIT.'
+    }
+]
+
+This is the UI/client-side extension version of the documentation, which connects directly to the Neuro API and is the "VS Code interface" for Neuro.
+
+## Links
+
+<ShowcaseProfile entries={profiles} />
+
+## Project contributors
+
+<ContributorList githubRepo="VSC-NeuroPilot/neuropilot" ignore={SHOWCASE_IGNORES} />

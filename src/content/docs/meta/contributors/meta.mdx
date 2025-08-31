@@ -1,0 +1,69 @@
+---
+title: Meta stuff (CI, linting, etc)
+description: Resources for modifying meta items (such as CI files and linting configs)
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+## CI (GitHub Actions) :badge["External"]
+
+### Workflows
+
+- Changing CI shouldn't be done often, it should only be changed if something within the project requires it.
+- Enabling GitHub Actions on forks is recommended so that you can push your changes and get feedback, however you should disable the publishing workflow on your fork.
+
+### Actions
+
+- Modifying actions is a thing that should be done rarely.
+- Unlike most other projects, you **need** to commit the `dist/` folder so the runner can access the code (they won't get built by the runner).
+- Try not to create too many
+
+## Linting (ESLint)
+
+- Existing linting rules should not be changed without discussion.
+- Linting rule additions should have a purpose.
+- Docs lint rules, playground lint rules, and extension lint rules must be kept separate.
+
+## Playground (Extension Development Host folder default)
+
+- You can commit whatever you want (as long as reasonable) in this folder, and it generally will be fine.
+- The `.vscode` folder intentionally contains a test.ts file in there for lint + file testing. Do not move it.
+
+## `tsconfig.json` (TypeScript config)
+
+- These should not be modified in most circumstances. In the rare cases they should be, it should be noted why.
+- Each part of the project (docs, playground, extension) should maintain their own `tsconfig.json` files.
+
+<Aside type="caution">
+
+In the upcoming web build PR, the extension's `tsconfig.json` will be split into 3 files. This is intentional, do not change this.
+
+</Aside>
+
+## `package.json`/`package-lock.json` (Node/npm package manifests)
+
+- *Only the extension's `package.json` should target the `vscode` engine!* All other package.json files should omit the target object.
+- New dependencies should be added on an as-needed basis.
+- Dependencies in `docs` should be pinned using `~`. Other package manifests can use any specifier.
+- All dependencies should target libraries published on npm as much as possible.
+
+## Pre-commit (Husky)
+
+- Pre-commits should be added sparingly and with reason indicated. Adding too many will increase the delay before being able to commit.
+- It is generally fine to overlap checks at CI with pre-commit checks, though once again do take note of the above.
+
+## `.vscode` (Editor config)
+
+- There shouldn't be a reason to modify editor configs most of the time. This does not apply to the playground's editor config.
+
+## `README.md`
+
+- These should explain as much as necessary. If it's too long, move to docs instead of leaving in README.
+- README files shouldn't usually refer to another README file.
+
+## Other files :badge[Not sure? Check here!]{variant=success}
+
+- `icons.woff`: Do not modify unless given permission by `@Pasu4`.
+- .*ignore: Generally these shouldn't be modified too much, although if something's in the `.gitignore` file, 90% of the time you need to copy it over to `.vscodeignore`
+- `LICENSE`: Do not modify.
+- `tony/`: See [Contributors/Testing](/docs/meta/contributors/testing).

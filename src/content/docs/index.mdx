@@ -6,15 +6,19 @@ hero:
   tagline: The operator's manual on using NeuroPilot.
   actions:
     - text: Setup NeuroPilot
-      link: /docs/guides/setup/
+      link: /docs/client/guides/setup/
       icon: right-arrow
     - text: Download NeuroPilot
       link: https://marketplace.visualstudio.com/items?itemName=Pasu4.neuropilot
-      icon: external
+      icon: vscode
       variant: secondary
-    - text: NeuroPilot repository
+    - text: NeuroPilot (client) repository
       link: https://github.com/VSC-NeuroPilot/neuropilot
       icon: github
+      variant: minimal
+    - text: Issues
+      link: https://github.com/VSC-NeuroPilot/neuropilot/issues
+      icon: error
       variant: minimal
   image:
     html: |
@@ -85,31 +89,26 @@ hero:
 ---
 
 import { Aside, Card, CardGrid, LinkCard } from '@astrojs/starlight/components'
-import { ContributorList } from 'starlight-contributor-list'
-import { BASE_GITHUB_URL, MARKETPLACE_URL } from '../../../consts/links.ts'
+import { BASE_GITHUB_ORG, MARKETPLACE_URL } from '@consts/links'
 
 **For simplicity, all mentions of Neuro in these docs also apply to Evil unless otherwise stated.**
 
-<Aside type="danger">
+<Aside type="danger" title="Disclaimer">
 
 Depending on the permissions you activate, what level they are set, and which tools / AIs you use, this extension can be quite destructive to your system.
-No contributors or collaborators on this project take responsibility for any harm done to your system as a result of this extension.
-Use Copilot mode for dangerous permissions or use the extension on a virtual machine.
+No contributors, collaborators or maintainers on any part of this project take responsibility for any harm done to your system as a result of this extension.
+Use Copilot mode for dangerous permissions or use the extension on a virtual machine/container image.
 
 </Aside>
 
 ## Quick links
 
 <CardGrid>
-  <LinkCard title="Discord thread" href="" description={`The thread on Neuro-sama Headquarters Discord where most things are discussed.`} />
-  <LinkCard title="Docs directory on repo" href={BASE_GITHUB_URL + "/tree/master/docs"} description="Source files for the documentation pages." />
-  <LinkCard title="Open extension in VS Code" href={MARKETPLACE_URL('direct')} />
+  <LinkCard title="Discord thread" href="https://discord.com/channels/574720535888396288/1350968830230396938" description={`The thread on Neuro-sama Headquarters Discord where most things are discussed.`} />
+  <LinkCard title="Docs directory" href={BASE_GITHUB_ORG + "/docs"} description="Source repository for the documentation pages." />
+  <LinkCard title="Open extension listing in VS Code" href={MARKETPLACE_URL('direct')} />
   <LinkCard title="Neuro Game API official repo" href="https://github.com/VedalAI/neuro-game-sdk" />
 </CardGrid>
-
-## Project contributors
-
-<ContributorList githubRepo="VSC-NeuroPilot/neuropilot" ignore={["actions-user"]} />
 
 ## Terminology :badge[Important]{variant=danger}
 
@@ -117,23 +116,23 @@ Use Copilot mode for dangerous permissions or use the extension on a virtual mac
 	<Card title="Neuro-safe/Neuro-unsafe" icon="document">
 		A set of directories Neuro is/isn't allowed to access.
 
-    To find out about what directories are included, see [the File access restrictions section on the safety page](/docs/reference/safety#file-access-restrictions).
+    To find out about what directories are included, see [the File access restrictions section on the safety page](/docs/client/reference/safety#file-access-restrictions).
 	</Card>
 	<Card title="Autopilot/Copilot" icon="pen">
 		Two modes you can set permissions to, allowing more controlled behaviour from the extension.
 
-    For more info, see [the guides page on selecting a -pilot mode for a setting](/docs/guides/pilot).
+    For more info, see [the guides page on selecting a -pilot mode for a setting](/docs/client/guides/pilot).
 	</Card>
 	<Card title="Passive/Background/Auto context" icon="information">
 		Context that is sent to Neuro passively. This is done with a small amount of features.
 
-    You can learn more and find the list [here](/docs/reference/auto-context).
+    You can learn more and find the list [here](/docs/client/reference/auto-context).
 	</Card>
 	<Card title="RCE" icon="approve-check-circle">
 		Short for the "**R**equested **C**ommand **E**xecution" system, which handles Neuro's permissions. Not to be confused with a "Remote Code Execution" vulnerability.
 
-    For how exactly this system works, read [this](/docs/reference/rce).
-	</Card>
+    For how exactly this system works, read [this](/docs/client/reference/rce).
+	</Card> {/* should I move this? */}
 </CardGrid>
 
-{/* I have an idea for quick links but this will be blank for now */}
+{/* I have an idea for quick links but this will be left like this for now */}
