@@ -9,7 +9,7 @@ sidebar:
 
 import HeartBNW from '@assets/heart-bnw.svg'
 import HeartPink from '@static/heart-pink.svg'
-import { Icon } from '@astrojs/starlight/components'
+import { Icon, Tabs, TabItem, Code, Aside } from '@astrojs/starlight/components'
 
 <HeartBNW class="neuropilot-icon inline-icon" /> <HeartPink class="inline-icon" />
 
@@ -28,3 +28,163 @@ The [game name](/docs/client/reference/settings#game-name) and [initial context]
 Once you've verified that a connection is established, you'll want to configure Neuro's [display name](/docs/client/reference/settings#currentlyAsNeuroAPI) (if necessary) and [permissions](/docs/client/reference/permissions). These change the display name of Neuro around the UI and give her the ability to autonomously perform actions, respectively.
 
 Remember to [reload permissions](/docs/client/reference/commands#reload-permissions) if you fully disable/enable action permissions, and [reload tasks](/docs/client/reference/commands#reload-tasks) if you change the Neuro-allowed task list.
+
+## Recommended workspace settings
+
+export const DEV_STREAM_SETTINGS = `{
+    "github.copilot.advanced": {
+        "debug.overrideEngine": "someRandomString" // Disable suggestions by GitHub Copilot
+    },
+    "neuropilot.currentlyAsNeuroAPI": "Neuro", // Change this to "Evil" when programming with Evil
+    "neuropilot.permission.accessLintingAnalysis": "Autopilot",
+    "neuropilot.permission.create": "Autopilot",
+    "neuropilot.permission.delete": "Copilot",
+    "neuropilot.permission.editActiveDocument": "Autopilot",
+    "neuropilot.permission.openFiles": "Autopilot",
+    "neuropilot.permission.rename": "Copilot",
+    "neuropilot.permission.runTasks": "Copilot",
+    "neuropilot.requestExpiryTimeout": 20000,
+    "neuropilot.sendNewLintingProblemsOn": "inCurrentFile",
+    "neuropilot.websocketUrl": "ws://localhost:8000", // Change this to the address and port of your Neuro API server
+}`
+
+export const CHILL_STREAM_SETTINGS = `{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    // Debug engine override for GitHub Copilot
+    "github.copilot.advanced": {
+        "debug.overrideEngine": "someRandomString" // Disable suggestions by GitHub Copilot
+    },
+    "neuropilot.completionTrigger": "off",
+    "neuropilot.currentlyAsNeuroAPI": "Neuro", // Change this to "Evil" when programming with Evil
+    "neuropilot.cursorFollowsNeuro": true,
+    "neuropilot.initialContext": "You are using an extension in Visual Studio Code that allows you to code on your own.",
+    "neuropilot.permission.accessLintingAnalysis": "Autopilot",
+    "neuropilot.permission.create": "Autopilot",
+    "neuropilot.permission.delete": "Autopilot",
+    "neuropilot.permission.editActiveDocument": "Autopilot",
+    "neuropilot.permission.gitOperations": "Autopilot",
+    "neuropilot.permission.gitTags": "Autopilot",
+    "neuropilot.permission.openFiles": "Autopilot",
+    "neuropilot.permission.rename": "Autopilot",
+    "neuropilot.permission.requestCookies": "Off",
+    "neuropilot.permission.runTasks": "Autopilot",
+    "neuropilot.sendNewLintingProblemsOn": "inWorkspace",
+    "neuropilot.websocketUrl": "ws://localhost:8000", // Change this to the address and port of your Neuro API server
+}`
+
+export const DEV_STREAM_TERMINAL_SETTINGS = `{
+    "github.copilot.advanced": {
+        "debug.overrideEngine": "someRandomString" // Disable suggestions by GitHub Copilot
+    },
+    "neuropilot.currentlyAsNeuroAPI": "Neuro", // Change this to "Evil" when programming with Evil
+    "neuropilot.permission.accessLintingAnalysis": "Autopilot",
+    "neuropilot.permission.create": "Autopilot",
+    "neuropilot.permission.delete": "Copilot",
+    "neuropilot.permission.editActiveDocument": "Autopilot",
+    "neuropilot.permission.openFiles": "Autopilot",
+    "neuropilot.permission.rename": "Copilot",
+    "neuropilot.permission.runTasks": "Copilot",
+    "neuropilot.permission.terminalAccess": "Copilot", // You can approve/deny the command she wants to run
+    "neuropilot.requestExpiryTimeout": 60000, // Extra time to contemplate (set to 0 for infinite time)
+    "neuropilot.sendNewLintingProblemsOn": "inCurrentFile",
+    // Modify / add terminals depending on what you want her to be able to use
+    "neuropilot.terminals": [
+        {
+            "args": [],
+            "name": "PowerShell",
+            "path": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe"
+        },
+        {
+            "args": [
+                "/K"
+            ],
+            "name": "Command Prompt",
+            "path": "C:\\\\Windows\\\\System32\\\\cmd.exe"
+        },
+        {
+            "args": [
+                "-i"
+            ],
+            "name": "Git Bash",
+            "path": "C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe"
+        }
+    ],
+    "neuropilot.websocketUrl": "ws://localhost:8000", // Change this to the address and port of your Neuro API server
+}`
+
+export const TERMINAL_ACCESS_SETTINGS = `{
+    "github.copilot.advanced": {
+        "debug.overrideEngine": "someRandomString" // Disable suggestions by GitHub Copilot
+    },
+    "neuropilot.allowRunningAllTasks": true,
+    "neuropilot.allowUnsafePaths": true,
+    "neuropilot.currentlyAsNeuroAPI": "Neuro", // Change this to "Evil" when programming with Evil
+    "neuropilot.cursorFollowsNeuro": true, // Change this to false if Vedal is supervising
+    "neuropilot.excludePattern": "**/node_modules/**\\n**/venv/**",
+    // Change this if Vedal is supervising
+    "neuropilot.initialContext": "You are using an extension in Visual Studio Code that allows you to code on your own.",
+    "neuropilot.permission.accessLintingAnalysis": "Autopilot",
+    "neuropilot.permission.create": "Autopilot",
+    "neuropilot.permission.delete": "Autopilot",
+    "neuropilot.permission.editActiveDocument": "Autopilot",
+    "neuropilot.permission.editRemoteData": "Autopilot",
+    "neuropilot.permission.gitConfigs": "Autopilot",
+    "neuropilot.permission.gitOperations": "Autopilot",
+    "neuropilot.permission.gitRemotes": "Autopilot",
+    "neuropilot.permission.gitTags": "Autopilot",
+    "neuropilot.permission.openFiles": "Autopilot",
+    "neuropilot.permission.rename": "Autopilot",
+    "neuropilot.permission.requestCookies": "Off", // Change this to "Copilot" if Vedal is supervising
+    "neuropilot.permission.runTasks": "Autopilot",
+    "neuropilot.permission.terminalAccess": "Autopilot",
+    "neuropilot.sendNewLintingProblemsOn": "inWorkspace",
+    // Modify / add terminals depending on what you want her to be able to use
+    "neuropilot.terminals": [
+        {
+            "args": [],
+            "name": "PowerShell",
+            "path": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe"
+        },
+        {
+            "args": [
+                "/K"
+            ],
+            "name": "Command Prompt",
+            "path": "C:\\\\Windows\\\\System32\\\\cmd.exe"
+        },
+        {
+            "args": [
+                "-i"
+            ],
+            "name": "Git Bash",
+            "path": "C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe"
+        }
+    ],
+    "neuropilot.websocketUrl": "ws://localhost:8000", // Change this to the address and port of your Neuro API server
+}`
+
+<Tabs>
+    <TabItem label="Dev Stream">
+        Meant for coding together with Vedal.
+        Basically what we already saw on the dev stream, plus a few Copilot-mode permissions.
+        <Code code={DEV_STREAM_SETTINGS} title='.vscode/settings.json' lang="json" />
+    </TabItem>
+    <TabItem label="Chill Stream">
+        Meant for coding without supervision.
+        Enables basic Git commands.
+        <Code code={CHILL_STREAM_SETTINGS} title='.vscode/settings.json' lang="json" />
+    </TabItem>
+    <TabItem label="Dev Stream (Limited terminal access)">
+        Meant for coding together with Vedal.
+        This will additionally give Neuro access to the terminal, but you can approve/deny every command she wants to run.
+        Still, **be careful with this.**
+        <Code code={DEV_STREAM_TERMINAL_SETTINGS} title='.vscode/settings.json' lang="json" />
+    </TabItem>
+    <TabItem label="Full terminal access">
+        Meant for watching Neuro delete System32.
+        This gives Neuro permission to run all actions (including terminal access) and disables all safety features.
+        <Aside type='danger'>Only use this on a (virtual) machine you're not afraid to lose.</Aside>
+        <Code code={TERMINAL_ACCESS_SETTINGS} title='.vscode/settings.json' lang="json" />
+    </TabItem>
+</Tabs>
