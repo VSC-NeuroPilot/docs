@@ -16,10 +16,12 @@ export const attribs = {
 
 <CenterIcon Icon={NeuroFiles} credits="File actions icon by KTrain5369" attribs={attribs} />
 
-## Get/open workspace files
+## Get/open/read workspace files
 
 Neuro can get or open files within the workspace. This will either get the list of Neuro-safe files in the workspace, or open files as specified (assuming the path is Neuro-safe).
 If a file is already opened, its tab will be focused.
+
+Reading a file (using `read_file`) will not open the file in the editor or reveal Neuro's cursor position in that file (if there was one already).
 
 When opening a file, Neuro will be sent the current file as well as her cursor position.
 
