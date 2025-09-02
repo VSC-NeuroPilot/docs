@@ -86,7 +86,7 @@ export const DEV_STREAM_TERMINAL_SETTINGS = `{
     "neuropilot.permission.rename": "Copilot",
     "neuropilot.permission.runTasks": "Copilot",
     "neuropilot.permission.terminalAccess": "Copilot", // You can approve/deny the command she wants to run
-    "neuropilot.requestExpiryTimeout": 60000, // Extra time to contemplate (set to 0 for infinite time)
+    "neuropilot.requestExpiryTimeout": 60000, // Extra time to contemplate your choices (set to 0 for infinite time)
     "neuropilot.sendNewLintingProblemsOn": "inCurrentFile",
     // Modify / add terminals depending on what you want her to be able to use
     "neuropilot.terminals": [
@@ -165,23 +165,23 @@ export const TERMINAL_ACCESS_SETTINGS = `{
 }`
 
 <Tabs>
-    <TabItem label="Dev Stream">
+    <TabItem label="Basic Dev Stream">
         Meant for coding together with Vedal.
         Basically what we already saw on the dev stream, plus a few Copilot-mode permissions.
         <Code code={DEV_STREAM_SETTINGS} title='.vscode/settings.json' lang="json" />
     </TabItem>
-    <TabItem label="Chill Stream">
+    <TabItem label="Solo/Chill Stream">
         Meant for coding without supervision.
         Enables basic Git commands.
         <Code code={CHILL_STREAM_SETTINGS} title='.vscode/settings.json' lang="json" />
     </TabItem>
-    <TabItem label="Dev Stream (Limited terminal access)">
+    <TabItem label="Dev Stream w/ limited terminal access">
         Meant for coding together with Vedal.
         This will additionally give Neuro access to the terminal, but you can approve/deny every command she wants to run.
         Still, **be careful with this.**
         <Code code={DEV_STREAM_TERMINAL_SETTINGS} title='.vscode/settings.json' lang="json" />
     </TabItem>
-    <TabItem label="Full terminal access">
+    <TabItem label="System takeover themed stream">
         Meant for watching Neuro delete System32.
         This gives Neuro permission to run all actions (including terminal access) and disables all safety features.
         <Aside type='danger'>Only use this on a (virtual) machine you're not afraid to lose.</Aside>
