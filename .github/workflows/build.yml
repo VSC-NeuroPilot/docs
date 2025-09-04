@@ -109,7 +109,7 @@ jobs:
                 elif [ "${{ inputs.checked }}" = "false" ]; then
                   export PUBLIC_NEXT=true
                 fi
-                PUBLIC_VERSION=$(npm show ./ version) pnpm build
+                PUBLIC_CLIENT_VERSION=$(npm show ./ version) pnpm build
             
             - name: Upload GitHub Pages Artifact
               uses: actions/upload-pages-artifact@2d163be3ddce01512f3eea7ac5b7023b5d643ce1 # Pinning to SHA because that thing hasn't updated in a year it seems

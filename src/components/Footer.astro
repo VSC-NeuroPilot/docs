@@ -60,7 +60,7 @@ if (currentPath !== import.meta.env.BASE_URL + "/") {
     {
     currentTopic === "ui"
         ?
-    <a href={`https://github.com/VSC-NeuroPilot/neuropilot/tree/${clientVersion}`}>The tag's commit can be found here.</a> <Icon name="github" class="inline-icon" />
+    clientVersion ? <a href={`https://github.com/VSC-NeuroPilot/neuropilot/tree/${clientVersion}`}>The tag's commit can be found here.</a> <Icon name="github" class="inline-icon" /> : ""
         :
     currentTopic === "containers"
         ?
