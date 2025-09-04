@@ -12,7 +12,7 @@ importers:
         specifier: ~0.35.2
         version: 0.35.2(astro@5.13.5(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.8.3)(yaml@2.8.1))
       astro:
-        specifier: ~5.13.4
+        specifier: 5.13.5
         version: 5.13.5(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.8.3)(yaml@2.8.1)
       sharp:
         specifier: ~0.32.5
