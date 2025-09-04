@@ -3,7 +3,7 @@
 import Default from '@astrojs/starlight/components/Footer.astro';
 import { Icon } from '@astrojs/starlight/components';
 // Import version info
-import { clientVersion, docsNext } from '@/utils/version';
+import { clientVersion } from '@/utils/version';
 import { BASE_GITHUB_ORG } from '@consts/links';
 
 // Gets the current path
@@ -38,7 +38,6 @@ if (currentPath !== import.meta.env.BASE_URL + "/") {
 ---
 <footer>
     <hr class="border" />
-    {docsNext === true ? <p class="center">A commit has been pushed since the last confirmed update. Some info may be outdated.</p> : ""}
     <p class="center">
     {
     currentTopic === "meta" 
@@ -47,7 +46,7 @@ if (currentPath !== import.meta.env.BASE_URL + "/") {
         :
     currentTopic === "ui"
         ?
-    clientVersion ? `NeuroPilot docs are up-to-date for extension version ${clientVersion}` : "No client version was defined. Either this is a dev environment or something went wrong during build."
+    clientVersion ? `The latest version of the base extension (according to build) is ${clientVersion}` : "No base extension version was defined. Either this is a dev environment or something went wrong during build."
         :
     currentTopic === "containers"
         ?
