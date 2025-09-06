@@ -16,11 +16,6 @@ on:
                     - 'minor'
                     - 'patch'
                     - 'none'
-            check:
-                type: boolean
-                description: 'Docs have been checked.'
-                required: true
-                default: false
 
 jobs:
     bump:
@@ -50,9 +45,10 @@ jobs:
                 git config --global user.email "actions@github.com"
 
             - name: Bump version
+              if: inputs.version != 'none'
               run: |
                 pnpm version ${{ inputs.version }}
                 git push --follow-tags
             
             - name: Call workflow
-              run: gh workflow run build.yml -f checked=true
+              run: gh workflow run build.yml

@@ -15,12 +15,6 @@ on:
             - .github
             - '!.github/workflows/build.yml'
     workflow_dispatch:
-        inputs:
-            checked:
-                type: boolean
-                description: 'Docs have been checked.'
-                default: false
-                required: false
 
 permissions:
   contents: read
