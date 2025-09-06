@@ -1,11 +1,12 @@
 export const BASE_GITHUB_ORG: string = "https://github.com/VSC-NeuroPilot"
-type MarketplaceLinks = "page" | "direct"
+type MarketplaceLinks = "page" | "direct" | "vsx"
 export const MARKETPLACE_URL = (type: MarketplaceLinks) => {
     if (type === "page") {
-        return "https://marketplace.visualstudio.com/items?itemName=Pasu4.neuropilot"
+        return "https://marketplace.visualstudio.com/items?itemName=vsc-neuropilot.neuropilot-base"
     } else if (type === "direct") {
-        return "vscode:extension/Pasu4.neuropilot"
+        return "vscode:extension/vsc-neuropilot.neuropilot-base"
+    } else if (type === "vsx") {
+        return "https://open-vsx.org/extension/vsc-neuropilot/neuropilot-base"
     } else
         return "/"
 }
-export const SHOWCASE_IGNORES: string[] = ["actions-user", "dependabot[bot]", "Copilot"]

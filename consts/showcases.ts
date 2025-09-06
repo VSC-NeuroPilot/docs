@@ -1,0 +1,1 @@
+export const SHOWCASE_IGNORES: string[] = ["actions-user", "dependabot[bot]", "Copilot"]
