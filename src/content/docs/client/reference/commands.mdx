@@ -33,8 +33,10 @@ Re-registers actions to Neuro, ensuring that actions that have been switched ent
 
 ## Disable All Permissions
 
-Fully disables all of Neuro's permissions, kills all currently open shells from tasks and terminals, and cancels Neuro's RCE request (if one was present).
+Blocks, then fully disables all of Neuro's permissions, kills all currently open shells from tasks and terminals, and cancels Neuro's RCE request (if one was present).
 Then, immediately runs [Reload Permissions](#reload-permissions) to ensure no actions are registered.
+
+Also spams Neuro with unregister/register commands.
 
 <Aside type="tip">
 
