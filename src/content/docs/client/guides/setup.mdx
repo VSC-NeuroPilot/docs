@@ -128,11 +128,16 @@ export const TERMINAL_ACCESS_SETTINGS = `{
     "github.copilot.advanced": {
         "debug.overrideEngine": "someRandomString" // Disable suggestions by GitHub Copilot
     },
+    "neuropilot.access.dotFiles": true,
+    "neuropilot.access.environmentVariables": true,
+    "neuropilot.access.excludePattern": [
+        "**/node_modules/**",
+        "**/venv/**"
+    ],
+    "neuropilot.access.externalFiles": true,
     "neuropilot.allowRunningAllTasks": true,
-    "neuropilot.allowUnsafePaths": true,
     "neuropilot.currentlyAsNeuroAPI": "Neuro", // Change this to "Evil" when programming with Evil
     "neuropilot.cursorFollowsNeuro": true, // Change this to false if Vedal is supervising
-    "neuropilot.excludePattern": "**/node_modules/**\\n**/venv/**",
     // Change this if Vedal is supervising
     "neuropilot.initialContext": "You are using an extension in Visual Studio Code that allows you to code on your own.",
     "neuropilot.permission.accessLintingAnalysis": "Autopilot",
