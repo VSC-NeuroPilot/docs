@@ -2,7 +2,7 @@
   "name": "neuropilot-docs",
   "type": "module",
   "private": true,
-  "version": "2.1.1",
+  "version": "2.1.2",
   "readme": "README.md",
   "repository": "https://github.com/VSC-NeuroPilot/neuropilot/tree/master/docs",
   "homepage": "https://vsc-neuropilot.github.io/docs",
