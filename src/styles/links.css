@@ -1,0 +1,6 @@
+a[href^="vscode:"]::before {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  content: "⚙️";
+}

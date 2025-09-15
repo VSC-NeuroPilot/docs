@@ -113,7 +113,8 @@ export default defineConfig({
             favicon: '/heart-pink.svg',
             customCss: [
                 './src/styles/icons.css',
-                './src/styles/starlight.css'
+                './src/styles/starlight.css',
+                './src/styles/links.css',
             ],
             head: [
                 {
