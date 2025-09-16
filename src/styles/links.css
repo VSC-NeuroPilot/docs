@@ -1,4 +1,4 @@
-a[href^="vscode:"]::before {
+a[href^="vscode://settings"]:not(.no-icon)::before {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
