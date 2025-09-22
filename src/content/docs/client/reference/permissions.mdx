@@ -108,6 +108,6 @@ The associated permission is found [here](vscode://settings/neuropilot.permissio
 These permissions don't directly influence action registration (mostly), but still give Neuro more access in some way.
 These permissions are also disabled by default (where applicable).
 
-- [Allow Unsafe Paths](vscode://settings/neuropilot.allowUnsafePaths) - Whether or not to ignore the built-in path filter.
-- [Include](vscode://settings/neuropilot.includePattern)/[Exclude](vscode://settings/neuropilot.excludePattern) Patterns - Allows custom definition of safe/unsafe paths. These will still be used to check path validation access even if Allow Unsafe Paths is enabled.
 - [Allow Running All Tasks](vscode://settings/neuropilot.allowRunningAllTasks) - Registers all tasks as actions, regardless of the task's prefix in its `detail` property.
+- [Include](vscode://settings/neuropilot.access.includePattern)/[Exclude](vscode://settings/neuropilot.access.excludePattern) Patterns - Allows custom definition of safe/unsafe paths. These will still be used to check path validation access even if any of the below are enabled.
+- [Dot files](vscode://settings/neuropilot.access.dotFiles), [External files](vscode://settings/neuropilot.access.externalFiles) and [Environmental variables](vscode://settings/neuropilot.access,environmentVariables) - Used to be under a shared `Allow Unsafe Paths` settings. Allows access to dot files, external files and environmental variables respectively.

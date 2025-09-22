@@ -9,35 +9,9 @@ The following are **non-permission-related** settings in NeuroPilot.
 
 To find the list of permission-related settings, visit [this section on Reference/Permissions](/docs/client/reference/permissions#non-action-permissions).
 
-## WebSocket URL :badge[Reconnect]{variant=tip}
+## General settings
 
-**Default: `ws://localhost:8000`**
-
-The address NeuroPilot will try to connect to for the Neuro Game API.
-You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
-
-## Game Name :badge[Reconnect]{variant=tip}
-
-**Default: `Visual Studio Code`**
-
-The game name that will be sent to Neuro in every packet (in the `game` parameter).
-You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
-
-<Aside>
-
-You really shouldn't change this unless you're working with a VS Code fork, since according to the Neuro Game API spec, 'the game name should match the display name'.
-Since NeuroPilot extends VS Code, the display name of the "game" is "Visual Studio Code".
-
-</Aside>
-
-## Initial Context :badge[Reconnect]{variant=tip}
-
-**Default: `You are currently using an extension that allows you to code together with Vedal.`**
-
-Sets the context that is sent to Neuro upon connection.
-You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
-
-## Currently As Neuro API
+### Currently As Neuro API
 
 **Default: `Neuro`**
 
@@ -54,7 +28,7 @@ If you type the wrong name's @, the prompt will be sent to GitHub Copilot, even 
 
 </Aside>
 
-## Docs URL :badge[Contributor]{variant=caution}
+### Docs URL :badge[Contributor]{variant=caution}
 
 **Default: `https://vsc-neuropilot.github.io/neuropilot` (this site)**
 
@@ -67,19 +41,26 @@ Changing this setting to an untrusted website could potentially be dangerous.
 
 </Aside>
 
-## Before/After Context :badge[Multiple settings]{variant=success}
+### Default Open Docs Window
+
+**Default: `Ask where to open`**
+**Options: `["Ask where to open", "Always open in browser", "Always open in a WebView"]`**
+
+Choose how the extension opens documentation links.
+
+### Before/After Context :badge[Multiple settings]{variant=success}
 
 **Default: `500`/`500`**
 
 The amount of lines before/after the **real** cursor to send to Neuro with inline completions, or the **virtual** cursor if Neuro is editing a file.
 
-## Max Completions
+### Max Completions
 
 **Default: 3**
 
 The maximum amount of completions to request from Neuro every trigger.
 
-## Completion Trigger
+### Completion Trigger
 
 **Default: `invokeOnly`**
 
@@ -96,18 +77,11 @@ This is due to NeuroPilot performing many action registers, action forces, actio
 
 </Aside>
 
-## Timeout
+### Timeout
 
 **Default: `10000`**
 
 The time (in milliseconds) to wait for chats and completions, before considering them cancelled.
-
-## Include/Exclude Patterns :badge[Multiple settings]{variant=success}
-
-**Default: `**/*`/`**/node_modules/**\n**/venv/**`**
-
-Glob patterns that define what Neuro is/isn't allowed to open.
-Separate each item with a newline character ('\n').
 
 <Aside>
 
@@ -115,7 +89,7 @@ Files and folders starting with a dot will still be ignored regardless of Includ
 
 </Aside>
 
-## Terminals :badge[JSON-only] :badge[Permission-dependent]{variant=danger}
+### Terminals :badge[JSON-only] :badge[Permission-dependent]{variant=danger}
 
 **Default: See object array below.**
 
@@ -147,7 +121,7 @@ Files and folders starting with a dot will still be ignored regardless of Includ
 
 An array of objects that specify the shell's name, path to the shell, and args (if any) to pass in when starting them up.
 
-## Show Time On Terminal Start :badge[Permission-dependent]{variant=danger}
+### Show Time On Terminal Start :badge[Permission-dependent]{variant=danger}
 
 **Default: `false`**
 
@@ -155,13 +129,13 @@ An array of objects that specify the shell's name, path to the shell, and args (
 
 Displays the current time (according to system clock) when starting a new terminal session.
 
-## Terminal Context Delay :badge[Permission-dependent]{variant=danger}
+### Terminal Context Delay :badge[Permission-dependent]{variant=danger}
 
 **Default: `400`**
 
 The time to wait (in ms) before sending terminal outputs to Neuro.
 
-## Send New Linting Problems On
+### Send New Linting Problems On
 
 **Default: `off`**
 
@@ -171,7 +145,7 @@ The time to wait (in ms) before sending terminal outputs to Neuro.
 
 Defines when Neuro gets automatic context updates. This will send context independent of the [`Access Linting Analysis`](/docs/client/reference/permissions#linting-analysis) permission.
 
-## Send Save Notifications
+### Send Save Notifications
 
 **Default: `true`**
 
@@ -180,13 +154,13 @@ Defines when Neuro gets automatic context updates. This will send context indepe
 If enabled, Neuro gets notified if a file is saved.
 This setting does nothing if the `Files > Auto Save` setting is set to `Off`, and does not affect whether or not Neuro gets notified if she saved manually.
 
-## Request Expiry Timeout
+### Request Expiry Timeout
 
 **Default: `0`**
 
 Gives how long to wait (in ms) before timing out Neuro's requests.
 
-## Hide Copilot Requests
+### Hide Copilot Requests
 
 **Default: `false`**
 
@@ -202,7 +176,7 @@ This means that you may timeout the notification while it's still sitting in the
 
 </Aside>
 
-## Cursor Follows Neuro
+### Cursor Follows Neuro
 
 **Default: `false`**
 
@@ -212,3 +186,77 @@ This means that you may timeout the notification while it's still sitting in the
 
 Whether or not Neuro moving her cursor will move the real cursor at the same time.
 Can be useful for Neuro solo coding.
+
+## Access settings
+
+Unless otherwise stated, the default setting will be set to `false`
+
+### Include/Exclude Patterns :badge[Multiple settings]{variant=success}
+
+**Default: `["**/*"]`/`["**/node_modules/**", "**/venv/**", "CNAME"]`**
+
+Glob patterns that define what Neuro is/isn't allowed to open.
+
+### Dot Files
+
+Allows Neuro to access files and folders beginning with a dot (.), like `.env`
+
+### External Files
+
+Allows Neuro to access files and folders outside the current workspace.
+
+### Environmental Variables
+
+Allows Neuro to use environment variables in paths.
+Due to Windows:tm: this probably won't work, this security setting is just in case it somehow does.
+
+## Connection settings :badge[Reconnect for effect]{variant=tip}
+
+### WebSocket URL 
+
+**Default: `ws://localhost:8000`**
+
+The address NeuroPilot will try to connect to for the Neuro Game API.
+You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
+
+### Game Name
+
+**Default: `Visual Studio Code`**
+
+The game name that will be sent to Neuro in every packet (in the `game` parameter).
+You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
+
+<Aside>
+
+You really shouldn't change this unless you're working with a VS Code fork, since according to the Neuro Game API spec, 'the game name should match the display name'.
+Since NeuroPilot extends VS Code, the display name of the "game" is "Visual Studio Code".
+
+</Aside>
+
+### Initial Context
+
+**Default: `You are currently using an extension that allows you to code together with Vedal.`**
+
+Sets the context that is sent to Neuro upon connection.
+You'll need to try to [reconnect](/docs/client/reference/commands) after changing this.
+
+If something goes wrong for whatever reason while trying to retrieve the initial context to send, it will be set to `Something went wrong, blame Pasu4 and/or KTrain5369 and tell Vedal to file a bug report.`
+
+### Auto Connect
+
+**Default: `true`**
+
+Whether or not the extension should connect to the Neuro API on startup.
+
+### Retry Interval
+
+**Default: `0`**
+
+The delay between connection retries (in ms) upon disconnection from the API.
+
+### Retry amount
+
+**Default: `0`**
+
+How many times the extension should retry connection to the Neuro API.
+The total amount of tries will be (this setting's value) + 1.
