@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightHeadingBadgesPlugin from 'starlight-heading-badges';
 import starlightSidebarTopicsPlugin from 'starlight-sidebar-topics';
-import starlightAutoSidebar from 'starlight-auto-sidebar';
+//import starlightAutoSidebar from 'starlight-auto-sidebar';
 
 import { BASE_GITHUB_ORG, MARKETPLACE_URL } from './consts/links'; // typescript aliasing doesn't work here for some reason (it does in the mdx pages tho)
 
@@ -15,7 +15,7 @@ export default defineConfig({
     base: '/docs',
     integrations: [
         starlight({
-            plugins: [starlightHeadingBadgesPlugin(), starlightAutoSidebar(), starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
+            plugins: [starlightHeadingBadgesPlugin(), /*starlightAutoSidebar(),*/ starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
                 {
                     label: 'Base Extension',
                     link: '/client/',

@@ -20,7 +20,6 @@
     "@astrojs/starlight": "~0.36.0",
     "astro": "5.14.1",
     "sharp": "~0.34.4",
-    "starlight-auto-sidebar": "~0.1.2",
     "starlight-contributor-list": "~0.3.0",
     "starlight-heading-badges": "~0.6.0",
     "starlight-showcases": "~0.3.0",
