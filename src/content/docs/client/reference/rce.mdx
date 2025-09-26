@@ -94,3 +94,25 @@ If you don't know what those are, just think of them as the data that gets retur
 They essentially tell your variable/function "hey, we're gonna go do some stuff in a separate thread, we promise we'll give you some data back after we're done!", which gives you the option to either continue on the main thread, or await them (in an async function or top-level call).
 
 </Aside>
+
+## Extra stuff
+
+There's also some extra layers to the RCE system for each RCE action, namely:
+
+### Prompt generator
+
+This can either be a pre-filled string or function that takes the action data as input and spits a string back out.
+It's used for generating the Copilot mode request to allow Neuro to request actions be ran.
+
+This is the only "extra" item that has actually been added at the same time as the system itself was merged into the repository.
+
+### Cancellation events
+
+Cancellation events can be attached to an action object to give it a trigger for when the event will be cancelled.
+These use VS Code's `EventEmitter` class and `Event` function type to set up events dynamically.
+
+To avoid wasting resources, cancellation events will be automatically disposed when the event fires or the request is accepted, as well as when the extension is deactivated.
+
+All of these is handled through a class that contains all the components necessary to pull this off.
+
+You can choose whether or not to enable this feature through the [Enable Cancel Events](/docs/reference/settings#enable-cancel-events).
