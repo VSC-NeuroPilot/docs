@@ -121,14 +121,6 @@ Files and folders starting with a dot will still be ignored regardless of Includ
 
 An array of objects that specify the shell's name, path to the shell, and args (if any) to pass in when starting them up.
 
-### Disabled Actions
-
-**Default: []**
-
-**Options: insert list of actions here**
-
-A list of actions that will be disabled, even if the relevant permission group is enabled.
-
 ### Show Time On Terminal Start :badge[Permission-dependent]{variant=danger}
 
 **Default: `false`**
@@ -168,22 +160,6 @@ This setting does nothing if the `Files > Auto Save` setting is set to `Off`, an
 
 Gives how long to wait (in ms) before timing out Neuro's requests.
 
-### Hide Copilot Requests
-
-**Default: `false`**
-
-**Options: `true`, `false`**
-
-If ticked, Neuro's Copilot requests will go into a "system tray" icon at the bottom bar of VS Code.
-Click the icon to reveal Neuro's request.
-
-<Aside>
-
-The timer starts from when Neuro sends the request, **not** when you click on the icon.
-This means that you may timeout the notification while it's still sitting in the icon.
-
-</Aside>
-
 ### Cursor Follows Neuro
 
 **Default: `false`**
@@ -194,14 +170,6 @@ This means that you may timeout the notification while it's still sitting in the
 
 Whether or not Neuro moving her cursor will move the real cursor at the same time.
 Can be useful for Neuro solo coding.
-
-### Enable Cancel Events
-
-**Default: `true`**
-
-**Options: `true`, `false`**
-
-Whether or not [cancellation events](/docs/client/reference/rce#cancellation-events) should be enabled.
 
 ## Access settings
 
@@ -276,3 +244,45 @@ The delay between connection retries (in ms) upon disconnection from the API.
 
 How many times the extension should retry connection to the Neuro API.
 The total amount of tries will be (this setting's value) + 1.
+
+## Actions settings
+
+### Hide Copilot Requests
+
+**Default: `false`**
+
+**Options: `true`, `false`**
+
+If ticked, Neuro's Copilot requests will go into a "system tray" icon at the bottom bar of VS Code.
+Click the icon to reveal Neuro's request.
+
+<Aside>
+
+The timer starts from when Neuro sends the request, **not** when you click on the icon.
+This means that you may timeout the notification while it's still sitting in the icon.
+
+</Aside>
+
+### Allow Running All Tasks
+
+**Default: `false`**
+
+**Options: `true`, `false`**
+
+Allows Neuro to run all registered tasks, regardless of task property.
+
+### Enable Enable Cancel Events
+
+**Default: `true`**
+
+**Options: `true`, `false`**
+
+Whether or not [cancellation events](/docs/client/reference/rce#cancellation-events) should be enabled.
+
+### Disabled Actions
+
+**Default: []**
+
+**Options: insert list of actions here**
+
+A list of actions that will be disabled, even if the relevant permission group is enabled.

@@ -37,7 +37,7 @@ Gets the contents of the entire file. The context sent will be more or less the 
 This gives Neuro the ability to insert, replace, delete or find text within the active document.
 
 Inserting will insert at Neuro's cursor.
-For all other options, Neuro can choose to use either glob patterns or regex to search for the targeted text.
+For all other options, Neuro can choose to use either exact pattern searches or regex to search for the targeted text.
 
 ## Insert Lines
 
@@ -51,6 +51,12 @@ Rewrites the specified range of lines with the given content and places the curs
 ## Delete Lines
 
 Deletes the specified range of lines and moves the cursor to the end of the previous line.
+
+## Highlight Lines
+
+Allows Neuro to highlight a set of lines.
+These lines will be displayed as pink highlights across the lines targeted.
+This is purely for attention-grabbing. {/* TODO: for now... */}
 
 ## Rewrite All
 
@@ -73,7 +79,7 @@ This action is only registered if the `autoSave` setting is set to any value oth
 
 ### Passive saving notifications
 
-In addition to being informed if she saved successfully, enabling [Send Save Notifications](/docs/client/reference/settings#send-save-notifications) will allow Neuro to receive save notifications as the active document is saved. 
+In addition to being informed if she saved successfully, enabling [Send Save Notifications](/docs/client/reference/settings#send-save-notifications) will allow Neuro to receive save notifications as the active document is saved.
 
 <Aside type="tip">
 
@@ -81,5 +87,59 @@ If you have enabled [Send Save Notifications](/docs/client/reference/settings#se
 This is to prevent double-up on sending Neuro save context.
 
 It will automatically be re-enabled once saving is finished.
+
+</Aside>
+
+## Get User Cursor
+
+Gets the cursor of the current user.
+
+## Replace User Selection
+
+Replaces the current user selection.
+If `requireSelectionUnchanged` is set to `true` and the selection was changed (or there is no selection info already stored), this requires that Neuro get the current user cursor's context in some way first.
+This can be either with her Get User Cursor action or by sending it via the [Send Current Selection as Context](/docs/client/reference/commands/) command.
+
+## Diff Patch
+
+Allows Neuro to write diff patches to modify the file.
+Intended as a more direct way of modifying the file.
+
+Patches are written in a pseudo-search-replace-diff format.
+`>>>>>> SEARCH` and `<<<<<< REPLACE` are used to denote the text to search and text to replace.
+These are separated by `======` in the middle.
+
+See the following example:
+
+```py
+def turtle():
+    return "Vedal"
+```
+
+To apply a diff like this:
+
+```diff
+def turtle():
+-    return "Vedal"
++    return "insert_turtle_here"
+```
+
+Neuro would need to write this patch:
+
+```txt
+>>>>>> SEARCH
+def turtle():
+    return "Vedal"
+======
+def turtle():
+    return "insert_turtle_here"
+<<<<<< REPLACE
+```
+
+<Aside title="Support for other diff formats">
+
+Support for more diff formats will be added later.
+
+We are currently targeting to add Git diffs next, followed by XML diffs.
 
 </Aside>
