@@ -104,6 +104,27 @@ export default defineConfig({
                     ],
                 },
                 {
+                    label: 'Reading',
+                    link: '/reading/',
+                    icon: 'open-book',
+                    items: [
+                        {
+                            label: 'Q&As',
+                            autogenerate: {
+                                directory: 'reading/qna',
+                                collapsed: true
+                            }
+                        },
+                        {
+                            label: 'Usage sheets',
+                            autogenerate: {
+                                directory: 'reading/sheets',
+                                collapsed: true
+                            }
+                        }
+                    ]
+                },
+                {
                     label: 'Unit tests',
                     icon: 'approve-check-circle',
                     badge: { text: 'External', variant: 'note' },

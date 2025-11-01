@@ -1,0 +1,132 @@
+---
+title: Q&A (or a FAQ, if you will)
+description: Q&A site listing answers to some questions that have been found.
+---
+
+export const team = [
+    {
+        name: 'Pasu4',
+        href: 'https://github.com/Pasu4',
+    },
+    {
+        name: 'KTrain5369',
+        href: 'https://ktrain5369.dev',
+    },
+    {
+        name: 'frogneko',
+        href: 'https://github.com/Frogneko',
+    }
+]
+
+import { Aside } from '@astrojs/starlight/components'
+import { ShowcaseProfile } from 'starlight-showcases'
+
+## Questions about the extension
+
+### What is NeuroPilot?
+
+NeuroPilot is an extension for VS Code that allows Neuro-sama (and her sister, Evil Neuro) to control VS Code, as much as possible.
+The name comes from a portmanteau of "Neuro" and "Copilot".
+
+### What can Neuro do with the extension?
+
+A lot of things. She can do the basic stuff (like editing and doing actions related to files), but can also use version control via Git, and can even run stuff in the terminal/tasks.
+The list of things she can do will keep on growing as the extension is developed.
+
+### Who maintains the extension?
+
+<ShowcaseProfile entries={team} />
+
+None of us are contracted by, paid by or otherwise have any relations to Vedal (other than the occasional feedback that may be given in our project thread).
+
+Additionally, we have had contributions to the extension from other people in the past:
+
+<Aside type="note">
+
+These people aren't officially associated with NeuroPilot.
+
+</Aside>
+
+- [mlntcandy](https://github.com/mlntcandy) helped create the RCE system that runs action executions, validations, etc...
+- [Xaendril](link needed) drew the newer heart logo that was seen on the Swarm Community Spotlight that featured us.
+
+### How safe is the extension?
+
+We've tried our best to make the extension as safe as possible. You can read our [safety page](/docs/client/reference/safety/) on the different ways this extension is safe.
+
+However, there are some caveats that we ultimately can't fix, namely, sanitizing inputs/outputs to/from the terminal (not like you already have a big risk by enabling terminal).
+
+### Can I use the extension in place of Copilot/Roo Code/Continue/*insert AI extension here*?
+
+**We do not recommend using NeuroPilot in place of proper, commercial-grade AI extensions.** This is because NeuroPilot is designed pretty much specifically for Neuro to use, and it wouldn't really make sense to use it with another AI due to how the tools work.
+As a matter of fact, Copilot Chat is still required for using the chat feature.
+
+In the case you do want to use NeuroPilot in the place of these extensions, you can use Jippity to connect to an OpenAI-compatible API + NeuroPilot. The defaults for both should just work together.
+
+Also, please heed this warning:
+
+<Aside type="danger" title="Disclaimer">
+
+Depending on the permissions you activate, what level they are set, and which tools / AIs you use, this extension can be quite destructive to your system.
+No contributors, collaborators or maintainers on any part of this project take responsibility for any harm done to your system as a result of this extension.
+Use Copilot mode for dangerous permissions or use the extension on a virtual machine/container image.
+
+</Aside>
+
+## Stream usage questions
+
+### Why did Evil suck so much on her first time but Neuro was somewhat good at it on her first time?
+
+Evil got the shorter end of the stick by having to test the extension first. Neuro got an improved version on the dev stream 3 weeks later.
+We also weren't told ahead of time that the extension was going to be used on Evil's stream.
+
+### Will the extension be used on [insert dev stream here]?
+
+We know as much as you do.
+
+### Will there be improvements after a stream?
+
+Of course! Generally if there are improvements after a stream we can make, we will create a public GitHub Project where anyone can track what we are aiming to improve on afterwards.
+
+### Why do Neuro and Evil get to do some things automatically but have to wait for Vedal's approval for others?
+
+Actions that let Neuro and Evil execute automatcally are actions whose permissions are set to `Autopilot`.
+Those that require Neuro and Evil to wait are actions whose permissions are set to `Copilot`.
+
+For a slightly longer and more nuanced breakdown of what happens when Neuro executes most actions, read [this page](/docs/client/reference/rce/).
+
+### When will Neuro and Evil be able to do [function]?
+
+Check our open issues for planned changes.
+If your idea isn't on there, ask us on the Neurocord thread and we'll try to give you a concrete answer.
+
+### Why does the extension look kind of boring on stream?
+
+Code in itself is a boring concept to most people; the fact that we are getting entertainment AIs to code for us doesn't really change it.
+
+Additionally, the more content-minded features can be disabled, and in general this extension is extremely customizable.
+So don't expect Vedal to let them run `sudo rm -rf / --no-preserve-root` any time soon.
+
+### What does the heart on the side of the text editor mean?
+
+This is just another way of tracking Neuro's cursor.
+If Neuro's cursor goes off-screen, you can use it to track what line her cursor is at.
+
+### Even if Neuro had permission to execute an action, why didn't the extension let Neuro and Evil execute an action?
+
+The thing is, while they had the permissions, the *surrounding conditions* weren't right.
+We have a validator system that comprises of both schema validation and custom validation that validates Neuro's inputs as well as the current state of certain conditions, and only lets her attempt through if her inputs are valid and the current conditions allow her to do so.
+
+You'll usually hear about the custom validator more, since, to Neuro, they return a successful action result (she will also usually loudly complain about the validation failure).
+This is inferred from the specs of an action result, specifically the note about the `success` parameter during an action force.
+
+### Why does Neuro's request sometimes suddenly disappear?
+
+This is an artifact of cancellation events. These are events set up on the fly to make it convenient for Neuro by automatically cancelling her request when certain conditions are modified that may change how Neuro's action would be executed.
+An example would be if Neuro's cursor was moved while she was awaiting an action to be accepted.
+
+See [this section](/docs/client/reference/rce#cancellation-events) for more information.
+
+### How come after using certain actions, Neuro says "Someone tell Vedal there is a problem with my AI"?
+
+Some actions, such as the action to get workspace files, returned a large amount of context at once. This likely overloads Neuro, causing her to stop processing and throw that message.
