@@ -14,9 +14,12 @@ import { Aside } from '@astrojs/starlight/components'
 
 ### Actions
 
-- Modifying actions is a thing that should be done rarely.
+- Modifying/creating actions is a thing that should be done rarely.
 - Unlike most other projects, you **need** to commit the `dist/` folder so the runner can access the code (they won't get built by the runner).
-- Try not to create too many
+    - If you're making a composite action, you shouldn't have a `dist/` folder to commit.
+    - You can also create a Docker-based action that will get built when runners load the action, but that can be a bit more annoying to work with. 
+- Try not to create too many, in general it should only be used if the specific repository needs a more complex action.
+    - If multiple repositories need the action, place it inside a subfolder in the `VSC-NeuroPilot/actions` repository.
 
 ## Linting (ESLint)
 
