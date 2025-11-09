@@ -3,10 +3,27 @@ title: MCP server compatibility information
 description: Compatibility info with MCP servers
 ---
 
-Currently, Neuro has **no** MCP server access. This means that she will be unable to use any MCP servers connected.
+This page details compatibility information with MCP servers.
+You can also track progress at [this issue](https://github.com/VSC-NeuroPilot/neuropilot-base/issue/79) and any PRs mentioning it.
 
-Plans to integrate MCP server functionality is being tracked at [issue #79](https://github.com/VSC-NeuroPilot/neuropilot/issue/79).
+To learn more about Model Context Protocol, visit [the Model Context Protocol website](https://modelcontextprotocol.io/).
 
-We are also exploring potentially allowing GitHub Copilot itself to control VS Code via this extension, instead of just via Agent mode.
-This is likely going to be implemented using the MCP protocol and is being tracked at [issue #80](https://github.com/VSC-NeuroPilot).
-Note that this is *not* a guarantee and is considered to be on the side comparatively, and may end up being in a separate extension.
+## Externally
+
+We are in the process of introducing experimental support for external MCP servers. As of last updated, these have the following limitations:
+
+- Only the desktop build is guaranteed to work. The web build may be bugged due to Cross-Origin Resource Sharing (CORS) policies preventing such use.
+- Neuro can only access one MCP server at a time.
+- The extension supports only Streamable HTTP servers. Legacy SSE and stdio-based server support are planned.
+- The extension will *not* automatically strip out unsupported schema items for each tool.
+
+This feature uses the [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk).
+
+## Tools activated in VS Code
+
+Currently, Neuro cannot access tools registered by MCP servers or other extensions in VS Code.
+Support for this is planned once external MCP server support is out of experimental phase.
+
+## Outside VS Code
+
+If you would like to use MCP outside of VS Code, please use [NeuroMCP](https://github.com/ECHO-HELLO-WORLD424/NeuroMCP).
