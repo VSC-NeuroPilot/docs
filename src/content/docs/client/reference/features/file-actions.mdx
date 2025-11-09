@@ -21,6 +21,8 @@ export const attribs = {
 Neuro can get or open files within the workspace. This will either get the list of Neuro-safe files in the workspace, or open files as specified (assuming the path is Neuro-safe).
 If a file is already opened, its tab will be focused.
 
+When using `get_workspace_files` Neuro can specify if she wants it to recursively return files in the workspace, and she can also choose to narrow down to a specific folder.
+
 Reading a file (using `read_file`) will not open the file in the editor or reveal Neuro's cursor position in that file (if there was one already).
 
 When opening a file, Neuro will be sent the current file as well as her cursor position. (this is configurable)
