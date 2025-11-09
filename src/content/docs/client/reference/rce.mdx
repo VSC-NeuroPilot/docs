@@ -56,7 +56,7 @@ The way that NeuroPilot's action permission system works has already been covere
 - Git Remotes is set to 'Copilot'
 - Edit Remote Data is set to 'Off'
 
-In this case, if Neuro tries to add files and make a commit, her permission level will be Autopilot. If Neuro wants to then push it online, her permission level will be Copilot. And finally, if she wants to change where to push it to, well she can't, so she has to ask for help.
+In this case, if Neuro tries to add files and make a commit, her permission level will be Autopilot. If Neuro wants to then push it online, her minimal permission level will be Copilot. And finally, if she wants to change where to push it to, well she can't, so she has to ask for help.
 
 If any of the required permissions are set to 'Off', processing will stop at this stage and Neuro will be told that she doesn't have permission.
 
@@ -65,6 +65,8 @@ If any of the required permissions are set to 'Off', processing will stop at thi
 In a perfect world, Neuro won't have access to the actions that she doesn't have permission to use, but this check is here to ensure that if permissions haven't been reloaded, Neuro can't run the disallowed actions anyways.
 
 </Aside>
+
+Additionally, actions can also have a `defaultPermission` property which overrides the `permissions` array. This is helpful for actions like `chat`, `complete_code` or `cancel_request`, which often want to run in Autopilot mode irrespective of any actual permission.
 
 ### Schema validation
 
@@ -102,7 +104,7 @@ There's also some extra layers to the RCE system for each RCE action, namely:
 ### Prompt generator
 
 This can either be a pre-filled string or function that takes the action data as input and spits a string back out.
-It's used for generating the Copilot mode request to allow Neuro to request actions be ran.
+It's used for generating the Copilot mode request prompt to allow Neuro to request actions be ran.
 
 This is the only "extra" item that has actually been added at the same time as the system itself was merged into the repository.
 
