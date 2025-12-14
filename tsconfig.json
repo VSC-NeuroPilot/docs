@@ -20,6 +20,9 @@
       ],
       "@consts/*": [
         "./consts/*"
+      ],
+      "@templates/*": [
+        "./src/templates/*"
       ]
     }
   }

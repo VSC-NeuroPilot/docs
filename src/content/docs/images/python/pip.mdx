@@ -2,11 +2,9 @@
 title: Python (standard) image
 description: A Python container with pre-configured settings for NeuroPilot.
 ---
-import { Tabs, TabItem, Code, FileTree, Steps, LinkButton, Aside } from '@astrojs/starlight/components'
-import { BASE_GITHUB_ORG } from '@consts/links'
-import { SHOWCASE_IGNORES } from '@consts/showcases'
-import { ShowcaseProfile } from 'starlight-showcases'
-import { ContributorList } from 'starlight-contributor-list'
+import { FileTree } from '@astrojs/starlight/components'
+import Containers from '@templates/Containers.astro'
+
 export const DOCKERFILE = `
 FROM ghcr.io/vsc-neuropilot/python-pip-image:latest
 # Or use a specific version, refer to container templates topic homepage for link formats
@@ -34,96 +32,46 @@ export const DOCKERPULL = `
 docker pull ghcr.io/vsc-neuropilot/python-pip-image:latest
 docker run --rm -it -v $(pwd):/workspace ghcr.io/vsc-neuropilot/python-pip-image:latest /bin/bash
 `
-export const profiles = [
-    {
-        name: 'GitHub Packages listing',
-        picture: import("@assets/icons/docker-mark-blue.svg"),
-        href: BASE_GITHUB_ORG + "python-pip-image/pkgs/container/python-pip-image",
-        description: "Public listing on VSC-NeuroPilot's GitHub Packages."
-    },
-    {
-        name: 'Source code repository',
-        picture: import("@assets/icons/github-mark.svg"),
-        href: BASE_GITHUB_ORG + '/python-pip-image',
-        description: "The source repository where the container is built and pushed to ghcr.io."
-    }
-]
 
-A pre-configured Python container for use with NeuroPilot.
+<Containers 
+    repoName="python-pip-image"
+    containerName="Python container"
+    description="A pre-configured Python container for use with NeuroPilot."
+    dockerfileCode={DOCKERFILE}
+    devcontainerCode={DEVCONTAINERJSON}
+    dockerPullCode={DOCKERPULL}
+>
+    <Fragment slot="fileTree">
+        - .devcontainer
+            - devcontainer.json
+            - Dockerfile
+        - .github
+            - workflows
+                - push.yml
+                - tag.yml
+            - README.md
+        - .vscode
+            - extensions.json
+            - launch.json
+            - settings.json
+            - tasks.json
+        - src
+            - \_\_main\_\_.py
+        - .dockerignore
+        - .gitignore
+        - requirements.txt
+        - README.md
+    </Fragment>
+    <Fragment slot="includedSoftware">
+        ### Dockerfile + package manifests
 
-<ShowcaseProfile entries={profiles} />
+        - Python 3.13.6 + pip (base image)
+        - Python Neuro SDK (package manifest)
 
-## Contributors
+        ### VS Code extensions
 
-<ContributorList githubRepo="VSC-NeuroPilot/python-pip-image" ignore={SHOWCASE_IGNORES} />
-
-## Use the image
-
-<Tabs syncKey="containerImageObtainMethod">
-    <TabItem label="Docker"><Code name="Dockerfile" lang="docker" code={DOCKERFILE} /></TabItem>
-    <TabItem label=".devcontainer/devcontainer.json"><Code name=".devcontainer/devcontainer.json" lang="json" code={DEVCONTAINERJSON} /></TabItem>
-    <TabItem label="Docker pull"><Code name="docker pull" lang="sh" code={DOCKERPULL} /></TabItem>
-    <TabItem label="GitHub Codespaces">
-        <Steps>
-            1. Make a new repository using the `Use this template` button. Alternatively, use the button below.
-
-                <LinkButton href="https://github.com/new?template_name=python-pip-image&template_owner=VSC-NeuroPilot">Create repo from template</LinkButton>
-
-            2. Press `.` to open the GitHub Containers web app.
-            3. Start coding!
-        </Steps>
-    </TabItem>
-    <TabItem label="Local dev containers">
-        This requires Docker Desktop to be installed.
-        <Steps>
-            1. Install the Dev Containers VS Code extension.
-            
-               <LinkButton href="https://marketplace.visualstudio.com/item?itemName=ms-vscode-remote.remote-containers">Dev Containers listing on VS Marketplace</LinkButton>
-            
-            2. Open the folder. If it's already open, reload the window.
-            3. Click on the prompt to reload in a dev container.
-            4. The container should be set up automatically.
-        </Steps>
-    </TabItem>
-</Tabs>
-
-## File tree
-
-Relative to `/workspace`:
-
-<FileTree>
-
-- .devcontainer
-    - devcontainer.json
-    - Dockerfile
-- .github
-    - workflows
-        - push.yml
-        - tag.yml
-    - README.md
-- .vscode
-    - extensions.json
-    - launch.json
-    - settings.json
-    - tasks.json
-- src
-    - \_\_main\_\_.py
-- .dockerignore
-- .gitignore
-- requirements.txt
-- README.md
-
-</FileTree>
-
-## Included software
-
-### Dockerfile + package manifests
-
-- Python 3.13.6 + pip (base image)
-- Python Neuro SDK (package manifest)
-
-### VS Code extensions
-
-- `vsc-neuropilot.neuropilot-base`
-- `ms-python.debugpy`
-- `ms-python.python`
+        - `vsc-neuropilot.neuropilot-base`
+        - `ms-python.debugpy`
+        - `ms-python.python`
+    </Fragment>
+</Containers>
