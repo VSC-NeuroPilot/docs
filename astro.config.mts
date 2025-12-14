@@ -5,7 +5,7 @@ import starlightHeadingBadgesPlugin from 'starlight-heading-badges';
 import starlightSidebarTopicsPlugin from 'starlight-sidebar-topics';
 //import starlightAutoSidebar from 'starlight-auto-sidebar';
 
-import { BASE_GITHUB_ORG, MARKETPLACE_URL } from './consts/links'; // typescript aliasing doesn't work here for some reason (it does in the mdx pages tho)
+import { BASE_GITHUB_ORG, MARKETPLACE_URL, PUBLISHER_URL } from './consts/links'; // typescript aliasing doesn't work here for some reason (it does in the mdx pages tho)
 
 /** @todo https://starlight.astro.build/resources/plugins/#plugins */
 
@@ -138,14 +138,19 @@ export default defineConfig({
             },
             social: [
                 {
-                    icon: 'vscode',
-                    label: 'NeuroPilot listing on Visual Studio Marketplace',
-                    href: MARKETPLACE_URL("page"),
-                },
-                {
                     icon: 'github',
                     label: 'VSC-NeuroPilot organization',
                     href: BASE_GITHUB_ORG
+                },
+                {
+                    icon: 'azureDevOps',
+                    label: 'Visual Studio Marketplace',
+                    href: PUBLISHER_URL("vsm"),
+                },
+                {
+                    icon: 'vscode',
+                    label: 'Open VSX Registry',
+                    href: PUBLISHER_URL("ovsx"),
                 },
                 {
                     icon: 'discord',

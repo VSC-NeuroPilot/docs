@@ -1,0 +1,39 @@
+---
+title: NeuroPilot Git
+description: Landing page for the Git companion
+---
+
+import { ContributorList } from 'starlight-contributor-list'
+import { ShowcaseProfile } from 'starlight-showcases'
+import { MARKETPLACE_URL, BASE_GITHUB_ORG } from '@consts/links'
+import { SHOWCASE_IGNORES } from '@consts/showcases'
+export const profiles = [
+    {
+        name: 'VS Marketplace listing',
+        picture: import('@assets/heart-xaendril.png'),
+        href: MARKETPLACE_URL("page"),
+        description: 'NeuroPilot\'s listing on the VS Marketplace.'
+    },
+    {
+        name: 'Open VSX Registry listing',
+        picture: import('@static/heart-pink.svg'),
+        href: MARKETPLACE_URL("vsx"),
+        description: 'NeuroPilot\'s listing on the Open VSX Registry.'
+    },
+    {
+        name: 'Source code repository',
+        picture: import('@assets/icons/github-mark.svg'),
+        href: BASE_GITHUB_ORG + '/neuropilot',
+        description: 'The source code of NeuroPilot Git, licensed under MIT.'
+    }
+]
+
+This is the documentation for the NeuroPilot Git companion, which re-enables Git support for NeuroPilot.
+
+## Links
+
+<ShowcaseProfile entries={profiles} />
+
+## Project contributors
+
+<ContributorList githubRepo="VSC-NeuroPilot/neuropilot-git" ignore={SHOWCASE_IGNORES} />

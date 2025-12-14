@@ -1,0 +1,21 @@
+---
+title: NeuroPilot API
+description: Landing page for the NeuroPilot API
+---
+
+NeuroPilot Base exposes an API for other extensions to hook into. This allows you to extend NeuroPilot's runtime and capabilities by granting Neuro access to more tools at her disposal, sending Neuro new context on certain conditions, or enabling entirely new states to run NeuroPilot in.
+
+## Terminology
+
+In addition to general NeuroPilot terminology, the following terminology is used when discussing the API:
+
+- Companion: An extension that hooks into NeuroPilot.
+    - Friends: The extension that the companion relies on to provide functionality.
+    - Solo companions: The term used for companions that provide all the tools in house.
+- API object: The object that is returned to your companion after registration.
+- Companion token: The token stored privately in your API object.
+- Neuro client: The instance of the `NeuroClient` class from the TypeScript Neuro SDK that is currently in use. Also referred to as NeuroClient.
+- Companion permissions: The permissions a companion extension has. This affects what the companion extension can do.
+- Read/Write functions: Used to differentiate functions that don't require a token vs functions that do require a token.
+    - This terminology is still up for debate.
+{/*- Registration collision: */}
