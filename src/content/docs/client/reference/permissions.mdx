@@ -18,7 +18,7 @@ NeuroPilot actually has 2 main types of permissions: action permissions and non-
 A constant with action permissions is that they usually have 3 options for their permissions: **Off**, **Copilot**, and **Autopilot**.  
 If you can't decide which one to choose, [visit this page](/docs/client/guides/pilot).
 
-All permissions are set to 'Off' by default, except one.
+All permissions are set to 'Off' by default, except two.
 
 ### File interactions
 
@@ -33,17 +33,15 @@ This is not the same as [editing active documents](#edit-active-document), which
 
 The following permissions belong in this category:
 
-- [Open Files](vscode://settings/neuropilot.permission.openFiles)
-- [Create](vscode://settings/neuropilot.permission.create)
-- [Delete](vscode://settings/neuropilot.permission.delete)
-- [Rename](vscode://settings/neuropilot.permission.rename)
+- Open Files
+- Create
+- Delete
+- Rename
 
 ### Edit active document
 
 This permission covers actions relating to editing the currently open document.  
 To see features covered by this permission, go to [this page](/docs/client/reference/features/edit-active-document).
-
-The associated permission is found [here](vscode://settings/neuropilot.permission.editActiveDocument).
 
 <Aside type="tip">
 
@@ -58,10 +56,10 @@ To see features covered by these permissions, visit [this page](/docs/client/ref
 
 The following permissions belong here:
 
-- [Git Operations](vscode://settings/neuropilot.permission.gitOperations)  
-- [Git Tags](vscode://settings/neuropilot.permission.gitTags)
-- [Git Remotes](vscode://settings/neuropilot.permission.gitRemotes)
-- [Edit Remote Data](vscode://settings/neuropilot.permission.editRemoteData)
+- Git Operations
+- Git Tags
+- Git Remotes
+- Edit Remote Data
 
 *Note: For Git operations to work correctly, certain underlying OS-level and workspace configurations must also be in place.*
 
@@ -78,28 +76,37 @@ Giving Neuro access to terminal especially should mean that security measures ar
 
 The following permissions belong here:
 
-- [Terminal Access](vscode://settings/neuropilot.permission.terminalAccess)  
-- [Run Tasks](vscode://settings/neuropilot.permission.runTasks)  
+- Terminal Access
+- Run Tasks
 
 ### Linting analysis
 
 This permission covers actions about getting linting problems from language servers. This can get any linting diagnostic from any extension contributing them.
 To see features covered by this permission, visit [this page](/docs/client/reference/features/linting-analysis).
 
-The associated permission is found [here](vscode://settings/neuropilot.permission.accessLintingAnalysis).
-
 ### Other Action Permissions
 
 Some additional permissions control other interactive elements in the extension.
+All of these actions are set to Copilot by default.
 
 #### Request cookies
 
 This special permission controls if Neuro is allowed to ask for cookies.
 She can also ask for a specific type of cookie.
 
-This permission is set to Copilot by default, and lacks an Autopilot option. {/* TODO: It would be funny if she could just take cookies herself */}
+<Aside type="tip">
 
-The associated permission is found [here](vscode://settings/neuropilot.permission.requestCookies)
+While it's intended to feed Neuro actual cookies, `undefined` effects occur when either of these happen:
+
+- A cookie was requested (in Copilot mode) but the flavour dialogue was canceled.
+- The flavour field was left `undefined` (in Autopilot mode).
+
+</Aside>
+
+#### Read changelog
+
+This special permission controls if Neuro can read the extension changelogs.
+She can limit the changelog from a specified version to the current version, but defaults to all versions since last reading changelog. 
 
 ---
 
