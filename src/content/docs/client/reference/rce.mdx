@@ -80,8 +80,16 @@ That may be preferred if actions are used on a smaller scale since it requires l
 
 Even though Neuro may have sent in a valid packet and has permission to run the action, what if the tools she needs aren't available? What if she tries to access Neuro-unsafe paths? That's where custom validations come in.
 
-These validators get immediately ran after the packet has been validated against the schema. This allows for custom validation with other tools (standout uses include Neuro-safe path checks and the Git extension's availability).
+These validators get ran after the packet has been validated against the schema. This allows for custom validation with other tools (standout uses include Neuro-safe path checks and the Git extension's availability).
 This can also act as a secondary schema validator, as a substitution for certain schema keys which have been prohibited from use by the Neuro Game API, or to put more restrictions where necessary (such as having parameters be required depending on another parameter).
+
+There are two types of validators: sync and async validators.
+
+Sync validators are ran immediately after schema validation, and don't usually take too long to work. This allows it to fail earlier if it does fail. This was the only type of validators previously.
+
+Async validators are ran after setting up cancellation events, whether or not you're on Autopilot.
+The cancellation events ensure that async validators don't cause problems while awaiting results, and as a result are also set up on Autopilot actions too.
+Async validators have a (for now hardcoded) 1-second timeout period. If timed out, the action fails execution.
 
 ### Execution/Request
 
@@ -94,6 +102,8 @@ Certain action results will still be returned asynchronously, regardless of Auto
 
 If you don't know what those are, just think of them as the data that gets returned when running your language-of-choice's asynchronous functions.
 They essentially tell your variable/function "hey, we're gonna go do some stuff in a separate thread, we promise we'll give you some data back after we're done!", which gives you the option to either continue on the main thread, or await them (in an async function or top-level call).
+
+To learn more abut Promises: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 </Aside>
 
@@ -118,3 +128,10 @@ To avoid wasting resources, cancellation events will be automatically disposed w
 All of these is handled through a class that contains all the components necessary to pull this off.
 
 You can choose whether or not to enable this feature through the [Enable Cancel Events](/docs/reference/settings#enable-cancel-events).
+
+### Preview effects
+
+Preview effects apply a visual effect on your screen when the action is ran in Copilot mode.
+This can let you see what is going to happen visually before you have to accept the request.
+
+Most preview effects also have a tooltip that tells you what is going to happen, in addition to the Copilot request.
