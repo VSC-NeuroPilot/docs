@@ -67,6 +67,28 @@ export default defineConfig({
                     ]
                 },
                 {
+                    label: 'Companion API',
+                    link: '/api/',
+                    badge: { text: 'API Developers', variant: 'caution' },
+                    icon: 'puzzle',
+                    items: [
+                        // TODO: integrate types packages JSDoc using https://starlight-typedoc.vercel.app/
+                        'api',
+                        {
+                            label: 'Guides',
+                            autogenerate: {
+                                directory: 'api/guides'
+                            }
+                        },
+                        {
+                            label: 'Reference',
+                            autogenerate: {
+                                directory: 'api/reference'
+                            }
+                        }
+                    ]
+                },
+                {
                     label: 'Container Presets',
                     link: '/images/',
                     icon: 'seti:docker',

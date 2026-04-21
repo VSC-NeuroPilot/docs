@@ -1,0 +1,64 @@
+---
+title: Getting started
+description: Getting started on how to build a companion
+---
+
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+
+This page details how to get started with building a companion.
+
+<Steps>
+
+1. Install with your package manager of choice:
+
+    <Tabs syncKey='js-package-manager'>
+        <TabItem label="npm">
+            ```sh
+            npm install @vsc-neuropilot/api-types
+            ```
+        </TabItem>
+        <TabItem label="yarn">
+            ```sh
+            yarn add @vsc-neuropilot/api-types
+            ```
+        </TabItem>
+        <TabItem label="pnpm">
+            ```sh
+            pnpm add @vsc-neuropilot/api-types
+            ```
+        </TabItem>
+    </Tabs>
+
+2. Declare an `extensionDependency` on your extension's `package.json` file:
+
+    ```json
+    {
+        "name": "neuropilot-companion",
+        // other fields
+        "extensionDependencies": [
+            "vsc-neuropilot.neuropilot-base"
+        ]
+    }
+    ```
+
+3. Get the public API via the relevant API.
+
+    ```ts
+    import * as vscode from 'vscode'
+    import { NeuroPilotAPI } from '@vsc-neuropilot/api-types'
+
+    let api: NeuroPilotAPI
+
+    export function activate(context: vscode.ExtensionContext) {
+        api = vscode.extensions.getExtension<NeuroPilotAPI>('vsc-neuropilot.neuropilot-base')!.exports;
+    }
+    ```
+
+4. Register your companion using the `Companion` subproperty:
+
+    ```ts
+    let register = new api.Companion({
+        // input your companion's details here.
+    })
+
+</Steps>

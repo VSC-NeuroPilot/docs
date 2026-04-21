@@ -1,0 +1,62 @@
+---
+title: Public utils
+description: Reference for public utils
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+NeuroPilot provides some public utilities that do not require a companion registration.
+Generally, these are utilities that expose the same tools used internally by NeuroPilot.
+
+You can access these utilities by getting the `utils` object from NeuroPilot's exports.
+
+## Ungrouped utilities
+
+These are utility functions that are not grouped with other utilities.
+
+You can access them at the top-level `utils` object.
+
+### `isPathNeuroSafe`
+
+Exposes the Neuro-safe path check logic. This can be used to check if an **absolute** file path is or isn't Neuro-safe.
+
+This utility also respects user-configured settings relating to Neuro-safe paths, and so is highly recommended to be used.
+
+### `CancelEvent`
+
+Allows a companion to construct a cancel event class, which can be used in your actions.
+
+## Action validation/handler utilities group
+
+The following utilities are used for action validator and handlers.
+Due to their similarity, they have been grouped into one section here.
+
+In your code, you can access the utilities through the `actionValidation`/`actionHandler` sub-objects respectively.
+
+### `success`
+
+Returns an action validation/handler object that indicates a successful validation/execution.
+
+### `failure`
+
+Returns an action validation/handler object that indicates an unsuccessful validation/execution.
+This should not ask Neuro to retry or reforce an action. For that, please see the `retry` method, documented below.
+
+### `retry`
+
+Returns an action validation/handler object that indicates an unsuccessful validation/execution.
+In addition to that, it will prompt Neuro to retry the action. If executed in an action force, the action force will be retried manually by NeuroPilot.
+
+## Diff utilities group
+
+These are utilities relating to diffs and the diff algorithm used.
+
+### `calculateDiffs`
+
+Calculates diffs using the [Patience Diff algorithm](https://github.com/VSC-NeuroPilot/neuropilot/blob/master/src/patience_diff.ts).
+This is the same algorithm that NeuroPilot uses for its diffs, and as such is highly recommended to be used when a diff algorithm is necessary.
+
+### `applyDiffHighlighting`
+
+Applys diffs calculated by the Patience Diff algorithm as highlights according to NeuroPilot's colours.
+These will be highlights applied to the currently open file until the file is edited again, similar to NeuroPilot's editing actions.

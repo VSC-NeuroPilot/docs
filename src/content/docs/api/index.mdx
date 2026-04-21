@@ -1,0 +1,38 @@
+---
+title: API landing page
+description: API landing page
+---
+
+NeuroPilot features a public API system to integrate with Neuro through the extension.
+
+The main purpose for this is to allow multiple extensions to communicate with Neuro. Currently, the Neuro API server that is used in "production" does not have proper handling of multiple integrations connecting.
+This leads to actions not from the first connected integration to not be executable by Neuro.
+
+By adding an API for other extensions to use, 3 things occur at once:
+
+- The multi-connect issue is sidestepped (since everything runs through NeuroPilot's connection)
+- NeuroPilot's core code can now be downsized, reducing the code needing to be compiled and downloaded for the main extension.
+- The extension can share its systems with other extensions that want to use this, without needing to copy the code over.
+
+## Terminology
+
+In addition to usual terminology for NeuroPilot, the following apply to specifically the API section.
+
+- Companions: Extensions that hook into NeuroPilot.
+- Companion token: A runtime-generated token that is used to "authenticate" to the API when performing certain actions. You shouldn't need to handle this yourself.
+- Registration object: An object that was constructed from the `CompanionAPI` class. The class is used to register the extension to NeuroPilot, and the resulting object is used to call certain APIs on NeuroPilot.
+- Contribution points: The features to which the companion contirbutes to. This must be declared when constructing a registration object.
+- Change warnings: A warning that is both noted on the JSDoc annotations and logged in NeuroPilot's output log when a companion attempts to use an API that is scheduled to be breaking changed in an upcoming major version.
+
+## Versioning policy
+
+- Patch versions (x.x.x) do not contain breaking changes or change warnings. These patch versions contain either non-breaking type changes or JSDoc annotation updates. In other words, you can often upgrade patch versions without much hassle.
+- Minor versions (x.x.0) do not contain breaking changes, but may contain change warnings. Change warnings act as early signals that your code may need to be changed in the upcoming major. Additionally, minor versions also add new APIs and may indicate minor functionality changes (without changing the type signature). Minor versions will *generally* maintain backwards compatibility.
+- Major versions (x.0.0) contain breaking changes. These breaking changes will most likely force you to change your code to handle the new type signatures and functionality. It is recommended to thoroughly test your code before upgrading to this version. Major versions can break backwards compatibility.
+
+Each higher version type can also inherit characteristics from the lower version types.
+
+## Other documentation
+
+- See the [package listing on npmx](https://npmx.dev/package/@vsc-neuropilot/api-types).
+- Check the [API changelogs](https://github.com/VSC-NeuroPilot/neuropilot/blob/master/packages/types/CHANGELOG.md) for changes between versions.
