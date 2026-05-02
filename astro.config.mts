@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 import starlightHeadingBadgesPlugin from 'starlight-heading-badges';
 import starlightSidebarTopicsPlugin from 'starlight-sidebar-topics';
 //import starlightAutoSidebar from 'starlight-auto-sidebar';
+import starlightTypeDocPlugin, { typeDocSidebarGroup } from 'starlight-typedoc';
 
 import { BASE_GITHUB_ORG, MARKETPLACE_URL } from './consts/links'; // typescript aliasing doesn't work here for some reason (it does in the mdx pages tho)
 
@@ -15,124 +16,132 @@ export default defineConfig({
     base: '/docs',
     integrations: [
         starlight({
-            plugins: [starlightHeadingBadgesPlugin(), /*starlightAutoSidebar(),*/ starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
-                {
-                    label: 'Base Extension',
-                    link: '/client/',
-                    icon: 'laptop',
-                    items: [
-                        {
-                            label: 'Guides',
-                            autogenerate: {
-                                directory: 'client/guides',
-                                collapsed: true
+            plugins: [
+                starlightHeadingBadgesPlugin(),
+                /*starlightAutoSidebar(),*/
+                starlightTypeDocPlugin({
+                    entryPoints: ['./node_modules/@vsc-neuropilot/api-types/dist/index.d.mts'],
+                    tsconfig: './tsconfig.json'
+                }),
+                starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
+                    {
+                        label: 'Base Extension',
+                        link: '/client/',
+                        icon: 'laptop',
+                        items: [
+                            {
+                                label: 'Guides',
+                                autogenerate: {
+                                    directory: 'client/guides',
+                                    collapsed: true
+                                }
+                            },
+                            {
+                                label: 'Reference',
+                                autogenerate: {
+                                    directory: 'client/reference',
+                                    collapsed: true
+                                }
+                            },
+                            {
+                                label: "MCP",
+                                autogenerate: {
+                                    directory: "client/mcp",
+                                    collapsed: true
+                                }
                             }
-                        },
-                        {
-                            label: 'Reference',
-                            autogenerate: {
-                                directory: 'client/reference',
-                                collapsed: true
+                        ]
+                    },
+                    {
+                        label: 'Server Extension',
+                        link: '/server/',
+                        badge: { text: 'Coming later!', variant: 'danger' },
+                        icon: 'vscode',
+                        items: [
+                            {
+                                label: 'Guides',
+                                autogenerate: {
+                                    directory: 'server/guides',
+                                    collapsed: true
+                                }
+                            },
+                            {
+                                label: 'Reference',
+                                autogenerate: {
+                                    directory: 'server/reference',
+                                    collapsed: true
+                                }
                             }
-                        },
-                        {
-                            label: "MCP",
-                            autogenerate: {
-                                directory: "client/mcp",
-                                collapsed: true
+                        ]
+                    },
+                    {
+                        label: 'Companion API',
+                        link: '/api/',
+                        badge: { text: 'API Developers', variant: 'caution' },
+                        icon: 'puzzle',
+                        items: [
+                            // TODO: integrate types packages JSDoc using https://starlight-typedoc.vercel.app/
+                            'api',
+                            {
+                                label: 'Guides',
+                                autogenerate: {
+                                    directory: 'api/guides'
+                                }
+                            },
+                            {
+                                label: 'Reference',
+                                autogenerate: {
+                                    directory: 'api/reference'
+                                }
+                            },
+                            typeDocSidebarGroup,
+                        ]
+                    },
+                    {
+                        label: 'Container Presets',
+                        link: '/images/',
+                        icon: 'seti:docker',
+                        items: [
+                            {
+                                label: 'Python',
+                                autogenerate: {
+                                    directory: 'images/python',
+                                    collapsed: true
+                                }
+                            },
+                            {
+                                label: 'JavaScript',
+                                autogenerate: {
+                                    directory: 'images/javascript',
+                                    collapsed: true
+                                }
                             }
-                        }
-                    ]
-                },
-                {
-                    label: 'Server Extension',
-                    link:  '/server/',
-                    badge: { text: 'Coming later!', variant: 'danger' },
-                    icon: 'vscode',
-                    items: [
-                        {
-                            label: 'Guides',
-                            autogenerate: {
-                                directory: 'server/guides',
-                                collapsed: true
+                        ]
+                    },
+                    {
+                        label: 'Meta',
+                        link: '/meta/',
+                        badge: { text: 'Contributors' },
+                        icon: 'list-format',
+                        items: [
+                            'meta/assets',
+                            {
+                                label: 'Contributors',
+                                autogenerate: {
+                                    directory: 'meta/contributors',
+                                    collapsed: true
+                                }
                             }
-                        },
-                        {
-                            label: 'Reference',
-                            autogenerate: {
-                                directory: 'server/reference',
-                                collapsed: true
-                            }
-                        }
-                    ]
-                },
-                {
-                    label: 'Companion API',
-                    link: '/api/',
-                    badge: { text: 'API Developers', variant: 'caution' },
-                    icon: 'puzzle',
-                    items: [
-                        // TODO: integrate types packages JSDoc using https://starlight-typedoc.vercel.app/
-                        'api',
-                        {
-                            label: 'Guides',
-                            autogenerate: {
-                                directory: 'api/guides'
-                            }
-                        },
-                        {
-                            label: 'Reference',
-                            autogenerate: {
-                                directory: 'api/reference'
-                            }
-                        }
-                    ]
-                },
-                {
-                    label: 'Container Presets',
-                    link: '/images/',
-                    icon: 'seti:docker',
-                    items: [
-                        {
-                            label: 'Python',
-                            autogenerate: {
-                                directory: 'images/python',
-                                collapsed: true
-                            }
-                        },
-                        {
-                            label: 'JavaScript',
-                            autogenerate: {
-                                directory: 'images/javascript',
-                                collapsed: true
-                            }
-                        }
-                    ]
-                },
-                {
-                    label: 'Meta',
-                    link: '/meta/',
-                    badge: { text: 'Contributors' },
-                    icon: 'list-format',
-                    items: [
-                        'meta/assets',
-                        {
-                            label: 'Contributors',
-                            autogenerate: {
-                                directory: 'meta/contributors',
-                                collapsed: true
-                            }
-                        }
-                    ],
-                },
-                {
-                    label: 'Unit tests',
-                    icon: 'approve-check-circle',
-                    badge: { text: 'External', variant: 'note' },
-                    link: 'https://vsc-neuropilot.github.io/unit-tests'
-                }
-            ],
-            )],
+                        ],
+                    },
+                    {
+                        label: 'Unit tests',
+                        icon: 'approve-check-circle',
+                        badge: { text: 'External', variant: 'note' },
+                        link: 'https://vsc-neuropilot.github.io/unit-tests'
+                    }
+                ],
+                )],
             favicon: '/heart-pink.svg',
             customCss: [
                 './src/styles/icons.css',

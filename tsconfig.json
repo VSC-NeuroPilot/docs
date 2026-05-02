@@ -2,7 +2,8 @@
   "extends": "astro/tsconfigs/strict",
   "include": [
     ".astro/types.d.ts",
-    "**/*"
+    "**/*",
+    "./node_modules/@vsc-neuropilot/api-types/dist/*.d.mts"
   ],
   "exclude": [
     "dist"
