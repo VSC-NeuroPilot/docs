@@ -11,7 +11,7 @@ The action APIs are a set of APIs related to actions, such as adding/removing ac
 
 *Requires `actions:manage` declared in contribution points*
 
-This function adds RCE actions to the registry of actions. This surfaces the action in the action permissions UI (unless hidden), allows RCE to handle it, and (unless otherwise overridden) registers the action name, description and schema to Neuro.
+This method adds RCE actions to the registry of actions. This surfaces the action in the action permissions UI (unless hidden), allows RCE to handle it, and (unless otherwise overridden) registers the action name, description and schema to Neuro.
 
 The model of RCE actions can be found in the types package. {/* I am not repeating it here again */}
 
@@ -19,29 +19,49 @@ The model of RCE actions can be found in the types package. {/* I am not repeati
 
 *Requires `actions:manage` declared in contribution points*
 
-This function removes RCE actions using the name from the registry of actions. This only allows actions registered by that companion to be removed.
+This method removes RCE actions using the name from the registry of actions. This only allows actions registered by that companion to be removed.
 
 ## `registerAction`
 
 *Requires `actions:manage` or `actions:manage_others` declared in contribution points*
 
-This function registers actions already added to the registry to Neuro.
+This method registers actions already added to the registry to Neuro.
 
-If `actions:manage_others` is declared in contribution points, this function will allow regitering other companions' actions.
+<Aside type="caution">
+
+This method **bypasses any obstructions for registering the action via other methods.**
+
+This means that:
+
+- `autoRegister: false` will not block this method from working.
+    - If you wish to check for this property, you can choose to get the action's metadata and check the `autoRegister` property.
+- The `registerCondition` method will not be called to check registration eligibility.
+    - If you wish to check for this method, you can choose to get the action's metadata and check the value returned from the `registerCondition` method.
+
+</Aside>
+
+If `actions:manage_others` is declared in contribution points, this function will allow registering other companions' actions.
 
 ## `unregisterAction`
 
 *Requires `actions:manage` or `actions:manage_others` declared in contribution points*
 
-This function unregister actions already added to the registry from Neuro.
+This method unregister actions already added to the registry from Neuro.
 
-If `actions:manage_others` is declared in contribution points, this function will allow regitering other companions' actions.
+If `actions:manage_others` is declared in contribution points, this function will allow registering other companions' actions.
+
+## `reregisterAllActions`
+
+*Requires `actions:manage` or `actions:manage_others` declared in contribution points*
+
+This method un-registers and re-registers all actions from and to Neuro automatically.
+Each action will only be registered if the `autoRegister` property is `true`/omitted and the `registerCondition` method is either omitted, or when called, returns `true`.
 
 ## `injectIntoActions`
 
 *Requires `actions:inject` declared in contribution points*
 
-This function allows companions to inject into other companions' actions.
+This method allows companions to inject into other companions' actions.
 These will allow replacing some or most of the properties on an action.
 
 <Aside type="caution">
@@ -54,4 +74,4 @@ Note that injection support is still in early preview. Do not expect stability q
 
 *Requires `actions:process` declared in contribution points*
 
-This function subscribes a listener to execution status events. This function has the same type signature as a VSCode Event interface.
+This method subscribes a listener to execution status events. This function has the same type signature as a VSCode Event interface.
