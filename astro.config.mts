@@ -21,7 +21,8 @@ export default defineConfig({
                 /*starlightAutoSidebar(),*/
                 starlightTypeDocPlugin({
                     entryPoints: ['./node_modules/@vsc-neuropilot/api-types/dist/index.d.mts'],
-                    tsconfig: './tsconfig.lib.json'
+                    tsconfig: './tsconfig.lib.json',
+                    output: 'api/reference'
                 }),
                 starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
                     {
@@ -96,19 +97,14 @@ export default defineConfig({
                                 label: 'Guides',
                                 items: [{
                                     autogenerate: {
-                                        directory: 'api/guides'
-                                    }
-                                }]
+                                        directory: 'api/guides',
+                                    },
+                                }],
                             },
                             {
                                 label: 'Reference',
-                                items: [{
-                                    autogenerate: {
-                                        directory: 'api/reference'
-                                    }
-                                }]
+                                items: [typeDocSidebarGroup]
                             },
-                            typeDocSidebarGroup,
                         ]
                     },
                     {
