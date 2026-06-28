@@ -21,7 +21,7 @@ export default defineConfig({
                 /*starlightAutoSidebar(),*/
                 starlightTypeDocPlugin({
                     entryPoints: ['./node_modules/@vsc-neuropilot/api-types/dist/index.d.mts'],
-                    tsconfig: './tsconfig.json'
+                    tsconfig: './tsconfig.lib.json'
                 }),
                 starlightSidebarTopicsPlugin([ // todo: Should API & web be in a separate section?
                     {
@@ -31,24 +31,30 @@ export default defineConfig({
                         items: [
                             {
                                 label: 'Guides',
-                                autogenerate: {
-                                    directory: 'client/guides',
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'client/guides',
+                                        collapsed: true
+                                    }
+                                }]
                             },
                             {
                                 label: 'Reference',
-                                autogenerate: {
-                                    directory: 'client/reference',
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'client/reference',
+                                        collapsed: true
+                                    }
+                                }]
                             },
                             {
                                 label: "MCP",
-                                autogenerate: {
-                                    directory: "client/mcp",
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: "client/mcp",
+                                        collapsed: true
+                                    }
+                                }]
                             }
                         ]
                     },
@@ -60,17 +66,21 @@ export default defineConfig({
                         items: [
                             {
                                 label: 'Guides',
-                                autogenerate: {
-                                    directory: 'server/guides',
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'server/guides',
+                                        collapsed: true
+                                    }
+                                }]
                             },
                             {
                                 label: 'Reference',
-                                autogenerate: {
-                                    directory: 'server/reference',
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'server/reference',
+                                        collapsed: true
+                                    }
+                                }]
                             }
                         ]
                     },
@@ -84,15 +94,19 @@ export default defineConfig({
                             'api',
                             {
                                 label: 'Guides',
-                                autogenerate: {
-                                    directory: 'api/guides'
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'api/guides'
+                                    }
+                                }]
                             },
                             {
                                 label: 'Reference',
-                                autogenerate: {
-                                    directory: 'api/reference'
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'api/reference'
+                                    }
+                                }]
                             },
                             typeDocSidebarGroup,
                         ]
@@ -104,17 +118,21 @@ export default defineConfig({
                         items: [
                             {
                                 label: 'Python',
-                                autogenerate: {
-                                    directory: 'images/python',
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'images/python',
+                                        collapsed: true
+                                    }
+                                }]
                             },
                             {
                                 label: 'JavaScript',
-                                autogenerate: {
-                                    directory: 'images/javascript',
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'images/javascript',
+                                        collapsed: true
+                                    }
+                                }]
                             }
                         ]
                     },
@@ -127,10 +145,12 @@ export default defineConfig({
                             'meta/assets',
                             {
                                 label: 'Contributors',
-                                autogenerate: {
-                                    directory: 'meta/contributors',
-                                    collapsed: true
-                                }
+                                items: [{
+                                    autogenerate: {
+                                        directory: 'meta/contributors',
+                                        collapsed: true
+                                    }
+                                }]
                             }
                         ],
                     },
