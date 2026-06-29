@@ -243,25 +243,6 @@ export default defineConfig({
                     }]
                 },
                 {
-                    label: 'Container Presets',
-                    collapsed: true,
-                    items: [{
-                        autogenerate: {
-                            directory: 'images'
-                        }
-                    }]
-                },
-                {
-                    label: 'Meta',
-                    collapsed: true,
-                    badge: { text: 'Contributors' },
-                    items: [{
-                        autogenerate: {
-                            directory: 'meta'
-                        }
-                    }],
-                },
-                {
                     label: 'Companion API',
                     collapsed: true,
                     items: [
@@ -289,6 +270,25 @@ export default defineConfig({
                             ]),
                         }
                     ]
+                },
+                {
+                    label: 'Container Presets',
+                    collapsed: true,
+                    items: [{
+                        autogenerate: {
+                            directory: 'images'
+                        }
+                    }]
+                },
+                {
+                    label: 'Meta',
+                    collapsed: true,
+                    badge: { text: 'Contributors' },
+                    items: [{
+                        autogenerate: {
+                            directory: 'meta'
+                        }
+                    }],
                 },
                 {
                     label: 'Unit tests',
