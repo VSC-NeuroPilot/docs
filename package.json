@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "~0.9.9",
+    "@astrojs/markdown-remark": "^7.2.0",
     "@vsc-neuropilot/api-types": "1.0.0-pre.16",
     "eslint": "~10.6.0",
     "eslint-plugin-astro": "~2.1.1",

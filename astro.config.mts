@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import starlight from '@astrojs/starlight';
 import starlightHeadingBadgesPlugin from 'starlight-heading-badges';
 //import starlightSidebarTopicsPlugin, type { StarlightSidebarTopicsUserConfig } from 'starlight-sidebar-topics';
@@ -158,6 +159,9 @@ const sidebarConfig/*: StarlightSidebarTopicsUserConfig*/ = [ // todo: Should AP
 export default defineConfig({
     site: 'https://vsc-neuropilot.github.io',
     base: '/docs',
+    markdown: {
+        processor: unified()
+    },
     integrations: [
         starlight({
             plugins: [
