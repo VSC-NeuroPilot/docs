@@ -3,7 +3,6 @@
   "include": [
     ".astro/types.d.ts",
     "**/*",
-    "./node_modules/@vsc-neuropilot/api-types/dist/*.d.mts"
   ],
   "exclude": [
     "dist"
@@ -24,6 +23,9 @@
       ],
       "@templates/*": [
         "./src/templates/*"
+      ],
+      "_starlight-sidebar-schemas": [
+        "./node_modules/@astrojs/starlight/schemas/sidebar"
       ]
     }
   }
