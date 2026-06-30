@@ -5,7 +5,7 @@ prev: false
 title: "RCEContext"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:91
+Defined in: [extension/packages/types/src/actions/classes.ts:78](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L78)
 
 RCE executes the methods of [RCEAction](/docs/api/reference/index/interfaces/rceaction/) (and therefore passes the context object) in the following order:
 1. Setup hooks
@@ -18,7 +18,7 @@ RCE executes the methods of [RCEAction](/docs/api/reference/index/interfaces/rce
 
 ## Extends
 
-- `unknown`
+- `Disposable`
 
 ## Type Parameters
 
@@ -40,7 +40,7 @@ RCE executes the methods of [RCEAction](/docs/api/reference/index/interfaces/rce
 
 > **createdAt**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:92
+Defined in: [extension/packages/types/src/actions/classes.ts:83](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L83)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:92
 
 > **data**: [`RCEActionData`](/docs/api/reference/index/type-aliases/rceactiondata/)\<`TDataShape`, `TSchema`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:93
+Defined in: [extension/packages/types/src/actions/classes.ts:85](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L85)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:93
 
 > `readonly` **forced**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:94
+Defined in: [extension/packages/types/src/actions/classes.ts:86](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L86)
 
 ***
 
@@ -64,7 +64,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:94
 
 > `readonly` **lifecycle**: [`RCELifecycleMetadata`](/docs/api/reference/index/interfaces/rcelifecyclemetadata/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:96
+Defined in: [extension/packages/types/src/actions/classes.ts:89](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L89)
 
 Lifecycle-specific data
 
@@ -74,7 +74,7 @@ Lifecycle-specific data
 
 > `optional` **request?**: [`RCERequestState`](/docs/api/reference/index/interfaces/rcerequeststate/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:98
+Defined in: [extension/packages/types/src/actions/classes.ts:91](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L91)
 
 Request-specific data (copilot mode only)
 
@@ -84,7 +84,7 @@ Request-specific data (copilot mode only)
 
 > **storage**: [`RCEStorage`](/docs/api/reference/index/type-aliases/rcestorage/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:106
+Defined in: [extension/packages/types/src/actions/classes.ts:99](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L99)
 
 Ephemeral storage.
 Can be used to store data that needs to be accessed across different lifecycle stages of
@@ -98,7 +98,7 @@ This data does not persist across different executions.
 
 > `readonly` **updateStatus**: [`SimplifiedStatusUpdateHandler`](/docs/api/reference/index/type-aliases/simplifiedstatusupdatehandler/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:112
+Defined in: [extension/packages/types/src/actions/classes.ts:105](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L105)
 
 Updates the status of the action on the action execution history panel
 
@@ -116,7 +116,7 @@ Message to update the status with
 
 > **clearPreHandlerResources**(): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:124
+Defined in: [extension/packages/types/src/actions/classes.ts:119](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L119)
 
 Clears request timers and cancel events before handler execution.
 This prevents timers/events from triggering during async handler execution.
@@ -128,11 +128,29 @@ Should be called immediately before invoking the handler.
 
 ***
 
+### dispose()
+
+> **dispose**(): `any`
+
+Defined in: extension/node\_modules/.pnpm/@types+vscode@1.120.0/node\_modules/@types/vscode/index.d.ts:1748
+
+Dispose this object.
+
+#### Returns
+
+`any`
+
+#### Inherited from
+
+`Disposable.dispose`
+
+***
+
 ### done()
 
 > **done**(`success`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:118
+Defined in: [extension/packages/types/src/actions/classes.ts:112](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L112)
 
 Marks this context object as done and destroys it.
 In normal circumstances you SHOULD NOT BE CALLING THIS FUNCTION, as RCE already handles this for you.

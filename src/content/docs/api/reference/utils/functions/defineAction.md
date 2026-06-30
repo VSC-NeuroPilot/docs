@@ -7,7 +7,7 @@ title: "defineAction"
 
 > **defineAction**\<`TData`, `TSchema`, `TInput`\>(`action`): [`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`TData`, `TSchema`, `TInput`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:100
+Defined in: [extension/packages/types/src/utils/index.ts:239](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L239)
 
 Define an action with proper type inference for schema, input data, and event types.
 
@@ -19,11 +19,11 @@ Define an action with proper type inference for schema, input data, and event ty
 
 ### TSchema
 
-`TSchema` *extends* `any`
+`TSchema` *extends* [`SchemaTypes`](/docs/api/reference/index/type-aliases/schematypes/)
 
 ### TInput
 
-`TInput` *extends* `any`
+`TInput` *extends* `unknown`
 
 ## Parameters
 

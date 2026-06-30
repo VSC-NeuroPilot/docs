@@ -7,7 +7,7 @@ title: "substituteMatch"
 
 > **substituteMatch**(`match`, `replacement`): `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:31
+Defined in: [extension/packages/types/src/utils/index.ts:50](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L50)
 
 Return the string that would be inserted for the specified match.
 

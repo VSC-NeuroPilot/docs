@@ -5,15 +5,15 @@ prev: false
 title: "NeuroPilotAPI"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:366
+Defined in: [extension/packages/types/src/index.ts:88](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L88)
 
 ## Properties
 
 ### actionHandler
 
-> **actionHandler**: `ActionHandlerUtils`
+> **actionHandler**: [`ActionHandlerUtils`](/docs/api/reference/index/interfaces/actionhandlerutils/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:383
+Defined in: [extension/packages/types/src/index.ts:105](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L105)
 
 Utililties for generating action handler messages
 
@@ -21,9 +21,9 @@ Utililties for generating action handler messages
 
 ### actionValidation
 
-> **actionValidation**: `ActionValidationUtils`
+> **actionValidation**: [`ActionValidationUtils`](/docs/api/reference/index/interfaces/actionvalidationutils/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:379
+Defined in: [extension/packages/types/src/index.ts:101](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L101)
 
 Utilities for generating action validation messages
 
@@ -33,7 +33,7 @@ Utilities for generating action validation messages
 
 > **Companion**: [`CompanionAPIConstructor`](/docs/api/reference/index/type-aliases/companionapiconstructor/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:371
+Defined in: [extension/packages/types/src/index.ts:93](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L93)
 
 Register your companion extension by creating a new object from this class.
 See [CompanionAPI](/docs/api/reference/index/interfaces/companionapi/) for the API surface it exposes.
@@ -44,7 +44,7 @@ See [CompanionAPI](/docs/api/reference/index/interfaces/companionapi/) for the A
 
 > **config**: [`NeuroPilotConfig`](/docs/api/reference/index/interfaces/neuropilotconfig/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:375
+Defined in: [extension/packages/types/src/index.ts:97](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L97)
 
 Config values and IDs from NeuroPilot.
 
@@ -54,7 +54,7 @@ Config values and IDs from NeuroPilot.
 
 > **applyDiffHighlighting**(`editor`, `diffRanges`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:458
+Defined in: [extension/packages/types/src/index.ts:185](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L185)
 
 Apply diff highlighting to a text editor based on the provided diff ranges.
 If you use [calculateDiffRanges](/docs/api/reference/index/interfaces/neuropilotapi/#calculatediffranges) to calculate the
@@ -86,7 +86,7 @@ the current text in the editor should be provided as the `newText` parameter.
 
 > **calculateDiff**(`oldLines`, `newLines`): [`Diff`](/docs/api/reference/index/interfaces/diff/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:421
+Defined in: [extension/packages/types/src/index.ts:148](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L148)
 
 Calculate the diff between two sets of lines using the Patience diff algorithm.
 
@@ -123,7 +123,7 @@ The lines after the change.
 
 > **calculateDiffPlus**(`oldLines`, `newLines`): [`DiffPlus`](/docs/api/reference/index/interfaces/diffplus/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:434
+Defined in: [extension/packages/types/src/index.ts:161](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L161)
 
 Calculate the diff between two sets of lines, taking moved lines into account.
 
@@ -161,7 +161,7 @@ The lines after the change.
 
 > **calculateDiffRanges**(`startPosition`, `oldText`, `newText`, `tokenRegExp?`): [`DiffRange`](/docs/api/reference/index/interfaces/diffrange/)[]
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:448
+Defined in: [extension/packages/types/src/index.ts:175](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L175)
 
 Calculates the difference between the original and modified text. The ranges are based on the new text.
 
@@ -207,7 +207,7 @@ Examples:
 
 > **formatContext**(`context`, `overrideCursorStyle?`): `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:409
+Defined in: [extension/packages/types/src/index.ts:136](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L136)
 
 Formats the context for sending to Neuro.
 Assumes the cursor is at the end of `contextBefore` + `contextBetween` and at the start of `contextAfter`.
@@ -234,31 +234,61 @@ The formatted context.
 
 ***
 
-### getActions()
+### getAction()
 
-> **getActions**(`action?`): `ItselfOrArray`\<[`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`undefined`, `any`, `any`\> & `object`\> \| `undefined`
+> **getAction**\<`TData`\>(`action`): [`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`TData`, [`SchemaTypes`](/docs/api/reference/index/type-aliases/schematypes/), `TData` *extends* `undefined` ? `unknown` : `TData`\> & `object` \| `undefined`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:390
+Defined in: [extension/packages/types/src/index.ts:112](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L112)
 
-Get an action or an array of actions.
+Get an action.
+
+#### Type Parameters
+
+##### TData
+
+`TData` *extends* `object` \| `undefined` = `any`
 
 #### Parameters
 
-##### action?
+##### action
 
-`string` \| `string`[]
+`string`
 
-A string or array of strings of action names.
+An action name.
 
 #### Returns
 
-`ItselfOrArray`\<[`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`undefined`, `any`, `any`\> & `object`\> \| `undefined`
+[`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`TData`, [`SchemaTypes`](/docs/api/reference/index/type-aliases/schematypes/), `TData` *extends* `undefined` ? `unknown` : `TData`\> & `object` \| `undefined`
 
-An action (if a string was provided), undefined (if a string was provided and nothing was found), or an array of actions (if nothing or an array was provided)
+An [RCEAction](/docs/api/reference/index/interfaces/rceaction/) and its source companion.
 
-#### Todo
+***
 
-split into overloads for sanity
+### getActions()
+
+> **getActions**\<`TData`\>(`actions`): [`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`TData`, [`SchemaTypes`](/docs/api/reference/index/type-aliases/schematypes/), `TData` *extends* `undefined` ? `unknown` : `TData`\> & `object`[]
+
+Defined in: [extension/packages/types/src/index.ts:119](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L119)
+
+Get an array of actions.
+
+#### Type Parameters
+
+##### TData
+
+`TData` *extends* `object` \| `undefined` = `any`
+
+#### Parameters
+
+##### actions
+
+`string`[]
+
+#### Returns
+
+[`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`TData`, [`SchemaTypes`](/docs/api/reference/index/type-aliases/schematypes/), `TData` *extends* `undefined` ? `unknown` : `TData`\> & `object`[]
+
+An array of [RCEAction](/docs/api/reference/index/interfaces/rceaction/) and their corresponding source companions.
 
 ***
 
@@ -266,7 +296,7 @@ split into overloads for sanity
 
 > **getPositionContext**(`document`, `options`): [`PositionContext`](/docs/api/reference/index/interfaces/positioncontext/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:401
+Defined in: [extension/packages/types/src/index.ts:128](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L128)
 
 Gets the context around a specified range in a document.
 If no range is specified, gets the entire document.
@@ -282,7 +312,7 @@ The document to get the context from.
 
 ##### options
 
-`any`
+`Position` \| [`PositionContextOptions`](/docs/api/reference/index/interfaces/positioncontextoptions/)
 
 The options for getting the context. If passed a vscode.Position, it is used as `cursorPosition`, `position` and `position2`.
 
@@ -298,7 +328,7 @@ The context around the specified range. The amount of lines before and after the
 
 > **isPathNeuroSafe**(`path`): `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:465
+Defined in: [extension/packages/types/src/index.ts:192](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L192)
 
 Checks if a file is Neuro-safe, according to the rules the user has set in NeuroPilot's settings.
 

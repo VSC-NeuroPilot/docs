@@ -5,7 +5,7 @@ prev: false
 title: "RCECancelEvent"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:135
+Defined in: [extension/packages/types/src/actions/classes.ts:137](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L137)
 
 ## Type Parameters
 
@@ -19,7 +19,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:135
 
 > `readonly` **disposable**: `Disposable`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:143
+Defined in: [extension/packages/types/src/actions/classes.ts:146](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L146)
 
 Event disposable using Disposable VS Code's Disposable class.
 
@@ -29,7 +29,7 @@ Event disposable using Disposable VS Code's Disposable class.
 
 > `readonly` **event**: `Event`\<`T`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:139
+Defined in: [extension/packages/types/src/actions/classes.ts:141](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L141)
 
 Publicly-exposed event.
 
@@ -39,7 +39,7 @@ Publicly-exposed event.
 
 > `readonly` `optional` **logReason?**: [`ReasonGenerator`](/docs/api/reference/index/type-aliases/reasongenerator/)\<`T`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:151
+Defined in: [extension/packages/types/src/actions/classes.ts:156](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L156)
 
 The reason that will be used to log the cancellation.
 
@@ -49,7 +49,7 @@ The reason that will be used to log the cancellation.
 
 > `readonly` `optional` **reason?**: [`ReasonGenerator`](/docs/api/reference/index/type-aliases/reasongenerator/)\<`T`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:147
+Defined in: [extension/packages/types/src/actions/classes.ts:151](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L151)
 
 The reason that will be used to send to Neuro-sama.
 
@@ -59,7 +59,7 @@ The reason that will be used to send to Neuro-sama.
 
 > **fire**(`data`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:156
+Defined in: [extension/packages/types/src/actions/classes.ts:162](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L162)
 
 Fires the event.
 

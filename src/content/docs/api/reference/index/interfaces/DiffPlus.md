@@ -5,7 +5,7 @@ prev: false
 title: "DiffPlus"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:399
+Defined in: [extension/packages/types/src/actions/types.ts:291](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L291)
 
 ## Extends
 
@@ -17,7 +17,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:399
 
 > **lineCountDeleted**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:395
+Defined in: [extension/packages/types/src/actions/types.ts:286](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L286)
 
 The number of lines in the old text that do not appear in the new text (i.e., deleted or changed lines).
 
@@ -31,7 +31,7 @@ The number of lines in the old text that do not appear in the new text (i.e., de
 
 > **lineCountInserted**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:397
+Defined in: [extension/packages/types/src/actions/types.ts:288](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L288)
 
 The number of lines in the new text that do not appear in the old text (i.e., inserted or changed lines).
 
@@ -45,7 +45,7 @@ The number of lines in the new text that do not appear in the old text (i.e., in
 
 > **lineCountMoved**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:402
+Defined in: [extension/packages/types/src/actions/types.ts:294](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L294)
 
 The number of lines that were moved.
 
@@ -55,7 +55,7 @@ The number of lines that were moved.
 
 > **lines**: [`DiffPlusLine`](/docs/api/reference/index/interfaces/diffplusline/)[]
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:400
+Defined in: [extension/packages/types/src/actions/types.ts:292](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L292)
 
 The lines in the diff.
 

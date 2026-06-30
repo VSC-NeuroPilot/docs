@@ -7,7 +7,7 @@ title: "PromptGenerator"
 
 > **PromptGenerator**\<`TData`, `TSchema`, `TDataShape`\> = `string` \| ((`context`) => `string`)
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:295
+Defined in: [extension/packages/types/src/actions/types.ts:155](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L155)
 
 A prompt parameter can either be a string or a function that converts an RCEContext into a prompt string.
 

@@ -5,7 +5,7 @@ prev: false
 title: "PositionContext"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:412
+Defined in: [extension/packages/types/src/actions/types.ts:311](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L311)
 
 ## Properties
 
@@ -13,7 +13,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:412
 
 > **contextAfter**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:416
+Defined in: [extension/packages/types/src/actions/types.ts:315](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L315)
 
 The context after the range, or an empty string if the cursor is not defined.
 
@@ -23,7 +23,7 @@ The context after the range, or an empty string if the cursor is not defined.
 
 > **contextBefore**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:414
+Defined in: [extension/packages/types/src/actions/types.ts:313](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L313)
 
 The context before the cursor, or the entire context if the cursor is not defined.
 
@@ -33,7 +33,7 @@ The context before the cursor, or the entire context if the cursor is not define
 
 > **cursorDefined**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:424
+Defined in: [extension/packages/types/src/actions/types.ts:323](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L323)
 
 `true` if the cursor is defined and inside the context, `false` otherwise.
 
@@ -43,7 +43,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:424
 
 > **endLine**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:420
+Defined in: [extension/packages/types/src/actions/types.ts:319](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L319)
 
 The zero-based line where [contextBefore](/docs/api/reference/index/interfaces/positioncontext/#contextafter) ends.
 
@@ -53,7 +53,7 @@ The zero-based line where [contextBefore](/docs/api/reference/index/interfaces/p
 
 > **startLine**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:418
+Defined in: [extension/packages/types/src/actions/types.ts:317](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L317)
 
 The zero-based line where [contextBefore](/docs/api/reference/index/interfaces/positioncontext/#contextbefore) starts.
 
@@ -63,6 +63,6 @@ The zero-based line where [contextBefore](/docs/api/reference/index/interfaces/p
 
 > **totalLines**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:422
+Defined in: [extension/packages/types/src/actions/types.ts:321](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L321)
 
 The number of total lines in the file.

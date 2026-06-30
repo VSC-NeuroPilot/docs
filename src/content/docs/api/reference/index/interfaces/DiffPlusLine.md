@@ -5,7 +5,7 @@ prev: false
 title: "DiffPlusLine"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:376
+Defined in: [extension/packages/types/src/actions/types.ts:266](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L266)
 
 ## Extends
 
@@ -17,7 +17,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:376
 
 > **moved**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:378
+Defined in: [extension/packages/types/src/actions/types.ts:268](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L268)
 
 Whether the line was moved.
 
@@ -27,7 +27,7 @@ Whether the line was moved.
 
 > **newIndex**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:389
+Defined in: [extension/packages/types/src/actions/types.ts:279](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L279)
 
 The line number in the new version of the text, or -1 if the line was deleted.
 For moved lines, this is the line number this line was moved to.
@@ -43,7 +43,7 @@ If this is -1 for a moved line, it is the counterpart of another moved line wher
 
 > **oldIndex**: `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:383
+Defined in: [extension/packages/types/src/actions/types.ts:273](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L273)
 
 The original line number in the old version of the text, or -1 if the line is new.
 For moved lines, this is the line number this line was moved from.
@@ -58,7 +58,7 @@ For moved lines, this is the line number this line was moved from.
 
 > **text**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:370
+Defined in: [extension/packages/types/src/actions/types.ts:260](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L260)
 
 The text of the line.
 

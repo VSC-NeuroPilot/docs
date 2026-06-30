@@ -7,7 +7,7 @@ title: "defineEventPredicate"
 
 > **defineEventPredicate**\<`T`, `TReturn`\>(`predicate`): (`event`) => `TReturn`
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:109
+Defined in: [extension/packages/types/src/utils/index.ts:299](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L299)
 
 ## Type Parameters
 

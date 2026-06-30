@@ -14,7 +14,7 @@ export const collections = {
                 title: 'API Changelog',
                 provider: 'keep-a-changelog',
                 base: 'api/changelog',
-                changelog: './node_modules/@vsc-neuropilot/api-types/CHANGELOG.md',
+                changelog: './extension/packages/types/CHANGELOG.md',
                 process(args) {
                     if (args.title.startsWith('(Draft)') || args.title.startsWith('(Unreleased)')) return
                     else return `v${args.title}`

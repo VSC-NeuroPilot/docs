@@ -7,7 +7,7 @@ title: "normalizePath"
 
 > **normalizePath**(`path`): `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:64
+Defined in: [extension/packages/types/src/utils/index.ts:178](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L178)
 
 Normalize a path for comparisons.
 

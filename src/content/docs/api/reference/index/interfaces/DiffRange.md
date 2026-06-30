@@ -5,7 +5,7 @@ prev: false
 title: "DiffRange"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:404
+Defined in: [extension/packages/types/src/actions/types.ts:297](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L297)
 
 ## Properties
 
@@ -13,7 +13,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:404
 
 > **range**: `Range`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:406
+Defined in: [extension/packages/types/src/actions/types.ts:299](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L299)
 
 The line/column range of the part of the diff.
 
@@ -23,7 +23,7 @@ The line/column range of the part of the diff.
 
 > `optional` **removedText?**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:410
+Defined in: [extension/packages/types/src/actions/types.ts:303](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L303)
 
 The text that was removed. Only applicable for removed and modified ranges.
 
@@ -33,6 +33,6 @@ The text that was removed. Only applicable for removed and modified ranges.
 
 > **type**: [`DiffRangeType`](/docs/api/reference/index/enumerations/diffrangetype/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:408
+Defined in: [extension/packages/types/src/actions/types.ts:301](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L301)
 
 The type of the diff range (added, removed or modified).

@@ -5,7 +5,7 @@ prev: false
 title: "RCERequestState"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:44
+Defined in: [extension/packages/types/src/actions/classes.ts:33](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L33)
 
 ## Properties
 
@@ -13,7 +13,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:44
 
 > **attachNotification**: (`progress`) => `Promise`\<`void`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:59
+Defined in: [extension/packages/types/src/actions/classes.ts:48](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L48)
 
 The function to report progress on the notification.
 Should not be necessary to call in most circumstances.
@@ -36,9 +36,9 @@ A promise that resolves when the request is resolved in some way.
 
 ### interval?
 
-> `optional` **interval?**: `any`
+> `optional` **interval?**: `Timeout` \| `null`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:75
+Defined in: [extension/packages/types/src/actions/classes.ts:61](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L61)
 
 The interval timeout that reports progress to VS Code.
 
@@ -48,7 +48,7 @@ The interval timeout that reports progress to VS Code.
 
 > **notificationVisible**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:52
+Defined in: [extension/packages/types/src/actions/classes.ts:41](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L41)
 
 Whether or not the notification is visible on screen.
 
@@ -58,7 +58,7 @@ Whether or not the notification is visible on screen.
 
 > **prompt**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:48
+Defined in: [extension/packages/types/src/actions/classes.ts:37](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L37)
 
 The prompt used for the request. Constructed from [the action's promptGenerator](/docs/api/reference/index/interfaces/rceaction/#promptgenerator).
 
@@ -68,7 +68,7 @@ The prompt used for the request. Constructed from [the action's promptGenerator]
 
 > **resolve**: () => `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:67
+Defined in: [extension/packages/types/src/actions/classes.ts:53](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L53)
 
 Resolves the request, clearing timers and resources used by this object.
 Should not be necessary to call in most circumstances.
@@ -83,7 +83,7 @@ Should not be necessary to call in most circumstances.
 
 > **resolved**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:71
+Defined in: [extension/packages/types/src/actions/classes.ts:57](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L57)
 
 Whether or not the request has been resolved.
 
@@ -91,8 +91,8 @@ Whether or not the request has been resolved.
 
 ### timeout?
 
-> `optional` **timeout?**: `any`
+> `optional` **timeout?**: `Timeout` \| `null`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:79
+Defined in: [extension/packages/types/src/actions/classes.ts:65](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L65)
 
 The timeout object that times out the request itself.

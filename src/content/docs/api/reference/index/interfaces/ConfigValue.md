@@ -5,7 +5,7 @@ prev: false
 title: "ConfigValue"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:467
+Defined in: [extension/packages/types/src/index.ts:195](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L195)
 
 ## Type Parameters
 
@@ -19,7 +19,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:467
 
 > `readonly` **settingID**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:469
+Defined in: [extension/packages/types/src/index.ts:197](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L197)
 
 The ID of the setting (without 'neuropilot.' at the start).
 
@@ -29,6 +29,6 @@ The ID of the setting (without 'neuropilot.' at the start).
 
 > `readonly` **value**: `T`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:471
+Defined in: [extension/packages/types/src/index.ts:199](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/index.ts#L199)
 
 The current configuration value.

@@ -7,7 +7,7 @@ title: "getMaxFenceLength"
 
 > **getMaxFenceLength**(`text`): `number`
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:80
+Defined in: [extension/packages/types/src/utils/index.ts:208](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L208)
 
 Searches for the longest fence (at least 3 backticks in a row) in the given text.
 

@@ -5,7 +5,7 @@ prev: false
 title: "RCELifecycleMetadata"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:32
+Defined in: [extension/packages/types/src/actions/classes.ts:21](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L21)
 
 ## Properties
 
@@ -13,7 +13,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:32
 
 > `optional` **events?**: `Disposable`[]
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:33
+Defined in: [extension/packages/types/src/actions/classes.ts:22](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L22)
 
 ***
 
@@ -21,7 +21,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:33
 
 > `optional` **preview?**: `object`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:34
+Defined in: [extension/packages/types/src/actions/classes.ts:23](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L23)
 
 #### dispose
 
@@ -37,7 +37,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:34
 
 > `optional` **setupHooks?**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:41
+Defined in: [extension/packages/types/src/actions/classes.ts:28](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L28)
 
 ***
 
@@ -45,7 +45,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:41
 
 > `optional` **validatorResults?**: `object`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:37
+Defined in: [extension/packages/types/src/actions/classes.ts:24](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/classes.ts#L24)
 
 #### async?
 

@@ -5,7 +5,7 @@ prev: false
 title: "RCEAction"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:196
+Defined in: [extension/packages/types/src/actions/types.ts:52](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L52)
 
 ActionHandler to use with constants for records of actions and their corresponding handlers.
 
@@ -29,21 +29,13 @@ You may optionally type the interface if you are sure the action will take a spe
 
 `TDataShape` *extends* `unknown` \| `undefined` = `TData` *extends* `undefined` ? [`InferDataFromSchema`](/docs/api/reference/index/type-aliases/inferdatafromschema/)\<`TSchema`\> : `TData`
 
-## Indexable
-
-> \[`key`: `string`\]: `Action`
-
-> \[`key`: `number`\]: `Action`
-
-> \[`key`: `symbol`\]: `Action`
-
 ## Properties
 
 ### autoRegister?
 
 > `optional` **autoRegister?**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:271
+Defined in: [extension/packages/types/src/actions/types.ts:130](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L130)
 
 Whether to automatically register the action with Neuro if all conditions are met.
 Defaults to true.
@@ -63,7 +55,7 @@ Note that certain events also call [CompanionAPI.reregisterAllActions](/docs/api
 
 > `optional` **cancelEvents?**: (`context`) => [`RCECancelEvent`](/docs/api/reference/index/interfaces/rcecancelevent/)\<`any`\> \| `null`[]
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:221
+Defined in: [extension/packages/types/src/actions/types.ts:82](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L82)
 
 Cancellation events attached to the action that will be automatically set up.
 Each cancellation event will be setup in parallel to each other.
@@ -88,7 +80,7 @@ Returns from calling the `dispose()` function will not be used anywhere.
 
 > **category**: `string` \| `null`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:257
+Defined in: [extension/packages/types/src/actions/types.ts:116](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L116)
 
 The category of the request.
 You can use null if the action is never added to the registry.
@@ -99,7 +91,7 @@ You can use null if the action is never added to the registry.
 
 > `optional` **contextSetupHooks?**: (`context`) => `Thenable`\<`void`\>[]
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:290
+Defined in: [extension/packages/types/src/actions/types.ts:149](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L149)
 
 Setup handlers that will be invoked to help setup the [RCEContext.storage](/docs/api/reference/index/interfaces/rcecontext/#storage) object.
 These functions should not throw.
@@ -122,9 +114,24 @@ These functions will be parallelised, so the same key should not be accessed fro
 
 > `optional` **defaultPermission?**: [`PermissionLevel`](/docs/api/reference/index/enumerations/permissionlevel/)
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:252
+Defined in: [extension/packages/types/src/actions/types.ts:111](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L111)
 
 Default permission for actions when no permission is configured in user or workspace settings. Defaults to [PermissionLevel.OFF](/docs/api/reference/index/enumerations/permissionlevel/#off).
+
+***
+
+### description
+
+> **description**: `string`
+
+Defined in: extension/node\_modules/.pnpm/neuro-game-sdk@1.1.1/node\_modules/neuro-game-sdk/dist/index.d.mts:18
+
+A plaintext description of what this action does.
+This information will be directly received by Neuro.
+
+#### Inherited from
+
+`Omit.description`
 
 ***
 
@@ -132,7 +139,7 @@ Default permission for actions when no permission is configured in user or works
 
 > `optional` **displayName?**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:207
+Defined in: [extension/packages/types/src/actions/types.ts:67](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L67)
 
 A human-friendly name for the action. If not provided, the action's name converted to Title Case will be used.
 
@@ -152,7 +159,7 @@ edit_file -> Edit File // if displayName isn't set
 
 > **handler**: `RCEHandler`\<`TData`, `TSchema`, `TDataShape`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:240
+Defined in: [extension/packages/types/src/actions/types.ts:99](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L99)
 
 The function to handle the action.
 This function must be synchronous.
@@ -166,10 +173,25 @@ An action result can be sent as either a synchronous result or asynchronous resu
 
 > `optional` **hidden?**: `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:276
+Defined in: [extension/packages/types/src/actions/types.ts:135](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L135)
 
 Whether the action should be hidden in the action permissions view.
 Usually meant for actions that are exclusively used in action forces.
+
+***
+
+### name
+
+> **name**: `string`
+
+Defined in: extension/node\_modules/.pnpm/neuro-game-sdk@1.1.1/node\_modules/neuro-game-sdk/dist/index.d.mts:13
+
+The name of the action, which is its unique identifier.
+Should be a lowercase string with words separated by underscores or dashes.
+
+#### Inherited from
+
+`Omit.name`
 
 ***
 
@@ -177,7 +199,7 @@ Usually meant for actions that are exclusively used in action forces.
 
 > `optional` **preview?**: (`context`) => `object`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:230
+Defined in: [extension/packages/types/src/actions/types.ts:91](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L91)
 
 A function that is used to preview the action's effects.
 This function will be called while awaiting user approval, if the action is set to Copilot permission.
@@ -215,7 +237,7 @@ return { dispose: () => undefined } // for no-ops
 
 > **promptGenerator**: [`PromptGenerator`](/docs/api/reference/index/type-aliases/promptgenerator/)\<`TData`, `TSchema`, `TDataShape`\> \| `null`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:250
+Defined in: [extension/packages/types/src/actions/types.ts:109](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L109)
 
 The function to generate a prompt for the action request (Copilot Mode). 
 The prompt should fit the phrasing scheme "Neuro wants to [prompt]".
@@ -231,7 +253,7 @@ More info (comment): https://github.com/VedalAI/neuro-game-sdk/discussions/58#di
 
 > `optional` **registerCondition?**: () => `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:283
+Defined in: [extension/packages/types/src/actions/types.ts:142](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L142)
 
 A condition that must be true for the action to be registered.
 If not provided, the action is always registered.
@@ -248,7 +270,7 @@ Should not be used if [autoRegister](/docs/api/reference/index/interfaces/rceact
 
 > `optional` **schema?**: `TSchema`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:201
+Defined in: [extension/packages/types/src/actions/types.ts:61](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L61)
 
 A valid JSON Schema or Standard JSON Schema that describes the action's parameters.
 Standard JSON Schemas (like Zod v4+) will be automatically converted to JSON Schema before registration.
@@ -259,7 +281,7 @@ Standard JSON Schemas (like Zod v4+) will be automatically converted to JSON Sch
 
 > `optional` **validators?**: `RCEValidators`\<`TData`, `TSchema`, `TDataShape`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:212
+Defined in: [extension/packages/types/src/actions/types.ts:72](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L72)
 
 An object that defines an array of functions to validate the action's "environment".
 Validators run before requests/executions to ensure environment/input validity.

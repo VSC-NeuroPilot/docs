@@ -168,7 +168,7 @@ export default defineConfig({
                 starlightHeadingBadgesPlugin(),
                 starlightAutoSidebar(),
                 starlightTypeDocPlugin({
-                    entryPoints: ['./node_modules/@vsc-neuropilot/api-types/dist/index.d.mts', './node_modules/@vsc-neuropilot/api-types/dist/utils.d.mts'],
+                    entryPoints: ['./extension/packages/types/src/index.ts', './extension/packages/types/src/utils/index.ts'],
                     tsconfig: './tsconfig.lib.json',
                     output: 'api/reference',
                     sidebar: {

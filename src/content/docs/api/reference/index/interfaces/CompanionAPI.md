@@ -5,11 +5,11 @@ prev: false
 title: "CompanionAPI"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:59
+Defined in: [extension/packages/types/src/companions/register.ts:6](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L6)
 
 ## Extends
 
-- `unknown`
+- `Disposable`
 
 ## Properties
 
@@ -17,7 +17,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:59
 
 > **actionUtils**: `object`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:64
+Defined in: [extension/packages/types/src/companions/register.ts:11](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L11)
 
 Utilities specific to creating actions.
 These are separated due to them returning Disposables that need to be handled better.
@@ -32,11 +32,11 @@ If you are adding them to the cancel events array of an action, this should auto
 
 #### edits
 
-> **edits**: `EditActionUtils`
+> **edits**: [`EditActionUtils`](/docs/api/reference/index/interfaces/editactionutils/)
 
 #### files
 
-> **files**: `FileActionUtils`
+> **files**: [`FileActionUtils`](/docs/api/reference/index/interfaces/fileactionutils/)
 
 ***
 
@@ -44,7 +44,7 @@ If you are adding them to the cancel events array of an action, this should auto
 
 > **onActionStatusChanged**: `Event`\<[`ActionsEventData`](/docs/api/reference/index/interfaces/actionseventdata/)\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:161
+Defined in: [extension/packages/types/src/companions/register.ts:122](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L122)
 
 Subscribe to the event that fires if an action status was changed.
 You must have declared the `actions:process` contribution point.
@@ -65,9 +65,9 @@ companion.onDidAttemptAction((data) => {
 
 ### onDidMoveCursor
 
-> **onDidMoveCursor**: `Event`\<`any`\>
+> **onDidMoveCursor**: `Event`\<`Position` \| `null` \| `undefined`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:194
+Defined in: [extension/packages/types/src/companions/register.ts:161](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L161)
 
 Subscribe to the event that fires if Neuro's cursor position changed.
 You must have declared the `cursor:get` contribution point.
@@ -82,7 +82,7 @@ See also: Event VS Code's Event type
 
 > **abortActionForce**(): `Promise`\<`void`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:137
+Defined in: [extension/packages/types/src/companions/register.ts:96](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L96)
 
 Aborts the current action force.
 You must have specified the `actions:force` contribution point.
@@ -99,7 +99,7 @@ This temporarily unregisters all actions for 250ms before re-registering actions
 
 > **addActions**(`actions`, `register?`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:84
+Defined in: [extension/packages/types/src/companions/register.ts:35](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L35)
 
 Add an action to NeuroPilot's actions registry.
 You must have declared the `actions:manage` contribution point.
@@ -108,7 +108,7 @@ You must have declared the `actions:manage` contribution point.
 
 ##### actions
 
-[`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`any`, `any`, `any`\>[]
+[`RCEAction`](/docs/api/reference/index/interfaces/rceaction/)\<`any`, [`SchemaTypes`](/docs/api/reference/index/type-aliases/schematypes/), `any`\>[]
 
 An array of [actions](/docs/api/reference/index/interfaces/rceaction/) that will be registered.
 
@@ -128,7 +128,7 @@ Whether or not these actions should be immediately registered to Neuro. This doe
 
 > **addChangelog**(`version`, `changelog`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:175
+Defined in: [extension/packages/types/src/companions/register.ts:138](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L138)
 
 Add a changelog entry that Neuro can query for your companion.
 You must have specified the `changelog` contribution point.
@@ -157,7 +157,7 @@ The changelog for that version. It is strongly recommended to follow Markdown fo
 
 > **canForceActions**(): `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:113
+Defined in: [extension/packages/types/src/companions/register.ts:69](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L69)
 
 Checks whether or not forcing an action from Neuro is possible right now.
 You must have specified the `actions:force` contribution point.
@@ -168,11 +168,29 @@ You must have specified the `actions:force` contribution point.
 
 ***
 
+### dispose()
+
+> **dispose**(): `any`
+
+Defined in: extension/node\_modules/.pnpm/@types+vscode@1.120.0/node\_modules/@types/vscode/index.d.ts:1748
+
+Dispose this object.
+
+#### Returns
+
+`any`
+
+#### Inherited from
+
+`Disposable.dispose`
+
+***
+
 ### getCurrentActionForce()
 
 > **getCurrentActionForce**(): [`ActionForceParams`](/docs/api/reference/index/interfaces/actionforceparams/) \| `null`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:130
+Defined in: [extension/packages/types/src/companions/register.ts:88](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L88)
 
 Gets the status of the current action force.
 You must have specified the `actions:force` contribution point.
@@ -187,15 +205,15 @@ You must have specified the `actions:force` contribution point.
 
 ### getCursor()
 
-> **getCursor**(): `any`
+> **getCursor**(): `Position` \| `null` \| `undefined`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:180
+Defined in: [extension/packages/types/src/companions/register.ts:145](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L145)
 
 Get Neuro's current cursor location in the current file.
 
 #### Returns
 
-`any`
+`Position` \| `null` \| `undefined`
 
 Either a Position object showing where her cursor is right now, `null` if she can't access the current file, or `undefined` if there is no cursor in the file for whatever reason (such as a read-only editor).
 
@@ -205,7 +223,7 @@ Either a Position object showing where her cursor is right now, `null` if she ca
 
 > **injectIntoAction**(`name`, `injection`, `force?`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:145
+Defined in: [extension/packages/types/src/companions/register.ts:105](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L105)
 
 Inject into any registered action and modify most of its properties.
 You must have specified the `actions:inject` contribution point.
@@ -240,7 +258,7 @@ Allows changing the action's description and schema. Defaults to false. **Don't 
 
 > **isNeuroConnected**(): `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:77
+Defined in: [extension/packages/types/src/companions/register.ts:25](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L25)
 
 Whether or not Neuro is connected to NeuroPilot.
 
@@ -254,7 +272,7 @@ Whether or not Neuro is connected to NeuroPilot.
 
 > **registerAction**(`action`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:96
+Defined in: [extension/packages/types/src/companions/register.ts:49](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L49)
 
 Registers an action to Neuro.
 You must have declared either the `actions:manage` or `actions:manage_others` contribution point.
@@ -275,7 +293,7 @@ You must have declared either the `actions:manage` or `actions:manage_others` co
 
 > **removeActions**(`actions`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:90
+Defined in: [extension/packages/types/src/companions/register.ts:42](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L42)
 
 Remove an action from NeuroPilot's actions registry.
 You must have declared the `actions:manage` contribution point.
@@ -298,7 +316,7 @@ An array of action names to remove from the registry.
 
 > **reregisterAllActions**(`conservative?`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:108
+Defined in: [extension/packages/types/src/companions/register.ts:63](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L63)
 
 Re-attempts to register all actions
 You must have declared either the `actions:manage` or `actions:manage_others` contribution point.
@@ -321,7 +339,7 @@ If true, only re-register actions as is deemed necessary.
 
 > **sendContext**(`message`, `silent?`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:168
+Defined in: [extension/packages/types/src/companions/register.ts:130](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L130)
 
 Send freeform context to Neuro.
 You must have specified the `context` contribution point.
@@ -350,7 +368,7 @@ If false, will prompt Neuro more strongly to react to that context. Defaults to 
 
 > **setCursor**(`location?`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:185
+Defined in: [extension/packages/types/src/companions/register.ts:151](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L151)
 
 Move Neuro's cursor location.
 
@@ -358,7 +376,7 @@ Move Neuro's cursor location.
 
 ##### location?
 
-`any`
+`Position` \| `null`
 
 The location to move her cursor to. `null` removes the cursor entirely and `undefined` moves it to the last known location (failing that, an error is logged and no cursor is placed).
 
@@ -372,7 +390,7 @@ The location to move her cursor to. `null` removes the cursor entirely and `unde
 
 > **tryForceActions**(`params`, `strict?`): `boolean`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:123
+Defined in: [extension/packages/types/src/companions/register.ts:80](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L80)
 
 Try to force an action from Neuro.
 You must have specified the `actions:force` contribution point.
@@ -405,7 +423,7 @@ If actions are stripped out, at least one action must remain, otherwise the acti
 
 > **unregisterAction**(`action`): `void`
 
-Defined in: @vsc-neuropilot/api-types/dist/index.d.mts:102
+Defined in: [extension/packages/types/src/companions/register.ts:56](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/companions/register.ts#L56)
 
 Unregisters an action to Neuro.
 You must have declared either the `actions:manage` or `actions:manage_others` contribution point.

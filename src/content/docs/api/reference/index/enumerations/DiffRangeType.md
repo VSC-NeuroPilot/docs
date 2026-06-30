@@ -5,7 +5,7 @@ prev: false
 title: "DiffRangeType"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:14
+Defined in: [extension/packages/types/src/actions/enums.ts:9](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/enums.ts#L9)
 
 Type of diff range
 
@@ -15,7 +15,7 @@ Type of diff range
 
 > **Added**: `0`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:15
+Defined in: [extension/packages/types/src/actions/enums.ts:10](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/enums.ts#L10)
 
 ***
 
@@ -23,7 +23,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:15
 
 > **Modified**: `1`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:16
+Defined in: [extension/packages/types/src/actions/enums.ts:11](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/enums.ts#L11)
 
 ***
 
@@ -31,4 +31,4 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:16
 
 > **Removed**: `2`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:17
+Defined in: [extension/packages/types/src/actions/enums.ts:12](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/enums.ts#L12)

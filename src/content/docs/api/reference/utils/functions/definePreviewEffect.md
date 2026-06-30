@@ -7,7 +7,7 @@ title: "definePreviewEffect"
 
 > **definePreviewEffect**\<`TData`, `TSchema`, `TInput`, `TReturn`\>(`preview`): (`ctx`) => `TReturn`
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:103
+Defined in: [extension/packages/types/src/utils/index.ts:268](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L268)
 
 ## Type Parameters
 
@@ -17,11 +17,11 @@ Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:103
 
 ### TSchema
 
-`TSchema` *extends* `any`
+`TSchema` *extends* [`SchemaTypes`](/docs/api/reference/index/type-aliases/schematypes/)
 
 ### TInput
 
-`TInput` *extends* `any`
+`TInput` *extends* `unknown`
 
 ### TReturn
 

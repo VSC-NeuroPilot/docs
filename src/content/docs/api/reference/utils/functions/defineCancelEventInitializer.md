@@ -7,7 +7,7 @@ title: "defineCancelEventInitializer"
 
 > **defineCancelEventInitializer**\<`T`\>(`init`): [`RCECancelEventInitializer`](/docs/api/reference/index/interfaces/rcecanceleventinitializer/)\<`T`\>
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:107
+Defined in: [extension/packages/types/src/utils/index.ts:289](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L289)
 
 ## Type Parameters
 

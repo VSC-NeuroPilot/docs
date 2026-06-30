@@ -7,7 +7,7 @@ title: "contextPath"
 
 > **contextPath**(`path`): `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/utils.d.mts:12
+Defined in: [extension/packages/types/src/utils/index.ts:15](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/utils/index.ts#L15)
 
 Process a path for usage in context.
 

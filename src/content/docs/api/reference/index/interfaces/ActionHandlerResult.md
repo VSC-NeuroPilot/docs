@@ -5,7 +5,7 @@ prev: false
 title: "ActionHandlerResult"
 ---
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:342
+Defined in: [extension/packages/types/src/actions/types.ts:220](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L220)
 
 ## Properties
 
@@ -13,7 +13,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:342
 
 > `optional` **historyNote?**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:345
+Defined in: [extension/packages/types/src/actions/types.ts:223](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L223)
 
 ***
 
@@ -21,7 +21,7 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:345
 
 > `optional` **message?**: `string`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:344
+Defined in: [extension/packages/types/src/actions/types.ts:222](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L222)
 
 ***
 
@@ -29,4 +29,4 @@ Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:344
 
 > **success**: `ActionHandlerSuccess`
 
-Defined in: @vsc-neuropilot/api-types/dist/index-CvuPi5gB.d.mts:343
+Defined in: [extension/packages/types/src/actions/types.ts:221](https://github.com/VSC-NeuroPilot/neuropilot/blob/96a757267bf860c19ddfb9291b78c856b93565cc/packages/types/src/actions/types.ts#L221)
